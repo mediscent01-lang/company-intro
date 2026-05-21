@@ -1,10 +1,11 @@
 
+
 <!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PLANT WELLNESS GROUND INSADONG | 최종 통합 실행 사업계획서 · 수치검증/목차정렬본</title>
+<title>PLANT WELLNESS GROUND INSADONG | 전략보완 반영 최종 사업계획서</title>
 <style>
 :root{
   --bg:#eef4f1;--paper:#fbfcfb;--alt:#f4f8f6;--ink:#1d2a2f;--muted:#66777b;--line:#d8e6e1;
@@ -76,7 +77,36 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
   .visual-card-img img{min-height:210px}
 }
 
+
+/* ===== STRATEGY SUPPLEMENT APPLIED ===== */
+.stat-block{background:#f3f0e8;border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+.stat-block .stat-label{font-size:12px;color:var(--muted);font-weight:800;margin:0 0 6px;letter-spacing:.02em}.stat-block .stat-val{font-size:26px;font-weight:900;color:var(--green);margin:0;line-height:1.1}.stat-block .stat-sub{font-size:12px;color:var(--muted);margin:4px 0 0}.stat-block.warn .stat-val{color:#8a5a00}.stat-block.danger .stat-val{color:var(--red)}.stat-block.ok .stat-val{color:var(--green)}
+.comp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0}.comp-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}.comp-card:before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px}.comp-card.direct:before{background:var(--red)}.comp-card.indirect:before{background:#b78d43}.comp-card.adjacent:before{background:#8fa49e}.comp-name{font-weight:900;color:var(--ink);font-size:16px;margin:0 0 4px}.comp-loc{font-size:12px;color:var(--muted);margin:0 0 12px}.comp-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #edf3f1;padding:5px 0;font-size:12.5px;color:#405056}.comp-item span:last-child{font-weight:800;color:var(--green);text-align:right}.threat-bar{height:7px;background:#e7f1ee;border-radius:999px;overflow:hidden;margin:7px 0 12px}.threat-fill{height:100%;border-radius:999px}.comp-diff{border-top:1px solid var(--line);padding-top:12px;margin-top:12px;color:#405056;font-size:12.5px}.diff-title{font-weight:900;color:var(--green);margin:0 0 4px}.map-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-top:22px}.position-map{position:relative;height:360px;border-left:2px solid #c9d7d2;border-bottom:2px solid #c9d7d2;margin:20px 34px 44px 70px;background:linear-gradient(90deg,transparent 49.7%,#dce7e3 50%,transparent 50.3%),linear-gradient(0deg,transparent 49.7%,#dce7e3 50%,transparent 50.3%)}.bubble{position:absolute;transform:translate(-50%,-50%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;text-align:center;line-height:1.15;box-shadow:0 8px 18px rgba(0,0,0,.18);font-size:11px}.bubble.shifti{width:70px;height:70px;background:var(--green);border:4px solid var(--gold);font-size:12px}.bubble.red{width:54px;height:54px;background:#8c2e24}.bubble.gold{width:52px;height:52px;background:#7b5428}.bubble.gray{width:48px;height:48px;background:#5f6966}.axis-label{position:absolute;font-size:12px;color:var(--muted);font-weight:800}.badge2{display:inline-block;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:900;background:#e7f1ee;color:var(--green)}.badge2.red{background:#ffe7e3;color:var(--red)}.badge2.warn{background:#fff1d7;color:#8a5a00}.badge2.gray{background:#edf0ee;color:#6f7e7a}
+@media(max-width:980px){.comp-grid{grid-template-columns:1fr}.position-map{margin-left:20px;margin-right:20px}.bubble{font-size:9px}.bubble.shifti{width:58px;height:58px}}
+
 </style>
+
+<style id="pdf-print-fix">
+@page { size: A4 landscape; margin: 10mm; }
+@media print {
+  body{background:#fff!important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .hero{min-height:520px!important; page-break-after:always;}
+  section{break-inside:avoid; page-break-inside:avoid; padding:38px 0!important;}
+  .card,.table,.visual-board,.callout,.assumption{break-inside:avoid; page-break-inside:avoid;}
+  h2,h3{break-after:avoid;}
+  table{font-size:11px!important; min-width:0!important;}
+  th,td{padding:8px 8px!important; font-size:11px!important;}
+  .visual-card-img img,.visual-img img{max-height:420px; object-fit:cover;}
+}
+
+/* ===== STRATEGY SUPPLEMENT APPLIED ===== */
+.stat-block{background:#f3f0e8;border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+.stat-block .stat-label{font-size:12px;color:var(--muted);font-weight:800;margin:0 0 6px;letter-spacing:.02em}.stat-block .stat-val{font-size:26px;font-weight:900;color:var(--green);margin:0;line-height:1.1}.stat-block .stat-sub{font-size:12px;color:var(--muted);margin:4px 0 0}.stat-block.warn .stat-val{color:#8a5a00}.stat-block.danger .stat-val{color:var(--red)}.stat-block.ok .stat-val{color:var(--green)}
+.comp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0}.comp-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}.comp-card:before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px}.comp-card.direct:before{background:var(--red)}.comp-card.indirect:before{background:#b78d43}.comp-card.adjacent:before{background:#8fa49e}.comp-name{font-weight:900;color:var(--ink);font-size:16px;margin:0 0 4px}.comp-loc{font-size:12px;color:var(--muted);margin:0 0 12px}.comp-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #edf3f1;padding:5px 0;font-size:12.5px;color:#405056}.comp-item span:last-child{font-weight:800;color:var(--green);text-align:right}.threat-bar{height:7px;background:#e7f1ee;border-radius:999px;overflow:hidden;margin:7px 0 12px}.threat-fill{height:100%;border-radius:999px}.comp-diff{border-top:1px solid var(--line);padding-top:12px;margin-top:12px;color:#405056;font-size:12.5px}.diff-title{font-weight:900;color:var(--green);margin:0 0 4px}.map-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-top:22px}.position-map{position:relative;height:360px;border-left:2px solid #c9d7d2;border-bottom:2px solid #c9d7d2;margin:20px 34px 44px 70px;background:linear-gradient(90deg,transparent 49.7%,#dce7e3 50%,transparent 50.3%),linear-gradient(0deg,transparent 49.7%,#dce7e3 50%,transparent 50.3%)}.bubble{position:absolute;transform:translate(-50%,-50%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;text-align:center;line-height:1.15;box-shadow:0 8px 18px rgba(0,0,0,.18);font-size:11px}.bubble.shifti{width:70px;height:70px;background:var(--green);border:4px solid var(--gold);font-size:12px}.bubble.red{width:54px;height:54px;background:#8c2e24}.bubble.gold{width:52px;height:52px;background:#7b5428}.bubble.gray{width:48px;height:48px;background:#5f6966}.axis-label{position:absolute;font-size:12px;color:var(--muted);font-weight:800}.badge2{display:inline-block;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:900;background:#e7f1ee;color:var(--green)}.badge2.red{background:#ffe7e3;color:var(--red)}.badge2.warn{background:#fff1d7;color:#8a5a00}.badge2.gray{background:#edf0ee;color:#6f7e7a}
+@media(max-width:980px){.comp-grid{grid-template-columns:1fr}.position-map{margin-left:20px;margin-right:20px}.bubble{font-size:9px}.bubble.shifti{width:58px;height:58px}}
+
+</style>
+
 </head>
 <body>
 
@@ -99,23 +129,26 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 
 
 
+
+
 <section class="alt">
   <div class="container">
     <div class="head">
       <h2>문서 구성</h2>
-      <p>검토자가 읽는 의사결정 순서로 재정렬했습니다. 공간 비전 → 공간/상품 → 수치 검증 → 운영/리스크 → 모객/제휴 → AI/확장 → 실행 판단 순서입니다.</p>
+      <p>전략 보완 파일의 4대 보강축(총 자금 조달, 경쟁 공간 분석, 공간 파트너 협상용 핵심본, 정부과제용 핵심본)을 본문 흐름에 맞춰 재정렬했습니다.</p>
     </div>
     <div class="toc-grid">
-      <div class="toc-item"><b>1. 공간 비전·전제</b><span>Executive Summary, 사업 전제, 운영 구조</span></div>
-      <div class="toc-item"><b>2. 공간·상품 설계</b><span>200평 구획, 최소 시공, 프로그램, MD, K-Beauty, 멤버십</span></div>
-      <div class="toc-item"><b>3. 수치 검증·재무</b><span>산출 기준, 자금 조달, 투자비, 고정비, BEP, 민감도, 런웨이, 비수기</span></div>
-      <div class="toc-item"><b>4. 운영·법무·리스크</b><span>KPI, RACI, SOP, 허가·인증, 계약 리스크, 통제 원칙</span></div>
-      <div class="toc-item"><b>5. 마케팅·채널·제휴</b><span>모객, OTA, 순손익, 기업복지, 지도 최적화, 앰배서더, 제휴 타깃</span></div>
-      <div class="toc-item"><b>6. AI·데이터·확장</b><span>AI Commerce OS, EEG B2B, 장비 타당성, 디지털 콘텐츠, 지원금</span></div>
-      <div class="toc-item"><b>7. 오너 의사결정</b><span>시간 배분, Exit Plan, 30일 실험, 6개월 로드맵, 최종 요청사항</span></div>
+      <div class="toc-item"><b>1. 공간 비전·전제</b><span>Executive Summary, 사업 전제, 경쟁 공간, 실행 역량, 운영 구조</span></div>
+      <div class="toc-item"><b>2. 공간·상품 설계</b><span>200평 구획, 최소 시공, 프로그램, K-BEAUTY 소싱, MD 운영</span></div>
+      <div class="toc-item"><b>3. 수치 검증·재무</b><span>검산 요약, 총 자금 조달, 초기 투자비, 관리비 보정 BEP, 비수기, 런웨이</span></div>
+      <div class="toc-item"><b>4. 운영·법무·리스크</b><span>KPI, RACI/SOP, 허가·업종·계약 리스크 통합</span></div>
+      <div class="toc-item"><b>5. 마케팅·채널·제휴</b><span>모객, OTA, 기업복지, 지도 최적화, 앰배서더, 제휴 타깃</span></div>
+      <div class="toc-item"><b>6. AI·데이터·확장</b><span>AI Staff Assistant, EEG ROI, EEG B2B, 디지털 콘텐츠, 정부지원금</span></div>
+      <div class="toc-item"><b>7. 제출·협상 버전</b><span>공간 파트너 협상용 핵심본, 정부과제용 핵심본, Exit Plan, 실행 로드맵</span></div>
     </div>
   </div>
 </section>
+
 
 <section>
   <div class="container">
@@ -206,71 +239,98 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     <div class="assumption"><b>검증 기준:</b> 오픈 후 30일간 B1 유입, 포토존 이용, 체험 결제, K-BEAUTY 판매, 자사 MD 매출, 기여이익률을 매일 기록하고 90일 차에 2차 투자 여부를 결정합니다.</div>
   </div>
 </section>
+
+
 <section>
   <div class="container">
     <div class="head">
-      <h2>3. 시장·경쟁 공간 분석</h2>
-      <p>직접 경쟁자는 단일 업종이 아니라 고객의 시간과 목적을 가져가는 인근 체험·공예·카페·뷰티 공간입니다. PLANT는 이들을 하나로 묶은 복합형으로 차별화해야 합니다.</p>
+      <h2>3. 경쟁 공간 분석 및 차별화</h2>
+      <p>인사동·북촌·성수권의 직간접 경쟁 공간을 기준으로, PLANT WELLNESS GROUND가 “또 하나의 체험 매장”이 아니라 복합 K-Wellness Commerce Platform임을 명확히 보여주는 섹션입니다.</p>
     </div>
 
-    <div class="table">
-      <table>
-        <thead>
-          <tr>
-            <th>경쟁/대체 공간 유형</th>
-            <th>인근 대표 예시</th>
-            <th>강점</th>
-            <th>약점</th>
-            <th>PLANT 차별화 방향</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>전통 공예·갤러리형 공간</strong></td>
-            <td>인사동 갤러리/공예 매장군, 통인가게 등</td>
-            <td>인사동 정체성, 외국인 관광객 친화성</td>
-            <td>체험·구매 전환 구조가 약한 경우 많음</td>
-            <td>K-Craft Gallery를 포토존·MD·체험과 연결</td>
-          </tr>
-          <tr>
-            <td><strong>한옥 카페·포토 공간</strong></td>
-            <td>익선동 한옥 카페거리</td>
-            <td>사진, 분위기, 데이트 동선 강함</td>
-            <td>웰니스·리테일·기념품 구매 연결은 약함</td>
-            <td>사진 후 K-Beauty·향수·족욕으로 구매 전환</td>
-          </tr>
-          <tr>
-            <td><strong>향수 공방 / 원데이 클래스</strong></td>
-            <td>종로·익선동 향수 클래스형 공간</td>
-            <td>체험 만족도와 기프트 수요</td>
-            <td>단일 체험에 그쳐 재방문·MD 확장 약함</td>
-            <td>향수 + EEG + 명상 + SHIFTI 본품 구매로 확장</td>
-          </tr>
-          <tr>
-            <td><strong>H&B / K-Beauty 매장</strong></td>
-            <td>명동·종로권 H&B 매장</td>
-            <td>상품 다양성, 외국인 구매 인지도</td>
-            <td>인사동 전통문화·체험 스토리 부족</td>
-            <td>20평 K-Beauty Select를 웰니스 체험과 결합</td>
-          </tr>
-          <tr>
-            <td><strong>스파·마사지·족욕형 공간</strong></td>
-            <td>호텔 스파, 도심 리커버리 매장</td>
-            <td>휴식·회복 니즈 명확</td>
-            <td>관광지형 접근성과 기념품 구매 연결 약함</td>
-            <td>Walking Recovery + 풋패치 + 콜라겐 + 홈스파 키트</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="grid3">
+      <div class="stat-block danger"><p class="stat-label">직접 경쟁</p><p class="stat-val">3곳</p><p class="stat-sub">향·웰니스 복합 체험</p></div>
+      <div class="stat-block warn"><p class="stat-label">간접 경쟁</p><p class="stat-val">3곳</p><p class="stat-sub">단일 카테고리 체험/전시</p></div>
+      <div class="stat-block ok"><p class="stat-label">독점 포지션</p><p class="stat-val">2개</p><p class="stat-sub">EEG×조향 + ISO16128 스토리</p></div>
     </div>
 
-    <div class="assumption"><b>핵심 결론:</b> PLANT의 직접 경쟁력은 “가장 좋은 향수 클래스”가 아니라, 인사동형 전시·포토·웰니스·K-Beauty·MD를 한 동선에서 전환시키는 복합 운영력입니다.</div>
+    <div class="comp-grid">
+      <div class="comp-card direct">
+        <p class="comp-name">레트르(RETTRE)</p><p class="comp-loc">성수·홍대·서울숲권</p>
+        <div class="comp-item"><span>체험 유형</span><span>뇌측정 + 조향</span></div><div class="comp-item"><span>가격대</span><span>3만~6만원대</span></div><div class="comp-item"><span>위협 수준</span><span>High</span></div>
+        <div class="threat-bar"><div class="threat-fill" style="width:90%;background:#ba4d3d"></div></div>
+        <div class="comp-diff"><p class="diff-title">차별화</p>EEG/HRV 기반 향 추천, 인사동 헤리티지, K-Beauty·족욕·명상·MD를 결합한 복합 동선으로 차별화.</div>
+      </div>
+      <div class="comp-card direct">
+        <p class="comp-name">쌈지길 내 향 공방</p><p class="comp-loc">동일 건물 가능 경쟁</p>
+        <div class="comp-item"><span>체험 유형</span><span>향초·비누·조향</span></div><div class="comp-item"><span>강점</span><span>기존 유입</span></div><div class="comp-item"><span>위협 수준</span><span>High</span></div>
+        <div class="threat-bar"><div class="threat-fill" style="width:75%;background:#ba4d3d"></div></div>
+        <div class="comp-diff"><p class="diff-title">차별화</p>생활 공방이 아닌 프리미엄 퍼퓨머리·AI 추천·K-Wellness 회복 체험으로 업종 구분 필요.</div>
+      </div>
+      <div class="comp-card direct">
+        <p class="comp-name">설화수 북촌 스파</p><p class="comp-loc">북촌권 프리미엄 스파</p>
+        <div class="comp-item"><span>체험 유형</span><span>한방 스파</span></div><div class="comp-item"><span>강점</span><span>브랜드 파워</span></div><div class="comp-item"><span>위협 수준</span><span>Mid-High</span></div>
+        <div class="threat-bar"><div class="threat-fill" style="width:65%;background:#b78d43"></div></div>
+        <div class="comp-diff"><p class="diff-title">차별화</p>고가 예약제 스파보다 접근 가능한 가격대와 향수·K-Beauty·전통 포토존 결합으로 진입장벽 완화.</div>
+      </div>
+      <div class="comp-card indirect">
+        <p class="comp-name">컬러풀뮤지엄</p><p class="comp-loc">쌈지길 지하권</p>
+        <div class="comp-item"><span>체험 유형</span><span>컬러 감각 전시</span></div><div class="comp-item"><span>시사점</span><span>B1 집객 가능성</span></div><div class="comp-item"><span>위협 수준</span><span>Mid</span></div>
+        <div class="threat-bar"><div class="threat-fill" style="width:40%;background:#b78d43"></div></div>
+        <div class="comp-diff"><p class="diff-title">시사점</p>동일 지하권 체험 수요의 근거로 활용 가능. 상호 쿠폰·동선 연계 검토.</div>
+      </div>
+      <div class="comp-card indirect">
+        <p class="comp-name">인사동 일반 조향 공방</p><p class="comp-loc">인사동 골목 산재</p>
+        <div class="comp-item"><span>체험 유형</span><span>원데이 클래스</span></div><div class="comp-item"><span>가격대</span><span>3만~6만원대</span></div><div class="comp-item"><span>위협 수준</span><span>Mid</span></div>
+        <div class="threat-bar"><div class="threat-fill" style="width:45%;background:#b78d43"></div></div>
+        <div class="comp-diff"><p class="diff-title">차별화</p>단일 조향을 넘어 EEG 추천, 족욕/명상, 자사 MD, K-Beauty 구매까지 연결.</div>
+      </div>
+      <div class="comp-card adjacent">
+        <p class="comp-name">안녕인사동 전시 공간</p><p class="comp-loc">인사동길 인근</p>
+        <div class="comp-item"><span>체험 유형</span><span>복합 문화 전시</span></div><div class="comp-item"><span>관계</span><span>시너지 가능</span></div><div class="comp-item"><span>위협 수준</span><span>Low-Mid</span></div>
+        <div class="threat-bar"><div class="threat-fill" style="width:25%;background:#8fa49e"></div></div>
+        <div class="comp-diff"><p class="diff-title">시사점</p>직접 경쟁보다 연계 가능성이 큼. 방문객 QR 쿠폰, 포토존 연계 제안 가능.</div>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <h3 style="margin:0 0 8px;color:var(--green)">포지셔닝 맵 - 가격 × 과학성</h3>
+      <p style="margin:0;color:var(--muted)">SHIFTI는 “과학 기반 + 프리미엄 접근성 + 복합 웰니스”의 중상단 포지션을 노립니다.</p>
+      <div class="position-map">
+        <div class="axis-label" style="left:-66px;top:0">과학적 체험 ↑</div><div class="axis-label" style="right:0;bottom:-32px">고가 →</div><div class="axis-label" style="left:0;bottom:-32px">← 저가</div><div class="axis-label" style="left:-66px;bottom:0">감성 체험 ↓</div>
+        <div class="bubble shifti" style="left:70%;top:12%">SHIFTI<br/>★</div><div class="bubble red" style="left:45%;top:22%">레트르</div><div class="bubble gold" style="left:82%;top:26%">설화수<br/>스파</div><div class="bubble gray" style="left:25%;top:72%">일반<br/>공방</div><div class="bubble gray" style="left:55%;top:56%;background:#426779">전시<br/>공간</div>
+      </div>
+      <div class="assumption"><b>주의:</b> 경쟁 공간명·가격대·매장 현황은 전략 보완 파일 기준의 내부 분석값입니다. 제출 전에는 현장 방문 또는 웹 검색으로 최신 운영 여부와 가격을 재확인해야 합니다.</div>
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      <h3>경쟁 우위 문장</h3>
+      <p>PLANT WELLNESS GROUND는 일반 조향 공방처럼 단일 체험에 머무르지 않고, EEG/HRV 기반 향 추천, K-Craft 포토존, K-Beauty Select, 족욕·명상 회복 프로그램, 자사 MD 구매를 하나의 동선으로 연결하는 K-Wellness Closed-Loop Commerce 공간입니다.</p>
+    </div>
   </div>
 </section>
+
+
+
 <section>
   <div class="container">
     <div class="head">
-      <h2>4. 최종 운영 구조: 3 Anchor + 5 MD + 2 Popup</h2>
+      <h2>4. 메디센츠 / SHIFTI 실행 역량</h2>
+      <p>대상 공간은 신규 컨셉이지만, 운영 주체는 향·웰니스·제조·오프라인 레퍼런스를 이미 보유하고 있습니다. 이 섹션은 협의 상대가 가장 먼저 확인할 신뢰 근거입니다.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><span class="tag">Manufacturing</span><h3>자체 제조·개발 기반</h3><p>향수, 샴푸, 바디케어, 콜라겐, 홈스파 MD를 단순 유통이 아니라 자사 브랜드와 제조 기반으로 연계할 수 있습니다.</p></div>
+      <div class="card"><span class="tag">Proof</span><h3>오프라인 협업 레퍼런스</h3><p>현대백화점, 반얀트리, 아름지기 등 기존 협업·납품·전시 이력을 공간 제안의 신뢰 근거로 활용합니다.</p></div>
+      <div class="card"><span class="tag">Differentiation</span><h3>EEG + 향 추천 + Water Wellness</h3><p>일반 조향 클래스와 달리 EEG 향 추천, PLANT Water Wellness, 샤워기필터, 식물성 콜라겐까지 확장 가능한 구조입니다.</p></div>
+    </div>
+    <div class="assumption"><b>보완 필요:</b> 외부 제출 전 각 레퍼런스는 계약서, 납품서, 행사 사진, 보도자료 등 증빙자료와 함께 별첨으로 정리해야 합니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="head">
+      <h2>5. 최종 운영 구조: 3 Anchor + 5 MD + 2 Popup</h2>
       <p>고정 입점 10개 구조는 폐기합니다. 고정비와 관리 복잡도를 낮추기 위해 고정 앵커, 자사 MD, 위탁·팝업을 분리합니다.</p>
     </div>
     <div class="table">
@@ -295,7 +355,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section>
   <div class="container">
     <div class="head">
-      <h2>5. 200평 전체 공간배치 및 구획별 평수 제안</h2>
+      <h2>6. 200평 전체 공간배치 및 구획별 평수 제안</h2>
       <p>PLANT WELLNESS GROUND는 약 200평 전체를 매대로 채우는 방식이 아니라, 지하 유입·체류·체험·구매 전환이 자연스럽게 이어지는 복합 동선으로 구성합니다. 핵심은 공용공간과 복도까지 포함해 숨통을 확보하는 것입니다.</p>
     </div>
 
@@ -472,7 +532,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>6. 공간 구성 및 최소 시공 범위</h2>
+      <h2>7. 공간 구성 및 최소 시공 범위</h2>
       <p>초기 시공은 “고객이 돈을 쓰는 구역”과 “조용해야 하는 구역”에만 집중합니다.</p>
     </div>
 
@@ -514,7 +574,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section>
   <div class="container">
     <div class="head">
-      <h2>7. 핵심 프로그램 및 가격전략</h2>
+      <h2>8. 핵심 프로그램 및 가격전략</h2>
       <p>처음부터 고가 프로그램만 운영하지 않습니다. 15분 미니 체험으로 진입시키고, 정규 클래스·EEG·리테일로 업셀합니다.</p>
     </div>
 
@@ -562,10 +622,33 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     </div>
   </div>
 </section>
+
+<section>
+  <div class="container">
+    <div class="head">
+      <h2>9. K-BEAUTY 소싱 파트너 계획</h2>
+      <p>K-BEAUTY 존은 '좋은 브랜드가 알아서 들어오는 구조'가 아닙니다. 카테고리별 소싱 기준과 SKU 검증 프로세스가 있어야 합니다.</p>
+    </div>
+    <div class="table">
+      <table>
+        <thead><tr><th>카테고리</th><th>초기 SKU</th><th>소싱 기준</th><th>위탁 조건 목표</th><th>퇴출 기준</th></tr></thead>
+        <tbody>
+          <tr><td><strong>마스크팩/패드</strong></td><td>15~20개</td><td>외국인 구매 이해 쉬움, 여행 수요</td><td>수수료 30% 내외</td><td>4주 GMV 100만원 미만</td></tr>
+          <tr><td><strong>선케어/클렌징</strong></td><td>15~20개</td><td>한국 여행 필수품, 객단가 1만~3만원</td><td>수수료 25~30%</td><td>테스터 대비 구매전환 5% 미만</td></tr>
+          <tr><td><strong>립/핸드/미니 기프트</strong></td><td>20~25개</td><td>충동구매, 선물, 포켓 사이즈</td><td>수수료 30~35%</td><td>재구매/세트 전환 없음</td></tr>
+          <tr><td><strong>홈스파/패치/풋웨어</strong></td><td>10~15개</td><td>족욕·샤워기필터·회복 루틴 연계</td><td>위탁 또는 일부 매입 혼합</td><td>체험 후 구매전환 8% 미만</td></tr>
+          <tr><td><strong>자사 MD</strong></td><td>10~20개</td><td>SHIFTI, PLANT, 콜라겐, 샤워기필터</td><td>자사 마진 확보</td><td>월 회전율 기준 재고 조정</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="assumption"><b>운영 원칙:</b> 초기 SKU는 50~80개로 제한합니다. 120개 이상으로 시작하면 재고·테스터·직원 설명 난이도가 올라가고, K-Beauty 존이 과도하게 복잡해집니다.</div>
+  </div>
+</section>
+
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>8. MD · 판매 · CRM 운영방안</h2>
+      <h2>10. MD · 판매 · CRM 운영방안</h2>
       <p>초기에는 SKU를 많이 깔지 않고, 고객 동선별로 바로 팔리는 상품만 배치합니다. 핵심은 자사 체험 후 SHIFTI·PLANT·콜라겐·필터·회복 키트로 객단가를 올리는 것입니다.</p>
     </div>
 
@@ -636,189 +719,75 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>9. 멤버십 / 구독 수익 모델</h2>
-      <p>기존 520명 목표는 초기 6개월 기준으로 과도합니다. 520명은 18개월 목표로 두고, 6개월 목표는 150명 수준으로 하향하는 것이 현실적입니다.</p>
-    </div>
-    <div class="table">
-      <table>
-        <thead><tr><th>기간</th><th>목표 회원</th><th>월 반복매출</th><th>획득 경로</th><th>핵심 조건</th></tr></thead>
-        <tbody>
-          <tr><td><strong>0~3개월</strong></td><td>50명</td><td>150만~300만원</td><td>현장 재방문 고객, 족욕 고객, 내국인 직장인</td><td>월 1회 재방문 이유 필요</td></tr>
-          <tr><td><strong>4~6개월</strong></td><td>150명</td><td>450만~900만원</td><td>기업복지, 점심 회복권, 콜라겐 정기구매</td><td>평일 낮 수요 확보</td></tr>
-          <tr><td><strong>7~12개월</strong></td><td>300명</td><td>900만~1,800만원</td><td>숙소 제휴, 앰배서더, 리뷰 고객 리타겟팅</td><td>CRM과 쿠폰 자동화 필요</td></tr>
-          <tr><td><strong>13~18개월</strong></td><td>520명</td><td>1,500만~2,500만원+</td><td>기업/학교/호텔 연계 멤버십</td><td>단체 제휴와 온라인 결제 시스템 필요</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="grid3" style="margin-top:24px">
-      <div class="card"><span class="tag">Basic</span><h3>Ground Pass</h3><p>월 29,000원. 포토 출력, 향 테스트, 콜라겐 티, MD 할인. 초기 획득용.</p></div>
-      <div class="card"><span class="tag">Core</span><h3>Recovery Pass</h3><p>월 59,000원. 족욕 1회, 풋패치, 콜라겐 티. 평일 낮 회전율 보완용.</p></div>
-      <div class="card"><span class="tag">Premium</span><h3>Scent & Wellness Club</h3><p>월 99,000원. 향수 미니클래스, EEG 우선 예약, 시즌 초대. 충성고객용.</p></div>
-    </div>
-    <div class="assumption"><b>수정 제안:</b> 사업계획서에는 “6개월 150명, 12개월 300명, 18개월 520명”으로 제시하는 것이 설득력이 높습니다.</div>
-  </div>
-</section>
-
-
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>10. 가격·수치 산출 기준 검증 요약</h2>
-      <p>기존 문서의 가격과 숫자는 일부가 “시장 확정가”처럼 보일 수 있어, 내부 산출식·가정·검증 필요 항목으로 재정리했습니다.</p>
-    </div>
-
-    <div class="grid3">
-      <div class="card">
-        <span class="tag">Corrected</span>
-        <h3>총 필요 자금 재계산</h3>
-        <p>기존 총액 일부가 세부 항목 합계와 맞지 않아 재계산했습니다. 기준안은 <strong>4.60억원</strong>입니다.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Assumption</span>
-        <h3>OTA 수수료</h3>
-        <p>Klook/Viator 계약 전 수수료는 확정값이 아닙니다. 본 문서는 <strong>25%</strong>를 보수적 내부 가정으로 적용했습니다.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Revised</span>
-        <h3>EEG B2B 가격</h3>
-        <p>첨부 이미지의 300만~2,000만원+ 가격은 시장 확정가가 아니라 내부 견적 범위입니다. 원가·표본수·리포트 깊이에 따라 재산정했습니다.</p>
-      </div>
-    </div>
-
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead>
-          <tr>
-            <th>항목</th>
-            <th>기존 리스크</th>
-            <th>수정 기준</th>
-            <th>검증 방식</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>자금 조달</strong></td>
-            <td>초기 투자비와 운전자금·보증금이 분리되어 총 필요자금이 약해 보임</td>
-            <td>초기투자 + 보증금 + 운전자금 3개월 + 예비비 합산</td>
-            <td>항목별 합계 자동 계산</td>
-          </tr>
-          <tr>
-            <td><strong>K-BEAUTY 위탁 매출</strong></td>
-            <td>월매출 목표만 있고 수수료·운영비 차감 후 기여이익이 불명확</td>
-            <td>GMV × 위탁수수료율 - 직접 운영비</td>
-            <td>20평 기준 평당 매출과 수수료율 시나리오</td>
-          </tr>
-          <tr>
-            <td><strong>BEP</strong></td>
-            <td>임대료 변동에 따른 손익 난이도 설명 부족</td>
-            <td>총 고정비 ÷ 매출총이익률</td>
-            <td>임대료 2,000만~5,000만원 시나리오</td>
-          </tr>
-          <tr>
-            <td><strong>OTA</strong></td>
-            <td>판매가 기준 매출만 보면 실제 기여이익 과대평가</td>
-            <td>판매가 - OTA 수수료 - 재료/운영원가</td>
-            <td>상품별 기여이익률 재계산</td>
-          </tr>
-          <tr>
-            <td><strong>EEG B2B</strong></td>
-            <td>가격표가 견적 근거 없이 높아 보일 수 있음</td>
-            <td>표본수, 리워드, 운영인력, 장비/라이선스, 분석/보고서, 마진 반영</td>
-            <td>상품별 최소 직접원가와 목표가격 분리</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="assumption"><b>해석:</b> 본 문서의 가격은 확정 견적이 아니라 사업성 판단용 산출 가정입니다. 계약서, 실제 견적서, 위탁 브랜드 조건, OTA 계약 조건이 확정되면 반드시 다시 보정해야 합니다.</div>
-  </div>
-</section>
-
-
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>11. 총 자금 조달 계획표</h2>
-      <p>초기 투자비만 보면 실행 판단이 불완전합니다. 실제 필요 자금은 초기 투자비, 보증금, 운전자금, 예비비를 합산해 판단해야 합니다.</p>
-    </div>
-    <div class="table">
-      <table>
-        <thead>
-          <tr><th>자금 항목</th><th>보수적 MVP</th><th>기준안</th><th>확장안</th><th>비고</th></tr>
-        </thead>
-        <tbody><tr><td><strong>기본 인테리어 / 전기 / 조명</strong></td><td>4,000만원</td><td>6,000만원</td><td>9,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>체험 설비</strong></td><td>1,500만원</td><td>2,500만원</td><td>4,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>초기 MD / 샘플 / 패키지</strong></td><td>2,500만원</td><td>4,000만원</td><td>6,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>시스템 / POS / QR / 예약</strong></td><td>500만원</td><td>1,000만원</td><td>2,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>오픈 마케팅</strong></td><td>700만원</td><td>1,500만원</td><td>3,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>보증금</strong></td><td>5,000만원</td><td>10,000만원</td><td>15,000만원</td><td>계약 조건에 따라 변동</td></tr>
-<tr><td><strong>운전자금 3개월</strong></td><td>15,000만원</td><td>18,000만원</td><td>21,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>예비비</strong></td><td>2,000만원</td><td>3,000만원</td><td>5,000만원</td><td>사업성 산출 가정</td></tr>
-<tr><td><strong>총 필요 자금</strong></td><td><strong>3.12억원</strong></td><td><strong>4.60억원</strong></td><td><strong>6.50억원</strong></td><td>세부 항목 합계 기준 재계산</td></tr></tbody>
-      </table>
-    </div>
-    <div class="assumption"><b>수정 결과:</b> 기존 총액은 일부 항목 합계와 오차가 있어 수정했습니다. 본 기준안은 <strong>4.60억원</strong>이며, 보증금 조건과 공사 견적 확정 후 재산정해야 합니다.</div>
-  </div>
-</section>
-
-
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>12. K-BEAUTY 위탁 매출 산출 근거</h2>
-      <p>K-BEAUTY SELECT ZONE은 20평 구매 앵커입니다. 자체 매입 재고 부담을 키우기보다 위탁·판매대행 중심으로 기여이익을 검증합니다.</p>
-    </div>
-    <div class="table">
-      <table>
-        <thead>
-          <tr><th>시나리오</th><th>월 총판매액 GMV</th><th>평당 월매출</th><th>위탁 수수료율</th><th>수수료 매출</th><th>직접 운영비</th><th>월 기여이익</th></tr>
-        </thead>
-        <tbody><tr><td><strong>보수적</strong></td><td>2,500만원</td><td>125만원</td><td>25%</td><td>625만원</td><td>250만원</td><td><strong>375만원</strong></td></tr><tr><td><strong>기준</strong></td><td>4,500만원</td><td>225만원</td><td>30%</td><td>1,350만원</td><td>400만원</td><td><strong>950만원</strong></td></tr><tr><td><strong>공격적</strong></td><td>7,000만원</td><td>350만원</td><td>35%</td><td>2,450만원</td><td>550만원</td><td><strong>1,900만원</strong></td></tr></tbody>
-      </table>
-    </div>
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>산출식</th><th>기준값</th><th>의미</th></tr></thead>
-        <tbody>
-          <tr><td><strong>월 총판매액</strong></td><td>방문객 × 구매전환율 × 객단가</td><td>현장 방문자가 실제 결제한 소비자가 총액</td></tr>
-          <tr><td><strong>수수료 매출</strong></td><td>GMV × 25~35%</td><td>위탁 또는 판매대행 조건에 따라 변동</td></tr>
-          <tr><td><strong>직접 운영비</strong></td><td>250만~550만원</td><td>진열, 테스터, 포장, 파손, 전담 인력 일부 배부</td></tr>
-          <tr><td><strong>월 기여이익</strong></td><td>수수료 매출 - 직접 운영비</td><td>고정비 방어에 실제 기여하는 금액</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="assumption"><b>판단 기준:</b> 20평 K-BEAUTY 존은 월 GMV <strong>4,500만원</strong> 이상, 기여이익 <strong>900만원 내외</strong>가 나와야 의미 있습니다. 3개월 연속 GMV 3,000만원 미만이면 면적 축소 또는 상품군 교체가 필요합니다.</div>
-  </div>
-</section>
-
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>13. 패키지 상품 및 제휴 매출 모델</h2>
-      <p>체험 단품만으로는 객단가가 낮습니다. 모든 체험은 리테일·키트·호텔·단체 상품과 연결합니다.</p>
+      <h2>11. 수치 검산 및 수정 요약</h2>
+      <p>심층 검토 결과, BEP 공식은 맞지만 관리비·전기·수도, 보증금, OTA 가격 전략에서 보정이 필요합니다.</p>
     </div>
     <div class="table">
       <table>
-        <thead><tr><th>상품명</th><th>구성</th><th>가격대</th><th>타깃</th><th>운영 포인트</th></tr></thead>
+        <thead><tr><th>항목</th><th>기존 문제</th><th>수정 기준</th><th>사업계획서 반영</th></tr></thead>
         <tbody>
-          <tr><td><strong>Insadong Walking Recovery</strong></td><td>족욕 + 풋패치 + 회복 티</td><td>49,000~69,000원</td><td>도보 관광객, 워킹투어</td><td>포토존·호텔 QR 연계</td></tr>
-          <tr><td><strong>Morning Run Recovery</strong></td><td>러닝 후 족욕 + 회복 티</td><td>39,000~59,000원</td><td>러닝크루</td><td>월 4~8회 커뮤니티 프로그램</td></tr>
-          <tr><td><strong>Runner’s Scent Reset</strong></td><td>족욕 + 미니 향 체험 + 패치</td><td>59,000~79,000원</td><td>러닝·워킹크루</td><td>체험 후 향수 구매 업셀</td></tr>
-          <tr><td><strong>Hotel Concierge Wellness Pass</strong></td><td>호텔 투숙객 전용 체험권</td><td>29,000~59,000원</td><td>인사동·종로 호텔</td><td>호텔 QR 월 정산</td></tr>
-          <tr><td><strong>Travel Agency K-Wellness Course</strong></td><td>인사동 투어 + 향수 클래스 + 기프트</td><td>1인 39,000~79,000원</td><td>여행사·가이드</td><td>10~30명 단체 견적</td></tr>
-          <tr><td><strong>Hotel Signature Scent Kit</strong></td><td>향 + 객실 리추얼 카드 + 콜라겐</td><td>견적형</td><td>호텔·기업</td><td>B2B 납품·VIP 기프트</td></tr>
+          <tr><td><strong>관리비·전기·수도</strong></td><td>400만~600만원 수준으로 과소계상</td><td>공용관리비 600만~1,000만원 + 전기 200만~300만원 + 수도 30만~50만원</td><td>월 830만~1,350만원으로 보정</td></tr>
+          <tr><td><strong>BEP</strong></td><td>관리비 과소계상으로 BEP 낮게 보임</td><td>총 고정비 6,430만~8,650만원 / 매출총이익률 55~60%</td><td>BEP 1.07억~1.58억원 구간으로 재산정</td></tr>
+          <tr><td><strong>OTA 가격</strong></td><td>현장가 대비 5~10% 인상은 수수료 차감 후 역마진 위험</td><td>현장가 ÷ (1-수수료율) + 할인/쿠폰 완충</td><td>현장가 대비 30~40% 인상 또는 OTA 전용 번들 구성</td></tr>
+          <tr><td><strong>보증금</strong></td><td>총 자금 계획에서 누락</td><td>월 2,000만원 기준 6~12개월치 = 1.2억~2.4억원</td><td>총 필요 자금 3.5억~4.7억원으로 재정리</td></tr>
+          <tr><td><strong>B1 유입</strong></td><td>800~1,200명 목표 근거 약함</td><td>기존 B1 테넌트 데이터 요청 또는 7일 직접 카운팅</td><td>첫 30일 실험 가설과 Gate로 관리</td></tr>
         </tbody>
       </table>
     </div>
+    <div class="callout" style="margin-top:24px"><h3>수정 결론</h3><p>이 사업은 1.2억원 규모가 아니라, 보증금과 운전자금을 포함하면 최소 3.5억원 이상을 준비해야 하는 공간사업입니다. 이 전제를 숨기면 협의 과정에서 신뢰가 흔들립니다.</p></div>
   </div>
 </section>
+
+
+
 <section>
   <div class="container">
     <div class="head">
-      <h2>14. 초기 투자비 산출</h2>
+      <h2>12. 총 자금 조달 계획 - 보증금 포함</h2>
+      <p>초기 투자비만 명시하면 1.2억원 규모 사업처럼 보이는 문제가 있습니다. 실제 필요 자금은 초기 투자, 보증금, 운전자금을 합산해 3.5억~4.7억원 수준으로 판단해야 합니다.</p>
+    </div>
+    <div class="grid3">
+      <div class="stat-block warn"><p class="stat-label">초기 시공·설비 투자</p><p class="stat-val">1.1억</p><p class="stat-sub">권장 집행액, 상한 1.2억</p></div>
+      <div class="stat-block danger"><p class="stat-label">보증금 추정</p><p class="stat-val">1.2~2.4억</p><p class="stat-sub">월세 6~12개월치 가정</p></div>
+      <div class="stat-block danger"><p class="stat-label">운전자금</p><p class="stat-val">0.8~0.9억</p><p class="stat-sub">M1~M4 BEP 전 완충</p></div>
+    </div>
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>구분</th><th>항목</th><th>낙관</th><th>권장</th><th>보수</th><th>비고</th></tr></thead><tbody>
+      <tr><td rowspan="4"><strong>A. 초기 투자</strong></td><td>시공 공사비</td><td>3,200만원</td><td>5,100만원</td><td>6,200만원</td><td>구획·조명·흡음</td></tr>
+      <tr><td>설비</td><td>2,000만원</td><td>2,600만원</td><td>3,200만원</td><td>EEG·족욕·MD테이블·POS</td></tr>
+      <tr><td>콘텐츠·소품·오픈 마케팅</td><td>800만원</td><td>1,100만원</td><td>1,500만원</td><td>POP·촬영·다국어 사인·SNS</td></tr>
+      <tr><td>예비비</td><td>500만원</td><td>900만원</td><td>1,100만원</td><td>현장 보정</td></tr>
+      <tr><td></td><td><strong>A 소계</strong></td><td><strong>6,500만원</strong></td><td><strong>9,700만원</strong></td><td><strong>1.2억원</strong></td><td></td></tr>
+      <tr><td rowspan="3"><strong>B. 보증금</strong></td><td>임대 보증금</td><td>1.2억원</td><td>1.6억원</td><td>2.4억원</td><td>월세 2,000만원 × 6~12개월</td></tr>
+      <tr><td>관리비 선납·기타</td><td>500만원</td><td>800만원</td><td>1,200만원</td><td>건물별 상이</td></tr>
+      <tr><td>원상복구 적립금</td><td>0원</td><td>500만원</td><td>1,000만원</td><td>계약 조건 따라 변동</td></tr>
+      <tr><td></td><td><strong>B 소계</strong></td><td><strong>1.25억원</strong></td><td><strong>1.73억원</strong></td><td><strong>2.62억원</strong></td><td>협상 핵심 변수</td></tr>
+      <tr><td rowspan="4"><strong>C. 운전자금</strong></td><td>M1 월 손실</td><td>3,525만원</td><td>3,525만원</td><td>3,525만원</td><td>개점 첫 달</td></tr>
+      <tr><td>M2 월 손실</td><td>2,360만원</td><td>2,360만원</td><td>2,360만원</td><td></td></tr>
+      <tr><td>M3 월 손실</td><td>1,155만원</td><td>1,155만원</td><td>1,155만원</td><td>Gate 1 판단</td></tr>
+      <tr><td>M4 완충 예비</td><td>500만원</td><td>1,000만원</td><td>2,000만원</td><td>매출 지연 대비</td></tr>
+      <tr><td></td><td><strong>C 소계</strong></td><td><strong>7,540만원</strong></td><td><strong>8,040만원</strong></td><td><strong>9,040만원</strong></td><td></td></tr>
+      <tr><td colspan="2"><strong>총 필요 자금 A+B+C</strong></td><td><strong>2.654억원</strong></td><td><strong>3.504억원</strong></td><td><strong>4.724억원</strong></td><td>보증금 포함</td></tr>
+    </tbody></table></div>
+
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>조달 원천</th><th>금액</th><th>활용 항목</th><th>난이도</th><th>비고</th></tr></thead><tbody>
+      <tr><td><strong>대표 자기자금</strong></td><td>1.0억~1.5억원</td><td>초기 투자 + 운전자금 일부</td><td><span class="badge2">낮음</span></td><td>기존 사업 자금 활용</td></tr>
+      <tr><td><strong>보증금 대출/보증</strong></td><td>0.8억~1.5억원</td><td>보증금 일부</td><td><span class="badge2 warn">중간</span></td><td>기업대출·보증서 검토</td></tr>
+      <tr><td><strong>정부 지원금</strong></td><td>2,000만~5,000만원</td><td>AI OS·디지털전환·관광 콘텐츠</td><td><span class="badge2 warn">중간</span></td><td>관광벤처·AI 바우처 등</td></tr>
+      <tr><td><strong>계약 조건 협상</strong></td><td>3,000만~8,000만원 효과</td><td>렌트프리·초기 할인</td><td><span class="badge2 red">높음</span></td><td>초기 현금 유출 절감</td></tr>
+      <tr><td><strong>K-BEAUTY 위탁 브랜드 보증금</strong></td><td>500만~1,500만원</td><td>일부 운영자금</td><td><span class="badge2">낮음</span></td><td>팝업/스팟 보증금 구조</td></tr>
+    </tbody></table></div>
+    <div class="assumption"><b>반영 판단:</b> 보증금은 퇴거 시 회수 가능한 자산이지만, 오픈 전 현금으로 묶입니다. 따라서 본 사업은 1.2억원짜리 사업이 아니라 최소 3.5억원 내외의 현금 계획을 요구하는 사업으로 보는 것이 맞습니다.</div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="head">
+      <h2>13. 초기 투자비 산출 - 보증금 제외 CAPEX</h2>
       <p>재고 비용은 위탁 판매 구조로 제외하고, EEG 장비 1,000만원과 최소 시공비만 반영했습니다. 보증금·월세·VAT는 별도입니다.</p>
     </div>
     <div class="finance-grid">
@@ -849,90 +818,28 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     </div>
   </div>
 </section>
+
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>15. 월 고정비 책정내역 및 BEP 재산정</h2>
-      <p>기존 문서에는 고정비 총액만 있었고, 항목별 산정 근거가 부족했습니다. 본 섹션은 월 고정비를 현금지출 기준과 관리손익 기준으로 나누어 책정합니다.</p>
-    </div>
-
-    <div class="finance-grid">
-      <div class="finance-box"><span class="tag">Cash Fixed Cost</span><h3>월 현금 고정비</h3><div class="num">5,050만~5,950만원</div><p>매월 실제 현금으로 나가는 임대료, 인건비, 관리비, 마케팅, 위생·소모품, 시스템 비용입니다.</p></div>
-      <div class="finance-box"><span class="tag">Depreciation</span><h3>월 감가/장비비</h3><div class="num">250만~330만원</div><p>초기 투자비 8,500만~1.1억원을 36개월 관리 기준으로 나눈 내부 관리비입니다.</p></div>
-      <div class="finance-box"><span class="tag">BEP Range</span><h3>관리손익 BEP</h3><div class="num">1.1억~1.25억/月</div><p>월 관리 고정비 5,500만~6,200만원, 가중 기여이익률 49~52% 기준입니다.</p></div>
-    </div>
-
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>고정비 항목</th><th>월 기준금액</th><th>책정 근거</th><th>절감/관리 원칙</th></tr></thead>
-        <tbody>
-          <tr><td><strong>임대료</strong></td><td>2,000만원</td><td>내부 검토 기준값. 보증금·관리비 별도.</td><td>K-BEAUTY·자사 체험·자사 MD의 매출총이익으로 방어. 입점료 의존 금지.</td></tr>
-          <tr><td><strong>관리비·전기·수도·냉난방</strong></td><td>400만~600만원</td><td>기존 전기·수도·기본 공사 활용, 레일 조명 중심 운영 기준.</td><td>대형 조명·냉난방 과사용 금지. 피크타임 중심 운영.</td></tr>
-          <tr><td><strong>현장 인건비</strong></td><td>1,800만~2,200만원</td><td>평일 3~4명, 주말 5~6명 탄력 운영. 매니저·체험운영·리테일/POS·파트타임 포함.</td><td>상시 고정 인력 확대 금지. 예약 회차와 주말 피크타임 중심 배치.</td></tr>
-          <tr><td><strong>4대보험·수당·식대 등 인건비 부대비</strong></td><td>200만~300만원</td><td>직접 인건비의 약 10~15% 관리 기준.</td><td>파트타임·회차형 인력 활용으로 고정화 방지.</td></tr>
-          <tr><td><strong>마케팅·제휴비</strong></td><td>300만~500만원</td><td>SNS 콘텐츠, 인플루언서 소액 집행, 호텔 QR 카드, A보드/POP 제작.</td><td>QR·쿠폰 성과가 확인된 채널만 증액.</td></tr>
-          <tr><td><strong>위생·소모품·청소</strong></td><td>200만~300만원</td><td>족욕 타월·라이너·소독제, 테스터 소모품, 청소·비품.</td><td>족욕 회차당 소모품 원가 별도 기록.</td></tr>
-          <tr><td><strong>POS·예약·QR·통신·SaaS</strong></td><td>70만~150만원</td><td>카드단말, 태블릿, 예약폼, QR 추적, 통신, 간단 CRM.</td><td>초기에는 경량 시스템 사용. 대형 솔루션 도입 보류.</td></tr>
-          <tr><td><strong>보험·회계·세무·기타 운영비</strong></td><td>80만~150만원</td><td>화재/배상책임 보험, 회계·세무, 소액 수선, 잡비.</td><td>필수 항목만 반영. 월별 사용 내역 관리.</td></tr>
-          <tr><td><strong>운영 예비비</strong></td><td>500만~750만원</td><td>민원, 수선, 추가 사인, 장비 보정, 예상치 못한 현장비용.</td><td>초기 3개월만 보수적으로 반영. 실제 집행률 기준 조정.</td></tr>
-          <tr><td><strong>월 현금 고정비 소계</strong></td><td><strong>5,050만~5,950만원</strong></td><td>매월 실제 현금 유출 기준</td><td>목표: 6,000만원 이하 유지</td></tr>
-          <tr><td><strong>초기 투자비 감가/장비비</strong></td><td>250만~330만원</td><td>초기 투자비 8,500만~1.1억원 ÷ 36개월 관리 기준.</td><td>회계상 감가와 실제 현금 유출은 구분. 내부 손익 판단용.</td></tr>
-          <tr><td><strong>관리손익 기준 고정비 합계</strong></td><td><strong>5,500만~6,200만원</strong></td><td>현금 고정비 + 감가/장비비 + 월별 보정</td><td>BEP 산정 기준값</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>수익축</th><th>월매출 목표</th><th>원가/정산비율</th><th>기여이익률</th><th>월 기여이익</th><th>비고</th></tr></thead>
-        <tbody>
-          <tr><td><strong>K-BEAUTY 위탁 판매</strong></td><td>3,500만~5,000만원</td><td>65~70%</td><td>30~35%</td><td>1,050만~1,750만원</td><td>재고투자 0원이나 판매 정산원가 발생</td></tr>
-          <tr><td><strong>자사 체험</strong></td><td>2,500만~3,500만원</td><td>30~35%</td><td>65~70%</td><td>1,625만~2,450만원</td><td>향수·족욕·명상·EEG. 가장 중요한 고마진 축</td></tr>
-          <tr><td><strong>SHIFTI / PLANT / 자사 MD</strong></td><td>2,000만~3,000만원</td><td>45~50%</td><td>50~55%</td><td>1,000만~1,650만원</td><td>샤워기필터·콜라겐·홈스파·패치·키트</td></tr>
-          <tr><td><strong>두피·Foot 입점/수수료</strong></td><td>300만~500만원</td><td>0~10%</td><td>90~100%</td><td>270만~500만원</td><td>공간사용료·판매수수료. 임대료 방어 보조축</td></tr>
-          <tr><td><strong>호텔/B2B 키트</strong></td><td>300만~1,000만원</td><td>55~60%</td><td>40~45%</td><td>120만~450만원</td><td>초기에는 보너스 매출로 판단</td></tr>
-          <tr><td><strong>기준 합계</strong></td><td><strong>8,600만~1.3억원</strong></td><td>-</td><td><strong>49~52%</strong></td><td><strong>4,065만~6,800만원</strong></td><td>1.1억원 이상부터 손익분기점 접근</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>구분</th><th>월 고정비 기준</th><th>가중 기여이익률</th><th>BEP 매출</th><th>일매출 기준</th><th>판단</th></tr></thead>
-        <tbody>
-          <tr><td><strong>현금흐름 BEP</strong></td><td>5,050만~5,950만원</td><td>50%</td><td>약 1.01억~1.19억원</td><td>337만~397만원/일</td><td>실제 현금 유출 방어 기준</td></tr>
-          <tr><td><strong>관리손익 BEP</strong></td><td>5,500만~6,200만원</td><td>49~52%</td><td>약 1.10억~1.25억원</td><td>367만~417만원/일</td><td>감가/장비비 포함한 내부 기준</td></tr>
-          <tr><td><strong>확장 검토 기준</strong></td><td>6,000만원 이하 유지</td><td>50% 이상</td><td>월매출 1.3억원 이상</td><td>433만원/일 이상</td><td>2차 투자 검토 가능</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="callout" style="margin-top:24px">
-      <h3>고정비 결론</h3>
-      <p>초기 사업의 생존 조건은 월 고정비를 6,000만원 이하로 유지하는 것입니다. 월매출 8,000만원 미만은 위험 구간, 1.1억원 이상은 BEP 접근 구간, 1.3억원 이상은 2차 투자 검토 구간으로 봅니다.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>16. 임대료 시나리오별 BEP 민감도 분석</h2>
-      <p>월매출 목표는 임대료 수준에 따라 달라집니다. 공식은 <strong>BEP 매출 = 총 고정비 ÷ 매출총이익률</strong>입니다.</p>
+      <h2>14. 월 고정비 및 BEP 재산정 - 관리비 보정</h2>
+      <p>관리비·전기·수도 비용을 보수적으로 보정했습니다. BEP 공식은 총 고정비 ÷ 매출총이익률입니다.</p>
     </div>
     <div class="table">
       <table>
-        <thead>
-          <tr><th>시나리오</th><th>월 임대료/관리비</th><th>기타 고정비</th><th>총 고정비</th><th>BEP @55%</th><th>BEP @60%</th><th>판단</th></tr>
-        </thead>
-        <tbody><tr><td><strong>Low</strong></td><td>2,000만원</td><td>3,500만원</td><td>5,500만원</td><td>10,000만원</td><td>9,200만원</td><td>초기 MVP 가능</td></tr><tr><td><strong>Base</strong></td><td>3,000만원</td><td>3,500만원</td><td>6,500만원</td><td>11,900만원</td><td>10,900만원</td><td>고마진 체험·자사 MD 필수</td></tr><tr><td><strong>High</strong></td><td>4,000만원</td><td>3,500만원</td><td>7,500만원</td><td>13,700만원</td><td>12,500만원</td><td>단체/B2B 보완 필요</td></tr><tr><td><strong>Stress</strong></td><td>5,000만원</td><td>3,700만원</td><td>8,700만원</td><td>15,900만원</td><td>14,500만원</td><td>단체/B2B 보완 필요</td></tr></tbody>
+        <thead><tr><th>시나리오</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>BEP @55%</th><th>BEP @60%</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Low</strong></td><td>2,000만원</td><td>830만원</td><td>2,500만원</td><td>1,100만원</td><td>6,430만원</td><td>1.17억원</td><td>1.07억원</td></tr>
+          <tr><td><strong>Base</strong></td><td>2,500만원</td><td>1,100만원</td><td>2,800만원</td><td>1,200만원</td><td>7,600만원</td><td>1.39억원</td><td>1.27억원</td></tr>
+          <tr><td><strong>High</strong></td><td>3,000만원</td><td>1,350만원</td><td>3,000만원</td><td>1,300만원</td><td>8,650만원</td><td>1.58억원</td><td>1.44억원</td></tr>
+        </tbody>
       </table>
     </div>
-    <div class="assumption"><b>검증 결과:</b> Base 기준 총 고정비 6,500만원이면 BEP 매출은 매출총이익률 55%에서 약 <strong>1.18억원</strong>, 60%에서 약 <strong>1.08억원</strong>입니다. 임대료가 4,000만원 이상이면 K-BEAUTY 위탁만으로는 방어가 어렵고, 향수·족욕·자사 MD·B2B 매출 비중이 반드시 올라가야 합니다.</div>
+    <div class="assumption"><b>수정 판단:</b> 기존 1.25억원 BEP는 낮은 시나리오에서만 가능합니다. 실제로는 월매출 1.3억~1.5억원을 방어선으로 봐야 하며, K-BEAUTY 위탁만으로는 불가능합니다.</div>
   </div>
 </section>
 
-<section class="alt"><div class="container"><div class="head"><h2>17. 재무 심화: 연간 손익·민감도 분석</h2><p>BEP만으로는 투자 판단이 부족합니다. 연간 램프업과 민감도 분석을 넣어야 숫자의 신뢰도가 올라갑니다.</p></div>
+<section class="alt"><div class="container"><div class="head"><h2>15. 재무 심화: 연간 손익·민감도 분석</h2><p>BEP만으로는 투자 판단이 부족합니다. 연간 램프업과 민감도 분석을 넣어야 숫자의 신뢰도가 올라갑니다.</p></div>
   <div class="table"><table><thead><tr><th>구분</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>연간 합계</th></tr></thead><tbody>
     <tr><td><strong>월평균 매출</strong></td><td>6,500만원</td><td>1.15억원</td><td>1.35억원</td><td>1.5억원</td><td>-</td></tr>
     <tr><td><strong>분기 매출</strong></td><td>1.95억원</td><td>3.45억원</td><td>4.05억원</td><td>4.5억원</td><td><strong>13.95억원</strong></td></tr>
@@ -953,7 +860,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section>
   <div class="container">
     <div class="head">
-      <h2>18. 계절성 비수기 생존 시나리오</h2>
+      <h2>16. 계절성 비수기 생존 시나리오</h2>
       <p>인사동 관광 상권은 날씨·방학·명절·환율·항공 수요의 영향을 받습니다. 비수기에는 유동 의존을 줄이고 예약·B2B·키트 매출로 방어해야 합니다.</p>
     </div>
 
@@ -1010,7 +917,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>19. 현금 소진 런웨이 시뮬레이션</h2>
+      <h2>17. 현금 소진 런웨이 시뮬레이션</h2>
       <p>초기 6개월은 매출보다 현금 방어가 더 중요합니다. 투자 상한, 월 고정비, 매출 램프업을 기준으로 오너 의사결정 Gate를 둡니다.</p>
     </div>
     <div class="grid2">
@@ -1046,7 +953,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>20. KPI 및 Gate 운영</h2>
+      <h2>18. KPI 및 Gate 운영</h2>
       <p>공간 완성도보다 30일간 실제 지표를 기준으로 확장 여부를 판단합니다.</p>
     </div>
     <div class="dashboard-grid">
@@ -1069,200 +976,56 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     </div>
   </div>
 </section>
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>21. 운영 조직 및 RACI 체계</h2>
-      <p>복합 공간은 담당이 불분명하면 바로 무너집니다. 초기에는 적은 인력으로 운영하되, 책임 경계를 명확히 해야 합니다.</p>
-    </div>
-    <div class="raci-grid">
-      <div class="raci"><b>총괄 PM</b><span>손익, 임대인 협의, Gate 판단, 월간 리포트, 제휴 우선순위.</span></div>
-      <div class="raci"><b>체험 운영</b><span>향수 클래스, 명상, EEG, 족욕 회차, 위생 로그, 고객 CS.</span></div>
-      <div class="raci"><b>MD / 리테일</b><span>K-BEAUTY 위탁, SHIFTI/PLANT, 필터, 콜라겐, 패치, 키트.</span></div>
-      <div class="raci"><b>AI / 콘텐츠</b><span>POP, SNS, 다국어 문구, 직원 멘트, 월간 리포트 초안.</span></div>
-      <div class="raci"><b>제휴 / B2B</b><span>호텔 QR, 러닝크루, 여행사, 기업 기프트, 외부 파트너.</span></div>
-    </div>
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>업무</th><th>Responsible</th><th>Accountable</th><th>Consulted</th><th>Informed</th></tr></thead>
-        <tbody>
-          <tr><td><strong>월 손익 관리</strong></td><td>총괄 PM</td><td>대표</td><td>MD / 운영</td><td>전 팀</td></tr>
-          <tr><td><strong>체험 회차 운영</strong></td><td>체험 운영</td><td>총괄 PM</td><td>현장 스태프</td><td>MD</td></tr>
-          <tr><td><strong>K-BEAUTY 위탁 정산</strong></td><td>MD / 리테일</td><td>총괄 PM</td><td>회계</td><td>브랜드사</td></tr>
-          <tr><td><strong>족욕 위생 관리</strong></td><td>체험 운영</td><td>총괄 PM</td><td>공간/시설</td><td>전 직원</td></tr>
-          <tr><td><strong>호텔 제휴</strong></td><td>제휴 / B2B</td><td>대표</td><td>총괄 PM</td><td>운영팀</td></tr>
-          <tr><td><strong>AI 콘텐츠 검수</strong></td><td>AI / 콘텐츠</td><td>총괄 PM</td><td>MD / 법무검토</td><td>현장팀</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>22. 운영 SOP 상세 설계</h2>
-      <p>현재 사업계획서의 가장 큰 약점은 현장 운영의 디테일입니다. 복합공간은 아이디어보다 운영 표준화가 손익을 좌우합니다.</p>
-    </div>
-    <div class="grid3">
-      <div class="card"><span class="tag">Shift A</span><h3>오픈 전 90분</h3><p>공간 청소, 조명·향·음악 점검, 포토존 소품 정렬, 족욕 수조 소독, 테스터 교체, 예약표 출력, POS·QR 정상 작동 확인.</p></div>
-      <div class="card"><span class="tag">Shift B</span><h3>피크타임 운영</h3><p>입구 유도 1명, 포토존 1명, 체험/클래스 1명, POS/MD 1명으로 최소 4인 기준. 대기 고객은 K-Craft·K-Beauty·콜라겐 티로 분산.</p></div>
-      <div class="card"><span class="tag">Shift C</span><h3>마감 후 60분</h3><p>매출 채널 분리, 예약 노쇼 체크, 위생 로그 저장, 품절 SKU 기록, 리뷰/CS 취합, 다음날 회차표와 인력 배치 확정.</p></div>
-    </div>
-    <div class="table" style="margin-top:24px"><table><thead><tr><th>운영 모듈</th><th>담당자</th><th>체크 주기</th><th>필수 체크리스트</th><th>문제 발생 시 조치</th></tr></thead><tbody>
-      <tr><td><strong>포토존</strong></td><td>웰컴 담당</td><td>매시간</td><td>소품 파손, 대기줄, QR 스캔, 사진 출력 오류</td><td>대기 10분 초과 시 K-Beauty 테스트 쿠폰 제공</td></tr>
-      <tr><td><strong>향수 클래스</strong></td><td>클래스 담당</td><td>회차별</td><td>향료, 용기, 라벨, 알레르기 안내, 환기</td><td>지연 발생 시 다음 회차 10분 버퍼 적용</td></tr>
-      <tr><td><strong>족욕</strong></td><td>리커버리 담당</td><td>고객별</td><td>1인 1수조, 물 교체, 소독, 타월 분리수거, 미끄럼 방지</td><td>위생 로그 누락 시 해당 좌석 즉시 중단</td></tr>
-      <tr><td><strong>K-Beauty</strong></td><td>MD 담당</td><td>오전/오후/마감</td><td>테스터 위생, 품절, 베스트존 진열, 가격표</td><td>품절 시 대체 SKU와 자사상품 추천 스크립트 적용</td></tr>
-      <tr><td><strong>EEG/명상</strong></td><td>웰니스 담당</td><td>예약별</td><td>동의서, 기기 배터리, 개인정보 최소수집, 결과 안내문</td><td>측정 오류 시 재측정 또는 향 추천권 대체 제공</td></tr>
-      <tr><td><strong>POS/정산</strong></td><td>매니저</td><td>마감</td><td>자사/K-Beauty/MD/숙소QR/OTA/기업권 분리</td><td>채널 미분류 건은 익일 오전까지 재확인</td></tr>
-    </tbody></table></div>
-    <div class="assumption"><b>보강 결론:</b> 오픈 전 반드시 회차표, 위생 로그, POS 채널코드, 고객응대 스크립트, CS 에스컬레이션 기준 5종을 출력물과 구글시트로 운영해야 합니다.</div>
-  </div>
-</section>
-<section class="alt">
-  <div class="container">
-    <div class="head">
-      <h2>23. 허가·인증 요건 체크리스트</h2>
-      <p>족욕·EEG·음료·화장품·건기식은 표현과 운영 범위에 따라 리스크가 달라집니다. 오픈 전 사전 검토가 필요합니다.</p>
-    </div>
 
-    <div class="table">
-      <table>
-        <thead>
-          <tr>
-            <th>영역</th>
-            <th>체크 항목</th>
-            <th>필요 확인</th>
-            <th>금지/주의 표현</th>
-            <th>실행 전 조치</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>족욕 서비스</strong></td>
-            <td>수조, 온수, 세척, 타월, 미끄럼 사고</td>
-            <td>위생 기준, 배상책임보험, 급배수 가능 여부</td>
-            <td>혈액순환 개선, 부종 치료, 통증 완화 보장</td>
-            <td>1인 1수조, 회차별 소독 로그, 온도 기준표</td>
-          </tr>
-          <tr>
-            <td><strong>EEG 체험</strong></td>
-            <td>뇌파 측정, 향 추천, 결과 리포트</td>
-            <td>개인정보 동의, 민감정보 검토, 데이터 보관기간</td>
-            <td>감정 진단, 정신건강 치료, 의학적 판정</td>
-            <td>체험 동의서, 익명화, 결과 안내 문구 표준화</td>
-          </tr>
-          <tr>
-            <td><strong>음료 / 콜라겐 티</strong></td>
-            <td>시음, 판매, 제조, 제공 방식</td>
-            <td>휴게음식점/즉석판매/시음 행사 가능 범위</td>
-            <td>디톡스, 해독, 면역 치료, 피부 개선 보장</td>
-            <td>제공 방식 확정 후 관련 신고 여부 확인</td>
-          </tr>
-          <tr>
-            <td><strong>건강기능식품</strong></td>
-            <td>콜라겐, 이너뷰티, 전해질 제품</td>
-            <td>건강기능식품판매업 신고 필요 여부, 광고심의</td>
-            <td>질병 예방, 체중감량 보장, 치료 효과</td>
-            <td>인정 문구만 사용, 직원 스크립트 제한</td>
-          </tr>
-          <tr>
-            <td><strong>화장품 판매</strong></td>
-            <td>향수, 스킨케어, 샴푸, 바디케어</td>
-            <td>표시사항, 책임판매, 수입/위탁 계약, 테스터 위생</td>
-            <td>아토피 치료, 피부질환 개선, 의학적 효능</td>
-            <td>전성분/주의사항 확인, 테스터 교체 SOP</td>
-          </tr>
-          <tr>
-            <td><strong>샤워기필터 시연</strong></td>
-            <td>수질 비교, Before/After 연출</td>
-            <td>실험 방식의 객관성, 과장광고 여부</td>
-            <td>질병 예방, 피부질환 개선, 모든 유해물질 제거 보장</td>
-            <td>시연 조건 명시, 필터 성능 자료 확보</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="assumption"><b>필수 조치:</b> 위 항목은 사업계획서에 “법무·세무·위생 전문가 사전 검토 예정”으로 명시해야 합니다. 확정 전에는 치료·진단·개선 보장 표현을 금지합니다.</div>
-  </div>
-</section>
-<section><div class="container"><div class="head"><h2>24. 법적·인허가 리스크 체크리스트</h2><p>치명적 공백입니다. 오픈 전 체크하지 않으면 영업 중단·광고 제재·CS 리스크로 이어질 수 있습니다.</p></div>
-  <div class="table"><table><thead><tr><th>영역</th><th>체크 포인트</th><th>위험도</th><th>사전 조치</th><th>금지/주의 표현</th></tr></thead><tbody>
-    <tr><td><strong>화장품 판매/표시광고</strong></td><td>향수, 바디케어, K-Beauty 제품 판매 및 기능성 표현</td><td>상</td><td>전성분, 사용상 주의, 제조/책임판매 정보, 수입/유통 계약 확인</td><td>치료, 불안 개선, 수면 치료, 피부질환 개선</td></tr>
-    <tr><td><strong>건강기능식품/콜라겐</strong></td><td>식물성 콜라겐, 비타민, 유산균, 전해질 판매</td><td>상</td><td>판매업 신고 필요 여부, 기능성 인정 문구, 광고 심의 확인</td><td>체중감량 보장, 질병 예방, 치료, 즉각 효과</td></tr>
-    <tr><td><strong>음료 제공</strong></td><td>콜라겐 티, 웰니스 티, 샘플 음료 제공/판매</td><td>상</td><td>휴게음식점/즉석판매/시음 행사 가능 범위 확인</td><td>디톡스, 해독, 면역 치료, 수면 개선 보장</td></tr>
-    <tr><td><strong>족욕 서비스</strong></td><td>수조, 물 교체, 소독, 타월, 미끄럼 사고</td><td>상</td><td>위생 SOP, 배상책임보험, 사고 안내문, 금기 고객 안내</td><td>혈액순환 개선, 부종 치료, 통증 완화 보장</td></tr>
-    <tr><td><strong>두피·마사지</strong></td><td>수기 마사지, 안마성 표현, 의료 유사 행위</td><td>상</td><td>미용/두피케어 범위와 안마성 행위 구분, 파트너 계약서 명시</td><td>치료 마사지, 통증 치료, 안마, 의료 효과</td></tr>
-    <tr><td><strong>EEG 데이터</strong></td><td>뇌파 측정, 감정 분석, 결과 리포트</td><td>상</td><td>개인정보 동의서, 민감정보 여부 검토, 보관기간, 익명화</td><td>진단, 정신건강 치료, 의학적 판정</td></tr>
-    <tr><td><strong>음악/이미지 저작권</strong></td><td>매장 음악, 포토존 이미지, 영상 광고 소재</td><td>중</td><td>상업 이용 가능 음원/이미지 사용, 모델 릴리즈 확보</td><td>무단 음원, 무단 초상권, 무단 캐릭터 사용</td></tr>
-    <tr><td><strong>입점/위탁 구조</strong></td><td>전대, 판매대행, 수수료, 공간사용료 구분</td><td>상</td><td>계약서상 위탁판매/판매대행/팝업 행사 구조 명확화</td><td>무허가 전대처럼 보이는 계약</td></tr>
-  </tbody></table></div>
-  <div class="assumption"><b>실행 전 필수:</b> 법무/세무/위생 전문가에게 화장품·건기식·음료·족욕·두피·EEG·위탁판매 7개 항목을 사전 검토받아야 합니다.</div>
-</div></section>
 <section>
   <div class="container">
     <div class="head">
-      <h2>25. 임대차 계약 리스크 체크리스트</h2>
-      <p>공간형 사업은 계약서에서 손익이 결정됩니다. 임대료보다 중요한 것은 용도, 공사, 원상복구, 전대·위탁 운영 허용 범위입니다.</p>
+      <h2>19. 운영 조직 · RACI · SOP 통합</h2>
+      <p>기존 운영 조직, RACI, SOP 섹션은 중복이 많아 하나로 통합합니다. 핵심은 누가, 언제, 무엇을, 어떤 기준으로 처리하는지입니다.</p>
     </div>
     <div class="table">
       <table>
-        <thead><tr><th>체크 항목</th><th>확인 내용</th><th>위험도</th><th>협의 방향</th></tr></thead>
+        <thead><tr><th>업무</th><th>Responsible</th><th>Accountable</th><th>일일 기준</th><th>문제 발생 시</th></tr></thead>
         <tbody>
-          <tr><td><strong>업종·용도</strong></td><td>화장품 판매, 클래스, 족욕, 음료/콜라겐 제공, 팝업 전시 가능 여부</td><td>상</td><td>운영 가능 업종을 계약서 또는 부속합의서에 명시</td></tr>
-          <tr><td><strong>위탁·팝업 운영</strong></td><td>두피·Foot 전문 입점, 시즌 팝업, 위탁 판매가 전대에 해당하는지</td><td>상</td><td>공간 재임대가 아닌 판매대행·위탁운영 구조로 정리</td></tr>
-          <tr><td><strong>인테리어 공사</strong></td><td>석고보드, 전기, 급배수, 족욕 설비, 간판, 사인 설치 범위</td><td>상</td><td>공사 전 승인 프로세스, 도면 제출 범위 확정</td></tr>
-          <tr><td><strong>원상복구</strong></td><td>철거 범위, 바닥/천장/급배수 복구, 보증금 차감 기준</td><td>상</td><td>원상복구 한도와 제외 항목 명문화</td></tr>
-          <tr><td><strong>운영시간</strong></td><td>야간 명상, 단체 클래스, 시즌 행사 운영 가능 시간</td><td>중</td><td>기본 영업시간과 행사 예외 조항 분리</td></tr>
-          <tr><td><strong>공용 사인</strong></td><td>1층, 계단, 엘리베이터, 외부 QR 안내물 설치 가능 여부</td><td>상</td><td>B1 유입 성패와 직결. 반드시 사전 협의</td></tr>
-          <tr><td><strong>관리비·공과금</strong></td><td>전기, 수도, 냉난방, 공용관리비, 피크 전력 부담</td><td>중</td><td>고정비 산정에 포함하고 상한/정산 방식 확인</td></tr>
-          <tr><td><strong>계약 해지·중도 철수</strong></td><td>성과 미달 시 축소·철수 가능성, 위약금, 보증금 반환</td><td>상</td><td>6개월/12개월 성과 Gate와 중도 조정 조건 협의</td></tr>
+          <tr><td><strong>웰컴/포토존</strong></td><td>웰컴 담당</td><td>매니저</td><td>QR, 대기, 사진소품, 리뷰 유도</td><td>대기 10분 초과 시 쿠폰 제공</td></tr>
+          <tr><td><strong>향수 클래스</strong></td><td>클래스 담당</td><td>운영총괄</td><td>향료, 라벨, 환기, 회차표</td><td>지연 시 다음 회차 10분 버퍼</td></tr>
+          <tr><td><strong>족욕</strong></td><td>리커버리 담당</td><td>매니저</td><td>온도, 1인 1수조, 소독 로그</td><td>로그 누락 시 좌석 중단</td></tr>
+          <tr><td><strong>K-Beauty/MD</strong></td><td>MD 담당</td><td>매니저</td><td>테스터, 품절, 베스트존, 가격표</td><td>품절 시 대체 SKU 제안</td></tr>
+          <tr><td><strong>EEG/AI 추천</strong></td><td>웰니스 담당</td><td>운영총괄</td><td>동의서, 장비, 추천 결과, 표현 검수</td><td>측정 오류 시 재측정 또는 대체권</td></tr>
+          <tr><td><strong>POS/정산</strong></td><td>POS 담당</td><td>대표/매니저</td><td>채널별 매출 코드 분리</td><td>미분류 건 익일 오전 재확인</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="assumption"><b>오너 메모:</b> 계약서에서 “전대 금지”가 강하면 10개 입점 구조는 리스크가 큽니다. 위탁 판매·판매대행·팝업 행사 운영 형태로 정리해야 합니다.</div>
   </div>
 </section>
+
+
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>26. 핵심 리스크 및 대응 원칙</h2>
-      <p>사업계획서에서는 장점보다 실패 요인을 먼저 통제해야 합니다. 아래 항목은 오픈 전 체크리스트로 관리합니다.</p>
+      <h2>20. 허가 · 업종 · 계약 리스크 통합 체크리스트</h2>
+      <p>족욕, 음료, EEG, 화장품, 건기식, 위탁 운영 중 하나라도 막히면 오픈 일정이 흔들립니다. 계약 전 Gate 0에서 확인해야 합니다.</p>
     </div>
-    <div class="grid3">
-      <div class="card warning"><h3>1. 위탁 판매 손익 착시</h3><p>재고투자는 0원이지만 정산원가는 발생합니다. POS에서 총판매액, 정산원가, 실제 기여이익을 분리해야 합니다.</p></div>
-      <div class="card warning"><h3>2. 방음 과투자</h3><p>완전 방음실은 비용이 급증합니다. 명상·EEG는 저소음 집중룸으로 시작하고, 매출 검증 후 보강합니다.</p></div>
-      <div class="card warning"><h3>3. 저가형 공간 인상</h3><p>공사비를 줄여도 조명·사인·테이블 정리는 필수입니다. 저가형으로 보이면 K-BEAUTY와 향수 구매전환이 떨어집니다.</p></div>
-      <div class="card warning"><h3>4. 족욕 위생 리스크</h3><p>1인 수조, 물 교체, 소독 로그, 타월 관리, 이용 제한 기준을 문서화해야 합니다.</p></div>
-      <div class="card warning"><h3>5. 자사상품 묻힘</h3><p>K-BEAUTY만 팔리면 수익통제력이 약해집니다. SHIFTI, PLANT, 콜라겐, 필터 교차구매율을 KPI로 둡니다.</p></div>
-      <div class="card warning"><h3>6. 인건비 상승</h3><p>공간이 넓어도 직원 수를 고정으로 늘리면 BEP가 악화됩니다. 평일 3~4명, 주말 5~6명으로 시작합니다.</p></div>
-      <div class="card warning"><h3>7. B1 유입 과대추정</h3><p>상권 유동과 지하 유입은 다릅니다. 실제 유입은 QR·카운팅으로 확인하고, 50% 유입률은 장기 목표로만 둡니다.</p></div>
-      <div class="card warning"><h3>8. 표시광고 리스크</h3><p>슬리밍, 건강기능식품, EEG, 족욕은 치료·진단·효능 보장 표현을 쓰지 않습니다.</p></div>
-      <div class="card warning"><h3>9. MD 과다 확장</h3><p>SKU가 많아지면 관리와 정산이 복잡해집니다. 30일 판매 데이터 기준 하위 SKU는 교체합니다.</p></div>
-    </div>
-  </div>
-</section>
-<section class="alt">
-  <div class="container">
-    <div class="head">
-      <h2>27. 리스크 및 통제 원칙</h2>
-      <p>초절감 MVP는 비용을 낮추는 대신, 운영 품질과 전환율 관리가 더 중요합니다.</p>
-    </div>
-    <div class="grid3">
-      <div class="card warning"><h3>위탁 판매 손익 착시</h3><p>재고투자는 0원이지만 판매 시 정산원가가 발생합니다. 총판매액과 실제 기여이익을 분리 관리해야 합니다.</p></div>
-      <div class="card warning"><h3>방음 과투자</h3><p>완전 방음실로 가면 비용이 급증합니다. 명상·EEG는 저소음 집중룸 수준으로 시작합니다.</p></div>
-      <div class="card warning"><h3>저가형 공간 인상</h3><p>공사비를 줄이더라도 조명·동선·사인·테이블 정리는 필수입니다. 저가형으로 보이면 구매 전환이 떨어집니다.</p></div>
-      <div class="card warning"><h3>족욕 위생 리스크</h3><p>3인 구성이라도 1인 수조, 물 교체, 소독 로그, 타월 관리가 필수입니다.</p></div>
-      <div class="card warning"><h3>K-BEAUTY 자사상품 묻힘</h3><p>외부 위탁 상품만 팔리면 손익 통제력이 낮아집니다. SHIFTI·PLANT·콜라겐 연계를 반드시 설계합니다.</p></div>
-      <div class="card warning"><h3>인건비 상승</h3><p>공간이 넓어 보인다고 인력을 늘리면 BEP가 악화됩니다. 평일 3~4명, 주말 5~6명 수준으로 시작합니다.</p></div>
+    <div class="table">
+      <table>
+        <thead><tr><th>영역</th><th>확인 이슈</th><th>위험도</th><th>사전 조치</th><th>금지 표현</th></tr></thead>
+        <tbody>
+          <tr><td><strong>족욕</strong></td><td>공중위생관리법상 목욕장업 해당 가능성, 급배수·위생</td><td>상</td><td>관할구청 사전 질의, 1인 1수조, 회차별 소독</td><td>혈액순환 개선, 부종 치료, 통증 완화</td></tr>
+          <tr><td><strong>콜라겐 티/음료</strong></td><td>휴게음식점 또는 시음/제공 가능 범위</td><td>상</td><td>제공 방식 확정 후 신고 여부 확인</td><td>디톡스, 해독, 피부개선 보장</td></tr>
+          <tr><td><strong>EEG</strong></td><td>의료기기 해당 여부, 개인정보, 민감정보</td><td>상</td><td>비의료 체험 고지, 동의서, 저장 최소화</td><td>진단, 치료, 정신건강 판정</td></tr>
+          <tr><td><strong>화장품/건기식</strong></td><td>표시광고, 판매업, 기능성 문구</td><td>상</td><td>전성분/주의사항/광고문구 사전 검수</td><td>질병 예방, 치료, 체중감량 보장</td></tr>
+          <tr><td><strong>위탁/팝업</strong></td><td>전대 여부, 판매대행 계약, 정산</td><td>상</td><td>위탁판매/판매대행 구조로 계약서 정리</td><td>공간 재임대처럼 보이는 구조</td></tr>
+          <tr><td><strong>건물 업종 허용</strong></td><td>해당 물건 내 가능한 업종과 행사 범위</td><td>상</td><td>계약 전 용도·영업시간·사인·급배수 확인</td><td>구두 합의에만 의존</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
+
 <section>
   <div class="container">
     <div class="head">
-      <h2>28. 광고 · 모객 · 제휴 전략</h2>
+      <h2>21. 광고 · 모객 · 제휴 전략</h2>
       <p>모객은 단순 홍보가 아니라 QR·쿠폰·예약·POS로 추적되는 매출 채널이어야 합니다. B1 유입은 포토존, 호텔 QR, 러닝·워킹 크루, 여행사 단체 상품으로 만듭니다.</p>
     </div>
 
@@ -1354,7 +1117,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     </div>
   </div>
 </section>
-<section class="alt"><div class="container"><div class="head"><h2>29. 마케팅 실행 계획 상세</h2><p>방향성은 충분하지만 실행 단위가 부족했습니다. 채널별 목표·예산·콘텐츠·KPI를 주간 단위로 쪼개야 합니다.</p></div>
+<section class="alt"><div class="container"><div class="head"><h2>22. 마케팅 실행 계획 상세</h2><p>방향성은 충분하지만 실행 단위가 부족했습니다. 채널별 목표·예산·콘텐츠·KPI를 주간 단위로 쪼개야 합니다.</p></div>
   <div class="table"><table><thead><tr><th>채널</th><th>1차 목표</th><th>실행 콘텐츠</th><th>월 예산 가이드</th><th>KPI</th><th>담당</th></tr></thead><tbody>
     <tr><td><strong>쌈지길 내부 유도</strong></td><td>B1 유입</td><td>1층 A보드, 계단 사인, 무료 포토존 안내, QR 쿠폰</td><td>50만~150만원</td><td>QR 스캔, B1 방문, 포토존 이용</td><td>현장 매니저</td></tr>
     <tr><td><strong>Google Maps</strong></td><td>외국인 검색 유입</td><td>영문 사진 30장, 프로그램 설명, 예약링크, 리뷰 QR</td><td>30만~80만원</td><td>조회수, 길찾기, 예약 클릭, 리뷰 수</td><td>마케팅</td></tr>
@@ -1368,7 +1131,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>30. Klook / Viator OTA 입점 전략</h2>
+      <h2>23. Klook / Viator OTA 입점 전략</h2>
       <p>외국인 체험 예약은 현장 유입만으로 부족합니다. OTA는 평일·비수기 예약을 채우는 보조 채널로 활용하되, 수수료와 리뷰 관리를 전제로 해야 합니다.</p>
     </div>
     <div class="grid3">
@@ -1403,28 +1166,31 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="container">
     <div class="head">
-      <h2>34. OTA 수수료 반영 채널별 순손익 재계산</h2>
-      <p>OTA는 외국인 사전예약 확보에 유리하지만 수수료 차감 후 손익으로 판단해야 합니다. 본 표는 수수료 25%를 보수적으로 가정했습니다.</p>
+      <h2>24. OTA 수수료 반영 가격표 재계산</h2>
+      <p>현장가 대비 5~10% 인상은 수익이 역전될 수 있습니다. OTA 수수료 20~25%를 반영하면 최소 28~34% 이상 인상이 필요합니다.</p>
     </div>
     <div class="table">
       <table>
-        <thead>
-          <tr><th>상품</th><th>판매가</th><th>OTA 수수료 가정</th><th>재료/운영 원가</th><th>채널 순매출</th><th>기여이익</th><th>판매가 대비 기여율</th></tr>
-        </thead>
-        <tbody><tr><td><strong>K-Scent Mini</strong></td><td>29,000원</td><td>25%</td><td>7,000원</td><td>21,750원</td><td>14,750원</td><td>50.9%</td></tr><tr><td><strong>Walking Recovery</strong></td><td>49,000원</td><td>25%</td><td>13,000원</td><td>36,750원</td><td>23,750원</td><td>48.5%</td></tr><tr><td><strong>K-Beauty & Scent</strong></td><td>69,000원</td><td>25%</td><td>18,000원</td><td>51,750원</td><td>33,750원</td><td>48.9%</td></tr><tr><td><strong>Night Reset</strong></td><td>79,000원</td><td>25%</td><td>20,000원</td><td>59,250원</td><td>39,250원</td><td>49.7%</td></tr></tbody>
+        <thead><tr><th>상품</th><th>현장가</th><th>20% 수수료 기준 동등가</th><th>25% 수수료 기준 동등가</th><th>권장 OTA 판매가</th><th>운영 판단</th></tr></thead>
+        <tbody>
+          <tr><td><strong>K-Scent Mini</strong></td><td>29,000원</td><td>36,250원</td><td>38,667원</td><td>39,000~42,000원</td><td>리뷰 확보용</td></tr>
+          <tr><td><strong>Walking Recovery</strong></td><td>49,000원</td><td>61,250원</td><td>65,333원</td><td>65,000~69,000원</td><td>OTA 주력 가능</td></tr>
+          <tr><td><strong>K-Beauty & Scent</strong></td><td>69,000원</td><td>86,250원</td><td>92,000원</td><td>92,000~99,000원</td><td>객단가 확보형</td></tr>
+          <tr><td><strong>Night Reset</strong></td><td>79,000원</td><td>98,750원</td><td>105,333원</td><td>105,000~110,000원</td><td>소수 예약형</td></tr>
+        </tbody>
       </table>
     </div>
-    <div class="assumption"><b>가격 원칙:</b> OTA 수수료율은 플랫폼·계약에 따라 달라지므로 25%는 확정값이 아니라 내부 스트레스 가정입니다. K-Scent Mini는 리뷰 확보용, Walking Recovery와 K-Beauty & Scent는 수익형 상품으로 운영하는 것이 더 합리적입니다.</div>
+    <div class="callout" style="margin-top:24px"><h3>가격 원칙</h3><p>OTA 상품은 현장가보다 단순히 5~10% 높이면 안 됩니다. 수수료와 쿠폰을 감안해 현장가 대비 30~40% 높은 패키지형 상품으로 구성해야 수지가 맞습니다.</p></div>
   </div>
 </section>
 
 <section>
   <div class="container">
     <div class="head">
-      <h2>32. 기업복지 플랫폼 입점 전략</h2>
+      <h2>25. 기업복지 플랫폼 입점 전략</h2>
       <p>평일 낮 시간대와 단체 예약을 채우기 위해 기업 복지몰·임직원몰·워크숍 채널을 활용합니다.</p>
     </div>
     <div class="table">
@@ -1447,7 +1213,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>33. 구글 맵 / 트립어드바이저 최적화</h2>
+      <h2>26. 구글 맵 / 트립어드바이저 최적화</h2>
       <p>외국인은 네이버보다 Google Maps와 TripAdvisor, OTA 리뷰를 먼저 봅니다. 오픈 전부터 리뷰 구조를 설계해야 합니다.</p>
     </div>
     <div class="grid4">
@@ -1473,7 +1239,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>34. 유학생 앰배서더 프로그램</h2>
+      <h2>27. 유학생 앰배서더 프로그램</h2>
       <p>외국인 대상 홍보는 한국인 인플루언서보다 한국 거주 외국인 유학생·교환학생·워홀러가 더 현실적입니다. 비용 대비 콘텐츠와 리뷰 확보가 쉽습니다.</p>
     </div>
     <div class="grid3">
@@ -1497,7 +1263,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     </div>
   </div>
 </section>
-<section><div class="container"><div class="head"><h2>35. 파트너십·제휴 타깃 리스트</h2><p>제휴 전략은 방향만으로 부족합니다. 우선 공략군, 제안 상품, 담당자, KPI를 리스트화해야 실행됩니다.</p></div>
+<section><div class="container"><div class="head"><h2>28. 파트너십·제휴 타깃 리스트</h2><p>제휴 전략은 방향만으로 부족합니다. 우선 공략군, 제안 상품, 담당자, KPI를 리스트화해야 실행됩니다.</p></div>
   <div class="table"><table><thead><tr><th>제휴군</th><th>우선 타깃</th><th>제안 상품</th><th>제공 베네핏</th><th>초기 목표</th></tr></thead><tbody>
     <tr><td><strong>인사동·종로 호텔</strong></td><td>인사동/종로3가/안국역 도보권 중소형 호텔</td><td>호텔 QR, Night Reset, Walking Recovery, Room Kit</td><td>투숙객 혜택, 예약 수수료, 월간 리포트</td><td>10곳 접촉 / 3곳 파일럿</td></tr>
     <tr><td><strong>한옥스테이</strong></td><td>북촌·서촌·익선동 한옥 숙소</td><td>K-Scent Class, K-Craft Gallery, 전통 기프트</td><td>로컬 체험 콘텐츠, 숙소 차별화</td><td>20곳 접촉 / 5곳 QR 비치</td></tr>
@@ -1510,108 +1276,19 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
   </tbody></table></div>
   <div class="grid3" style="margin-top:24px"><div class="card"><span class="tag">1순위</span><h3>숙소 QR 제휴</h3><p>가장 빠르게 실행 가능. 비용이 낮고 외국인 예약을 추적할 수 있습니다.</p></div><div class="card"><span class="tag">2순위</span><h3>한복·포토 제휴</h3><p>포토존과 시너지가 큽니다. 무료 유입 후 향수·K-Beauty로 전환합니다.</p></div><div class="card"><span class="tag">3순위</span><h3>기업복지/단체</h3><p>평일 낮 시간대 매출을 보완합니다. 단체권과 기프트 견적서를 별도 운영합니다.</p></div></div>
 </div></section>
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>36. AI Commerce OS 실행 구조</h2>
-      <p>AI는 보여주기용 기술이 아니라 예약, 판매, 정산, 직원 멘트, 콘텐츠, 리포트를 빠르게 만드는 운영 엔진입니다.</p>
-    </div>
-
-    <div class="visual-board">
-      <div class="visual-board-head">
-        <span class="tag">AI / Diagnostic Experience</span>
-        <h3>AI Commerce OS와 EEG·두피 진단형 체험 이미지</h3>
-        <p>AI는 전면에 과시하는 장치가 아니라, 고객 추천·직원 응대·예약/정산·B2B 리포트를 뒷받침하는 운영 시스템으로 배치합니다.</p>
-      </div>
-      <div class="visual-grid">
-        <div class="visual-card-img">
-          <img src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="두피 진단 및 EEG 향 추천 존">
-          <div class="visual-caption"><b>Scalp + EEG Diagnostic Wing</b><span>두피·향·컨디션 추천을 하나의 체험 동선으로 통합</span></div>
-        </div>
-        <div class="visual-card-img">
-          <img src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천 룸">
-          <div class="visual-caption"><b>EEG Scent Recommendation</b><span>프리미엄 향 추천 · 리포트 · B2B 실증 근거</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flow">
-      <div class="step"><b>예약 상품화</b><p>향수·족욕·EEG·명상·단체 상품을 예약 가능한 상품으로 구성.</p><small>예약 페이지</small></div>
-      <div class="step"><b>판매 상품화</b><p>SHIFTI, 필터, 콜라겐, K-BEAUTY, 패치, 기프트 키트 정리.</p><small>상품 DB</small></div>
-      <div class="step"><b>AI 패키징</b><p>상품명, POP, 직원 멘트, SNS 문구, 추천 루트 자동 생성.</p><small>콘텐츠 OS</small></div>
-      <div class="step"><b>통합 정산</b><p>자사·위탁·입점·팝업 판매를 구분해 월간 리포트화.</p><small>정산 기준</small></div>
-      <div class="step"><b>B2B 제안</b><p>호텔·기업·여행사 대상 1페이지 제안서 자동 초안.</p><small>영업 속도</small></div>
-    </div>
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>AI 기능</th><th>입력 데이터</th><th>출력물</th><th>현장 효과</th><th>주의점</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Staff Sales Assistant</strong></td><td>고객 유형, 시간대, 잔여석</td><td>추천 멘트·상품 조합</td><td>직원 숙련도 편차 감소</td><td>효능 과장 표현 금지</td></tr>
-          <tr><td><strong>Package Generator</strong></td><td>체험, 상품, 가격, 타깃</td><td>Walking/Hotel/Runner Kit</td><td>객단가 상승</td><td>원가율 자동 표시 필요</td></tr>
-          <tr><td><strong>POP/SNS Generator</strong></td><td>상품 특징, 시즌, 언어</td><td>다국어 POP·릴스 카피</td><td>콘텐츠 제작 속도 개선</td><td>사람 최종 검수</td></tr>
-          <tr><td><strong>Monthly Report</strong></td><td>QR, 예약, 판매, 후기</td><td>카테고리별 성과표</td><td>MD 교체·제휴 설득</td><td>개인정보 최소화</td></tr>
-          <tr><td><strong>B2B Draft</strong></td><td>호텔/기업/여행사 조건</td><td>제휴 제안서 초안</td><td>영업 리드 대응 속도 개선</td><td>가격·계약조건 별도 검토</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-<section class="alt">
-  <div class="container">
-    <div class="head">
-      <h2>37. AI Commerce OS 세부 운영</h2>
-      <p>AI는 보여주기용 기술이 아니라, 현장 판매와 운영 효율을 높이는 실무 도구입니다. 예약, 추천, POP, 직원 멘트, 정산 리포트, B2B 제안서에 적용합니다.</p>
-    </div>
-    <div class="table">
-      <table>
-        <thead><tr><th>모듈</th><th>입력 데이터</th><th>AI 출력물</th><th>현장 적용</th><th>기대 효과</th></tr></thead>
-        <tbody>
-          <tr><td><strong>예약 상품 생성</strong></td><td>체험명, 시간, 정원, 가격</td><td>예약 페이지 문구, 안내문, FAQ</td><td>향수·족욕·명상·EEG 예약 상품화</td><td>상품 등록 속도 개선</td></tr>
-          <tr><td><strong>직원 판매 도우미</strong></td><td>고객 유형, 잔여석, 구매 상황</td><td>추천 멘트, 업셀 상품</td><td>포토존·족욕·향수 클래스 후 안내</td><td>직원 숙련도 편차 감소</td></tr>
-          <tr><td><strong>MD 패키지 생성</strong></td><td>상품 원가, 판매가, 타깃</td><td>키트 구성안, POP 문구</td><td>Walking / Hotel / Home Spa Kit</td><td>객단가 상승</td></tr>
-          <tr><td><strong>다국어 콘텐츠</strong></td><td>상품 설명, 체험 설명</td><td>영문·일문·중문 POP/SNS</td><td>외국인 관광객 응대</td><td>언어 장벽 완화</td></tr>
-          <tr><td><strong>월간 리포트</strong></td><td>QR, 예약, POS, 리뷰, 위탁 판매</td><td>카테고리별 성과표</td><td>입점/MD 교체, 임대인 보고</td><td>운영 판단 속도 개선</td></tr>
-          <tr><td><strong>B2B 제안서 초안</strong></td><td>호텔/기업 유형, 예산, 인원</td><td>1페이지 제안서, 견적 초안</td><td>호텔·기업·여행사 영업</td><td>영업 리드 대응 속도 개선</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="assumption"><b>운영 원칙:</b> AI가 생성한 문구는 사람이 최종 검수합니다. 건강기능식품, 슬리밍, EEG, 족욕 관련 표현은 치료·진단·효능 보장으로 보이지 않게 관리합니다.</div>
-  </div>
-</section>
 
 <section>
   <div class="container">
     <div class="head">
-      <h2>38. EEG 데이터 B2B 수익화</h2>
-      <p>첨부 이미지의 가격은 시장에서 자동으로 인정되는 가격이 아니라, 표본수·측정 운영·분석 리포트 깊이에 따라 달라지는 내부 견적 범위입니다. 아래처럼 원가 기준을 분리해야 설득력이 생깁니다.</p>
+      <h2>29. AI Commerce OS / Staff Assistant 통합 운영</h2>
+      <p>AI 섹션은 중복을 줄이고 하나로 통합합니다. AI는 기술 과시가 아니라 직원 숙련도 편차를 줄이고, 추천·정산·리포트를 표준화하는 운영 도구입니다.</p>
     </div>
-
-    <div class="table">
-      <table>
-        <thead>
-          <tr><th>상품</th><th>표본수</th><th>제공물</th><th>최소 직접원가</th><th>권장 견적가</th><th>가격 배수</th></tr>
-        </thead>
-        <tbody><tr><td><strong>Basic Test</strong></td><td>20~30명</td><td>향 선호/설문 리포트</td><td>160만원</td><td><strong>300만~450만원</strong></td><td>1.9x~2.8x</td></tr><tr><td><strong>EEG Scent Report</strong></td><td>30~50명</td><td>EEG 기반 반응 + 설문 + 개선 제안</td><td>430만원</td><td><strong>900만~1,500만원</strong></td><td>2.1x~3.5x</td></tr><tr><td><strong>Brand Experience Lab</strong></td><td>50~100명</td><td>공간향/제품향/고객동선 통합 분석</td><td>950만원</td><td><strong>1,800만~3,000만원</strong></td><td>1.9x~3.2x</td></tr></tbody>
-      </table>
+    <div class="grid3">
+      <div class="card"><span class="tag">Staff</span><h3>다국어 응대 보조</h3><p>언어, 고객 유형, 니즈, 체류시간, 예산을 입력하면 직원 멘트와 추천 상품을 제공합니다.</p></div>
+      <div class="card"><span class="tag">Commerce</span><h3>상품 추천·업셀</h3><p>향수, 족욕, K-Beauty, 콜라겐, 샤워기필터, 홈스파 키트를 고객 유형별로 조합합니다.</p></div>
+      <div class="card"><span class="tag">Control</span><h3>금지 표현 차단</h3><p>치료, 진단, 혈액순환, 수면개선 보장 등 리스크 표현을 직원 화면에서 경고합니다.</p></div>
     </div>
-
-    <div class="table" style="margin-top:24px">
-      <table>
-        <thead><tr><th>원가 항목</th><th>Basic Test</th><th>EEG Scent Report</th><th>Brand Experience Lab</th></tr></thead>
-        <tbody>
-          <tr><td><strong>참여자 리워드/모집</strong></td><td>40만~70만원</td><td>90만~180만원</td><td>200만~400만원</td></tr>
-          <tr><td><strong>현장 운영 인력</strong></td><td>40만~60만원</td><td>120만~250만원</td><td>250만~500만원</td></tr>
-          <tr><td><strong>장비/라이선스/소모품</strong></td><td>20만~40만원</td><td>80만~150만원</td><td>150만~300만원</td></tr>
-          <tr><td><strong>분석/리포트/제안서</strong></td><td>60만~120만원</td><td>140만~350만원</td><td>350만~800만원</td></tr>
-          <tr><td><strong>PM/운영/마진</strong></td><td>견적가에 포함</td><td>견적가에 포함</td><td>견적가에 포함</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="callout" style="margin-top:24px">
-      <h3>결론</h3>
-      <p>기존 Basic 300만~500만원은 유지 가능하지만, EEG Scent Report는 700만원 하한보다 900만원 이상이 안전합니다. Brand Experience Lab은 2,000만원+ 표현보다 1,800만~3,000만원+처럼 범위와 산출 근거를 함께 제시하는 것이 현실적입니다.</p>
-    </div>
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>입력값</th><th>추천 결과</th><th>관리 지표</th></tr></thead><tbody><tr><td>언어 / 고객 유형 / 니즈 / 시간 / 예산</td><td>프로그램, 상품, 업셀, 다국어 멘트, 금지표현</td><td>직원별 전환율, 응대시간, 추천 후 결제율</td></tr></tbody></table></div>
   </div>
 </section>
 
@@ -1619,28 +1296,61 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>39. EEG 장비 단독 투자 타당성</h2>
-      <p>EEG는 브랜드 차별화에는 강하지만 장비 자체만으로 투자 회수하기는 어렵습니다. 향 추천·B2B 리포트·향수 구매 전환까지 묶어야 합니다.</p>
+      <h2>30. EEG 장비 단독 ROI 및 투자 타당성</h2>
+      <p>EEG는 단순 장비가 아니라 향 추천, 프리미엄 상담, B2B 리포트, 브랜드 차별화 자산입니다. 그래도 최소 단독 ROI는 제시해야 합니다.</p>
     </div>
     <div class="table">
       <table>
-        <thead><tr><th>항목</th><th>저비용 MVP</th><th>기준안</th><th>확장안</th><th>판단</th></tr></thead>
+        <thead><tr><th>가정</th><th>보수적</th><th>기준</th><th>비고</th></tr></thead>
         <tbody>
-          <tr><td><strong>장비/키오스크/디스플레이</strong></td><td>800만~1,200만원</td><td>1,500만~2,500만원</td><td>4,000만원+</td><td>초기에는 1~2석 MVP 권장</td></tr>
-          <tr><td><strong>월 운영비</strong></td><td>50만~100만원</td><td>100만~250만원</td><td>300만원+</td><td>라이선스/소모품/직원 교육 포함</td></tr>
-          <tr><td><strong>단독 유료 체험</strong></td><td>15,000원</td><td>29,000원</td><td>49,000원</td><td>단독 유료화만으로는 가격 저항 가능</td></tr>
-          <tr><td><strong>투자 회수 핵심</strong></td><td>체험료</td><td>향수 구매 전환</td><td>B2B 리포트</td><td>체험+상품+B2B 결합 필요</td></tr>
+          <tr><td><strong>운영 시간</strong></td><td>9시간/일</td><td>9시간/일</td><td>1회 45분 기준 최대 12슬롯</td></tr>
+          <tr><td><strong>실운용 회차</strong></td><td>3회/일</td><td>6회/일</td><td>예약 충전율과 현장 운영 난이도 반영</td></tr>
+          <tr><td><strong>회당 판매가</strong></td><td>79,000원</td><td>79,000원</td><td>향 추천 포함 중간가</td></tr>
+          <tr><td><strong>월 매출</strong></td><td>711만원</td><td>1,422만원</td><td>30일 기준</td></tr>
+          <tr><td><strong>원가율 20% 후 기여이익</strong></td><td>569만원</td><td>1,138만원</td><td>직원 인건비 일부는 고정비에 포함</td></tr>
+          <tr><td><strong>초기 투자 1,000만원 회수</strong></td><td>약 1.8개월</td><td>약 0.9개월</td><td>향수 구매 전환 제외한 단독 계산</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="assumption"><b>도입 조건:</b> 향수 본품 구매 전환율 15% 이상, B2B 리포트 월 1건 이상, 직원 운영 난이도 통제 가능성이 확인될 때 확장합니다.</div>
+    <div class="assumption"><b>투자 판단:</b> EEG ROI는 충분하지만, 고객이 무료 진단으로 인식하면 수익화가 무너집니다. 유료 체험, 향수 업셀, B2B 리포트 세 가지를 동시에 설계해야 합니다.</div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="head">
+      <h2>31. EEG 데이터 B2B 수익화 - 가격 근거 보정</h2>
+      <p>기존 가격표는 방향은 맞지만 근거가 부족했습니다. 표본수, 운영인력, 리워드, 장비/라이선스, 분석 리포트 원가를 기준으로 견적 범위를 보정합니다.</p>
+    </div>
+    <div class="table">
+      <table>
+        <thead><tr><th>상품</th><th>표본수</th><th>제공물</th><th>최소 직접원가</th><th>권장 견적가</th><th>판단</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Basic Test</strong></td><td>20~30명</td><td>향 선호/설문 리포트</td><td>160만원 내외</td><td><strong>300만~500만원</strong></td><td>유지 가능</td></tr>
+          <tr><td><strong>EEG Scent Report</strong></td><td>30~50명</td><td>EEG 반응 + 설문 + 개선 제안</td><td>430만원 내외</td><td><strong>900만~1,500만원</strong></td><td>기존 700만원 하한은 낮음</td></tr>
+          <tr><td><strong>Brand Experience Lab</strong></td><td>50~100명</td><td>공간향/제품향/고객동선 통합 분석</td><td>950만원 내외</td><td><strong>1,800만~3,000만원+</strong></td><td>2,000만원+ 단일 표기보다 설득력 높음</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table" style="margin-top:24px">
+      <table>
+        <thead><tr><th>원가 항목</th><th>내용</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><strong>참여자 리워드/모집</strong></td><td>표본수와 대상 난이도에 따라 증가</td><td>외국인/특정 타깃은 비용 상승</td></tr>
+          <tr><td><strong>현장 운영 인력</strong></td><td>측정, 안내, 동의서, 설문, 장비 세팅</td><td>측정 오류 대비 예비시간 필요</td></tr>
+          <tr><td><strong>장비/라이선스/소모품</strong></td><td>EEG 디바이스, 소프트웨어, 위생 소모품</td><td>월 라이선스 별도 가능</td></tr>
+          <tr><td><strong>분석/리포트</strong></td><td>데이터 정리, 그래프, 향 개선 제안, B2B 제안서</td><td>가격의 핵심 근거</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container">
     <div class="head">
-      <h2>40. 디지털 콘텐츠 수익화</h2>
+      <h2>32. 디지털 콘텐츠 수익화</h2>
       <p>공간 방문자만으로는 성장 한계가 있습니다. 향·웰니스·K-Craft 콘텐츠를 디지털 상품과 광고 자산으로 전환합니다.</p>
     </div>
     <div class="grid3">
@@ -1664,7 +1374,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>41. 정부 지원금 연계 전략</h2>
+      <h2>33. 정부 지원금 연계 전략</h2>
       <p>지원금은 생존 자금이 아니라, AI 운영체계·관광콘텐츠·수출·로컬상권 실증비를 보전하는 보조 수단으로 활용합니다.</p>
     </div>
     <div class="table">
@@ -1682,10 +1392,42 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
     <div class="assumption"><b>우선순위:</b> 1차는 관광·상권활성화, 2차는 AI/디지털전환, 3차는 EEG·향 추천 실증 R&D로 나눠야 합니다. 한 사업계획서에 모든 명분을 과도하게 넣으면 심사 설득력이 떨어집니다.</div>
   </div>
 </section>
+
+<section class="alt">
+  <div class="container">
+    <div class="head">
+      <h2>34. B1 유입 첫 30일 실험 가설</h2>
+      <p>B1 일 방문객 800~1,200명은 아직 검증된 수치가 아니라 목표 가설입니다. 첫 30일은 실제 유입률을 측정하는 실험으로 운영합니다.</p>
+    </div>
+    <div class="table">
+      <table>
+        <thead><tr><th>시나리오</th><th>B1 순방문/일</th><th>유료 전환율</th><th>객단가</th><th>월 환산 매출</th><th>판단</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Low</strong></td><td>400명</td><td>6%</td><td>40,000원</td><td>2,880만원</td><td>외부 예약·B2B 없으면 BEP 불가</td></tr>
+          <tr><td><strong>Base</strong></td><td>800명</td><td>6%</td><td>40,000원</td><td>5,760만원</td><td>체험·K-Beauty·자사 MD 업셀 필수</td></tr>
+          <tr><td><strong>High</strong></td><td>1,200명</td><td>6%</td><td>40,000원</td><td>8,640만원</td><td>BEP 접근, 단체·OTA로 보완 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table" style="margin-top:24px">
+      <table>
+        <thead><tr><th>실험</th><th>실행 방식</th><th>측정 지표</th><th>성공 기준</th><th>실패 시 조치</th></tr></thead>
+        <tbody>
+          <tr><td><strong>기존 B1 트래픽 확인</strong></td><td>기존 테넌트 데이터 요청 또는 7일 직접 카운팅</td><td>시간대별 순방문</td><td>평일/주말 기준선 확보</td><td>매출 목표 재산정</td></tr>
+          <tr><td><strong>무료 포토존</strong></td><td>1층/계단/엘리베이터 QR 사인</td><td>QR 스캔, 포토 이용</td><td>일 150명 이상 유입</td><td>사인 위치·문구 교체</td></tr>
+          <tr><td><strong>K-Beauty 앵커</strong></td><td>입구 10m 안에 베스트/여행 키트</td><td>구매 전환율, 객단가</td><td>방문객 대비 5% 구매</td><td>SKU·가격 교체</td></tr>
+          <tr><td><strong>족욕 예약</strong></td><td>Walking Recovery 30분 상품</td><td>예약, 노쇼, 풋패치 구매</td><td>일 15건 이상</td><td>가격/시간 재설계</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:24px"><h3>Gate 0</h3><p>계약 전 기존 B1 유입 데이터 확인 또는 직접 카운팅이 선행되어야 합니다. 이 데이터가 없으면 모든 매출 시뮬레이션은 가설에 불과합니다.</p></div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="head">
-      <h2>42. 오너 시간 리소스 배분표</h2>
+      <h2>35. 오너 시간 리소스 배분표</h2>
       <p>초기 6개월은 대표 시간이 가장 비싼 자원입니다. 모든 일을 직접 하면 사업이 아니라 현장 운영에 갇힙니다.</p>
     </div>
     <div class="table">
@@ -1705,35 +1447,15 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="head">
-      <h2>43. B1 유입 첫 30일 실험 가설</h2>
-      <p>공격적인 B1 유입 목표는 ‘가능성’이 아니라 실험 설계와 측정지표로 증명해야 합니다.</p>
-    </div>
-    <div class="table">
-      <table>
-        <thead><tr><th>실험 가설</th><th>실행 방식</th><th>측정 지표</th><th>성공 기준</th><th>실패 시 조치</th></tr></thead>
-        <tbody>
-          <tr><td><strong>무료 포토존은 B1 진입을 만든다</strong></td><td>1층/계단/엘리베이터 사인과 QR 설치</td><td>QR 스캔, B1 방문, 포토 이용</td><td>일 150명 이상 B1 진입</td><td>사인 위치·문구 교체</td></tr>
-          <tr><td><strong>K-Beauty는 빠른 구매 앵커가 된다</strong></td><td>입구 10m 안에 베스트/여행용 키트 노출</td><td>K-Beauty 구매 전환율, 객단가</td><td>방문객 대비 5% 구매</td><td>SKU 교체, 가격대 하향</td></tr>
-          <tr><td><strong>족욕은 체류시간을 늘린다</strong></td><td>Walking Recovery 30분 상품 전면 노출</td><td>예약 수, 노쇼율, 풋패치 구매</td><td>일 15건 이상 예약</td><td>가격/시간/패키지 재설계</td></tr>
-          <tr><td><strong>호텔 QR은 평일 예약을 만든다</strong></td><td>숙소 10곳에 객실 QR 카드 비치</td><td>숙소별 스캔, 예약, 결제</td><td>월 30건 이상 예약</td><td>혜택 문구와 카드 위치 교체</td></tr>
-          <tr><td><strong>AI 추천은 직원 편차를 줄인다</strong></td><td>언어·니즈·예산 입력 후 추천 멘트 제공</td><td>직원별 전환율, 응대시간, 금지표현 오류</td><td>응대시간 30% 단축</td><td>추천 로직 단순화</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="callout" style="margin-top:24px">
-      <h3>30일 Gate 기준</h3>
-      <p>30일 내 B1 일평균 순방문 300명, 유료 전환율 6%, K-Beauty 월매출 환산 3,000만원, 체험 예약 월 300건 페이스가 나오지 않으면 구획·가격·사인·상품군을 즉시 수정합니다.</p>
-    </div>
-  </div>
-</section>
+
+
+
+
 
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>44. 출구 전략 · Exit / Plan B</h2>
+      <h2>36. 출구 전략 · Exit / Plan B</h2>
       <p>대형 공간 사업은 실패했을 때 줄이는 설계가 있어야 합니다. Exit는 포기가 아니라 현금흐름을 지키는 구조입니다.</p>
     </div>
     <div class="table">
@@ -1757,7 +1479,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section>
   <div class="container">
     <div class="head">
-      <h2>45. 30일 실행 체크리스트</h2>
+      <h2>37. 30일 실행 체크리스트</h2>
       <p>바로 실행 가능한 체크리스트입니다. 이 항목이 완료되어야 MVP 오픈이 가능합니다.</p>
     </div>
     <div class="table">
@@ -1787,7 +1509,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section>
   <div class="container">
     <div class="head">
-      <h2>46. 실행 Gate 및 6개월 로드맵</h2>
+      <h2>38. 실행 Gate 및 6개월 로드맵</h2>
       <p>한 번에 완성형으로 투자하지 않고, 수치 검증 후 확장합니다. Gate 기준을 넘지 못하면 축소·수정합니다.</p>
     </div>
     <div class="phase-grid">
@@ -1812,7 +1534,7 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
 <section class="alt">
   <div class="container">
     <div class="head">
-      <h2>47. 최종 의사결정 요청사항</h2>
+      <h2>39. 최종 의사결정 요청사항</h2>
       <p>다음 항목이 확정되어야 시공 견적, 위탁 계약, 오픈 일정, 임대인 협의가 현실적으로 진행됩니다.</p>
     </div>
     <div class="table">
@@ -1834,6 +1556,60 @@ section{padding:74px 0;background:var(--paper)}section.alt{background:var(--alt)
       <h3>최종 실행 결론</h3>
       <p>PLANT WELLNESS GROUND는 인사동 B1을 웰니스·뷰티·전통·체험 커머스로 전환할 가능성이 있습니다. 다만 성공 조건은 ‘멋진 공간’이 아니라 ‘작게 열고, 매일 숫자를 보고, 팔리는 것만 확장하는 운영’입니다. 1차는 초절감 MVP로 열고, 30일·90일·180일 Gate를 통과할 때만 2차 투자를 집행합니다.</p>
     </div>
+  </div>
+</section>
+<section class="alt">
+  <div class="container">
+    <div class="head">
+      <h2>40. 공간 파트너 협상용 핵심본</h2>
+      <p>공간 협상에서는 기술보다 집객력, 임대료 방어력, 하부 공간 활성화, 월간 리포트 제공을 전면에 세워야 합니다.</p>
+    </div>
+    <div class="grid3">
+      <div class="stat-block ok"><p class="stat-label">월 임대료 방어 수익 목표</p><p class="stat-val">4,000만+</p><p class="stat-sub">기여이익 기준</p></div>
+      <div class="stat-block ok"><p class="stat-label">B1 유입 목표</p><p class="stat-val">검증형</p><p class="stat-sub">첫 30일 실측 후 조정</p></div>
+      <div class="stat-block warn"><p class="stat-label">1차 계약 구조</p><p class="stat-val">12~24개월</p><p class="stat-sub">Gate 성과 후 연장</p></div>
+    </div>
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>핵심 메시지</th><th>제안 내용</th><th>상대방 메리트</th></tr></thead><tbody>
+      <tr><td><strong>B1 집객력 창출</strong></td><td>갓·쪽두리 포토존, K-Craft Gallery, K-Beauty Select를 결합해 하부 유입 명분을 만듭니다.</td><td>하부 공간 인지도와 체류시간 개선</td></tr>
+      <tr><td><strong>임대료 방어 구조</strong></td><td>K-BEAUTY 위탁, 자사 체험, SHIFTI/PLANT MD의 복합 수익으로 고정비를 방어합니다.</td><td>단일 테넌트 의존보다 안정적</td></tr>
+      <tr><td><strong>외국인 관광객 유입</strong></td><td>숙소 QR, OTA, 다국어 안내, Google Maps 리뷰 구조를 결합합니다.</td><td>상권의 외국인 친화 이미지 강화</td></tr>
+      <tr><td><strong>월간 운영 리포트</strong></td><td>방문객 수, 전환율, 카테고리별 매출, 리뷰 지표를 월 단위로 공유합니다.</td><td>성과 확인 가능, 리스크 조기 관리</td></tr>
+      <tr><td><strong>운영사 신뢰도</strong></td><td>화장품 제조 기반, SHIFTI/메디센츠 실적, 호텔·백화점 협업 이력을 제시합니다.</td><td>공간 운영 리스크 감소</td></tr>
+    </tbody></table></div>
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>협의 항목</th><th>희망 조건</th><th>대안</th><th>효과</th></tr></thead><tbody>
+      <tr><td><strong>렌트프리</strong></td><td>오픈 준비 2개월</td><td>1개월 무상 + 1개월 50%</td><td>초기 운전자금 부담 완화</td></tr>
+      <tr><td><strong>임대료 구조</strong></td><td>고정 임대료 하향</td><td>고정 + 매출 연동 일부</td><td>성과 기반 상생 구조</td></tr>
+      <tr><td><strong>공용 사인</strong></td><td>1층·계단·외부 A보드</td><td>비용 자체 부담</td><td>B1 유입률 상승</td></tr>
+      <tr><td><strong>위탁·팝업 운영</strong></td><td>전대가 아닌 판매대행 구조</td><td>브랜드 목록 사전 승인</td><td>법적·운영 리스크 방어</td></tr>
+      <tr><td><strong>원상복구</strong></td><td>복구 범위 한도 명시</td><td>복구비 상한 협의</td><td>보증금 분쟁 사전 방지</td></tr>
+    </tbody></table></div>
+    <div class="assumption"><b>미팅 원칙:</b> AI·EEG는 전면에 과도하게 내세우지 말고, 집객·임대료 방어·외국인 유입·월간 리포트·운영사 신뢰도를 우선 제시합니다.</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="head">
+      <h2>41. 정부과제 제출용 핵심 구성안</h2>
+      <p>정부과제용 문서는 공간 협상용과 언어가 달라야 합니다. 기술 차별성, 정량 KPI, TRL, 실증 데이터, 사업화 경로 중심으로 분리 제시합니다.</p>
+    </div>
+    <div class="grid3">
+      <div class="stat-block ok"><p class="stat-label">1순위</p><p class="stat-val">관광벤처</p><p class="stat-sub">K-Wellness 체험 관광</p></div>
+      <div class="stat-block warn"><p class="stat-label">2순위</p><p class="stat-val">AI 바우처</p><p class="stat-sub">AI Commerce OS</p></div>
+      <div class="stat-block warn"><p class="stat-label">3순위</p><p class="stat-val">R&D 실증</p><p class="stat-sub">EEG·HRV 향 추천</p></div>
+    </div>
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>과제 유형</th><th>핵심 주장</th><th>KPI</th><th>지원금 활용</th></tr></thead><tbody>
+      <tr><td><strong>관광벤처 / 로컬관광</strong></td><td>외국인 관광객이 체험-구매-리뷰-재방문으로 이어지는 K-Wellness 관광 콘텐츠</td><td>6개월 외국인 체험객 3,000명, OTA 리뷰 300개, 구매전환율 35%</td><td>다국어 랜딩, OTA 촬영/등록, 관광객 데이터 시스템</td></tr>
+      <tr><td><strong>AI 바우처 / 디지털전환</strong></td><td>예약·추천·정산·리포트를 자동화하는 AI Commerce OS</td><td>예약 자동화율 80%, 리포트 자동화 100%, 콘텐츠 생성 시간 70% 단축</td><td>AI 추천 웹앱, POS-CRM 연동, 다국어 콘텐츠 자동 생성</td></tr>
+      <tr><td><strong>R&D 실증</strong></td><td>EEG+HRV 기반 향 추천과 향 개입 전후 생체 변화 정량 측정</td><td>감정 인식 F1 85%, HRV 지표 변화 15%, 유효 데이터 500건, TRL4→TRL6</td><td>측정 프로토콜, 데이터 수집, 분석 리포트, 특허/논문 기반</td></tr>
+    </tbody></table></div>
+    <div class="table" style="margin-top:24px"><table><thead><tr><th>항목</th><th>공간 협상용 표현</th><th>정부과제용 표현</th></tr></thead><tbody>
+      <tr><td><strong>사업 정의</strong></td><td>인사동 B1 웰니스 복합 상업공간</td><td>AI 멀티모달 바이오시그널 K-Wellness Commerce Platform</td></tr>
+      <tr><td><strong>EEG 장비</strong></td><td>고객 체험과 향 추천 장치</td><td>EEG+HRV 복합 감정 측정 실증 장치</td></tr>
+      <tr><td><strong>성과</strong></td><td>월매출, 유입, 전환율, 체류시간</td><td>감정 인식 정확도, HRV 변화, 데이터셋, TRL</td></tr>
+      <tr><td><strong>차별화</strong></td><td>외국인이 좋아하는 K-Wellness 체험</td><td>오프라인 실증 기반 향기-감정 피드백 루프</td></tr>
+      <tr><td><strong>금지 표현</strong></td><td>과도한 기술 용어 남발</td><td>치료, 진단, 효능 보장, 의료 표현</td></tr>
+    </tbody></table></div>
+    <div class="assumption"><b>작성 원칙:</b> 하나의 문서에 공간 협상 논리와 과제 기술 논리를 동시에 넣으면 양쪽 모두 약해집니다. 본 사업계획서는 내부 의사결정용으로 유지하고, 외부 제출용은 목적별 5페이지 요약본으로 분리합니다.</div>
   </div>
 </section>
 <section class="alt">
