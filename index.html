@@ -9,9 +9,7 @@
 
 <!-- ── 성능 최적화 ── -->
 <meta http-equiv="x-dns-prefetch-control" content="on">
-<!-- LCP 이미지 preload (커버 첫 이미지) -->
 <link rel="preload" as="image" href="assets/01-plant-wellness-entrance.webp" fetchpriority="high">
-<!-- 구글 폰트 preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -327,19 +325,11 @@ td b,td strong{font-weight:600;color:var(--ink)}
 }
 
 
-/* ── 성능: content-visibility (뷰포트 밖 렌더링 지연) ── */
-.sec:not(:first-child){
-  content-visibility:auto;
-  contain-intrinsic-size:auto 600px;
-}
-/* 이미지 레이아웃 안정화 (CLS 방지) */
-.img-hero,.img-2 figure img,.img-3 figure img,.ch-header img{
-  aspect-ratio:16/9;
-}
-.img-2 figure img{aspect-ratio:4/3}
+/* ── 성능: content-visibility ── */
+.sec:not(:first-child){content-visibility:auto;contain-intrinsic-size:auto 600px;}
+img{max-width:100%;height:auto;}
 
 </style>
-</head>
 <body>
 
 <!-- COVER -->
@@ -356,28 +346,13 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <span style="font-size:10px;font-weight:500;letter-spacing:.08em;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65)">EEG Scent Insight</span>
     </div>
     <div class="cover-h1">PLANT WELLNESS GROUND<br><span>INSADONG</span></div>
-    <div class="cover-sub">인사동 쌈지길 B1 &nbsp;·&nbsp; 약 200평 &nbsp;·&nbsp; K-Wellness Commerce Platform<br>인사동 쌈지길 B1 · 약 200평 · AI 기반 K-Wellness Commerce Platform</div>
+    <div class="cover-sub">인사동 쌈지길 B1 &nbsp;·&nbsp; 약 200평 &nbsp;·&nbsp; AI 기반 K-Wellness Commerce Platform</div>
     <div class="cover-kpis">
-      <div class="ckpi">
-        <div class="ckpi-v">1.1억</div>
-        <div class="ckpi-l">1차 CAPEX 상한<br>시공·설비·소품</div>
-      </div>
-      <div class="ckpi">
-        <div class="ckpi-v gold">3.5~4.7억</div>
-        <div class="ckpi-l">총 소요 현금<br>보증금·운전자금 포함</div>
-      </div>
-      <div class="ckpi">
-        <div class="ckpi-v">1.07~1.39억</div>
-        <div class="ckpi-l">BEP 월매출<br>Low~Base 시나리오</div>
-      </div>
-      <div class="ckpi">
-        <div class="ckpi-v gold">M5</div>
-        <div class="ckpi-l">실질 BEP 도달<br>렌트 절벽 극복 후 안정화</div>
-      </div>
-      <div class="ckpi">
-        <div class="ckpi-v gold2">0원</div>
-        <div class="ckpi-l">재고 투자<br>위탁 판매 원칙</div>
-      </div>
+      <div class="ckpi"><div class="ckpi-v">1.1억</div><div class="ckpi-l">1차 CAPEX 상한<br>시공·설비·소품</div></div>
+      <div class="ckpi"><div class="ckpi-v gold">3.23~4.73억</div><div class="ckpi-l">총 소요 현금<br>보증금·운전자금 포함</div></div>
+      <div class="ckpi"><div class="ckpi-v">8,500만~1.38억</div><div class="ckpi-l">BEP 월매출<br>렌트프리→정상임대</div></div>
+      <div class="ckpi"><div class="ckpi-v gold">M5</div><div class="ckpi-l">실질 BEP 도달<br>렌트 절벽 극복 후 안정화</div></div>
+      <div class="ckpi"><div class="ckpi-v gold2">0원</div><div class="ckpi-l">재고 투자<br>위탁 판매 원칙</div></div>
     </div>
   </div>
   <div class="cover-footer">FINAL INTEGRATED EXECUTION PLAN · LEAN MVP · 2026</div>
@@ -395,10 +370,11 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <div class="sb-nav">
     <div class="sb-chapter">
       <div class="sb-ch-lbl">I. 비전·전제</div>
+      <div class="sb-link" onclick="g('s0')"><span class="sb-n">00</span>대표 소개 · 신뢰 근거</div>
       <div class="sb-link" onclick="g('s1')"><span class="sb-n">01</span>Executive Summary</div>
       <div class="sb-link" onclick="g('s2')"><span class="sb-n">02</span>사업 전제 및 가정</div>
       <div class="sb-link" onclick="g('s3')"><span class="sb-n">03</span>경쟁 공간 분석</div>
-      <div class="sb-link" onclick="g('s4')"><span class="sb-n">04</span>실행 역량</div>
+      <div class="sb-link" onclick="g('s4')"><span class="sb-n">04</span>SHIFTI × PLANT 브랜드</div>
       <div class="sb-link" onclick="g('s5')"><span class="sb-n">05</span>운영 구조 3A·5M·2P</div>
     </div>
     <div class="sb-chapter">
@@ -407,12 +383,12 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <div class="sb-link" onclick="g('s7')"><span class="sb-n">07</span>최소 시공 범위</div>
       <div class="sb-link" onclick="g('s8')"><span class="sb-n">08</span>프로그램 및 가격</div>
       <div class="sb-link" onclick="g('s9')"><span class="sb-n">09</span>K-BEAUTY 소싱</div>
-      <div class="sb-link" onclick="g('s10')"><span class="sb-n">10</span>MD · 판매 · CRM</div>
+      <div class="sb-link" onclick="g('s10')"><span class="sb-n">10</span>MD · 판매 · 멤버십</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">III. 수치·재무</div>
       <div class="sb-link" onclick="g('s11')"><span class="sb-n">11</span>수치 검산 요약</div>
-      <div class="sb-link" onclick="g('s12')"><span class="sb-n">12</span>총 자금 조달</div>
+      <div class="sb-link" onclick="g('s12')"><span class="sb-n">12</span>자금 조달 계획</div>
       <div class="sb-link" onclick="g('s13')"><span class="sb-n">13</span>CAPEX 산출</div>
       <div class="sb-link" onclick="g('s14')"><span class="sb-n">14</span>월 고정비 · BEP</div>
       <div class="sb-link" onclick="g('s15')"><span class="sb-n">15</span>연간 손익 · 민감도</div>
@@ -422,7 +398,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     <div class="sb-chapter">
       <div class="sb-ch-lbl">IV. 운영·법무</div>
       <div class="sb-link" onclick="g('s18')"><span class="sb-n">18</span>KPI · Gate</div>
-      <div class="sb-link" onclick="g('s19')"><span class="sb-n">19</span>조직 · RACI · 인건비</div>
+      <div class="sb-link" onclick="g('s19')"><span class="sb-n">19</span>조직 · RACI · 운영</div>
       <div class="sb-link" onclick="g('s20')"><span class="sb-n">20</span>허가 · 리스크</div>
     </div>
     <div class="sb-chapter">
@@ -454,13 +430,48 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
 <!-- CH I -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/02-main-circulation-retail-gallery.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/02-main-circulation-retail-gallery.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter I</div>
     <div class="ch-title">비전 · 전제 · 경쟁 분석</div>
   </div>
 </div>
+
+<!-- S0 신규: 대표 소개 -->
+<section class="sec bg2" id="s0">
+  <div class="s-tag">Section 00</div>
+  <h2 class="s-title">대표 소개 · 실행 역량 · 신뢰 근거</h2>
+  <p class="s-desc">공간 사업의 성패는 운영 주체의 역량에 달려 있습니다. 메디센츠는 향·웰니스·AI·제조 전반에 걸친 검증된 실행 기반을 보유하고 있습니다.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-top"></div>
+      <div class="card-title">김주인 대표 (Chris Kim)</div>
+      <div class="card-body">(주)메디센츠 · (주)클래식마인드 대표이사. 향수·웰니스 브랜드 SHIFTI 창업자. EEG/HRV 기반 AI 감정 분석 향 추천 시스템 개발 총괄. 화장품제조업 제7691호 보유. 경기 구리시 소재.</div>
+    </div>
+    <div class="card">
+      <div class="card-top"></div>
+      <div class="card-title">오프라인 검증 레퍼런스</div>
+      <div class="card-body">현대백화점 (트레이드센터·목동·여의도 비클린) 입점 및 판매 실적. 반얀트리 호텔 웰니스 파트너십. 아름지기 바자 참가. 북촌 코너갤러리 아트×프래그런스 전시.</div>
+    </div>
+    <div class="card">
+      <div class="card-top"></div>
+      <div class="card-title">기술·제조 기반</div>
+      <div class="card-body">멀티모달 생체신호 분석 기반 폐루프형 향 추천 시스템 (EEG·HRV·Face·Voice). ISO 16128 천연기원지수 98~100% 퍼퓨머리 라인. 자체 화장품제조업 등록 기반의 OEM/ODM 역량.</div>
+    </div>
+    <div class="card">
+      <div class="card-top"></div>
+      <div class="card-title">SHIFTI 브랜드 자산</div>
+      <div class="card-body">TATE ARCHIVE 01 (감정 데이터 기반 6종) + Nature's Breath (천연기원 4종) + 최인규 명장 청자 디퓨저 협업 라인. "Scents to find myself" — 빙렬(氷裂) 미학 기반 이모셔널 웰니스 브랜드.</div>
+    </div>
+  </div>
+
+  <div class="box ok">
+    <span class="box-icon">📋</span>
+    <div><strong>외부 제출용 첨부 서류 :</strong> 화장품제조업 등록증 · 현대백화점 납품 계약서 또는 입점 확인서 · 반얀트리 파트너십 계약서 · 정부과제 수행 확인서 · SHIFTI 브랜드 카탈로그 (별도 첨부)</div>
+  </div>
+</section>
 
 <!-- S1 -->
 <section class="sec" id="s1">
@@ -470,20 +481,20 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
   <div class="box warn">
     <span class="box-icon">⚠</span>
-    <div><strong>투자 규모 :</strong> 1차 투자 1.1억은 CAPEX(시공·설비·소품)만입니다. 보증금(2,500만×6~12개월) + 운전자금 포함 <strong>총 소요 현금은 3.2억~4.7억원</strong>입니다. 협상·투자 협의 시 반드시 이 수치로 제시합니다.</div>
+    <div><strong>투자 규모 전체 구조 :</strong> 1차 투자 1.1억은 CAPEX(시공·설비·소품)만입니다. 보증금(협상 목표 2.0억) + 운전자금(5,611만) 포함 <strong>총 소요 현금 권장 3.73억원</strong>입니다. 협상·투자 협의 시 반드시 이 수치로 제시합니다.</div>
   </div>
+
   <div class="box ok">
     <span class="box-icon">🎁</span>
     <div><strong>렌트프리 3개월 — 7,500만원 현금 절감 :</strong> M1~M3 월 고정비가 5,100만원으로 낮아집니다. M3에 9,500만원 달성 시 렌트프리 기간 중 손익분기에 도달합니다. <strong>렌트프리 기간을 MVP 검증·기반 구축·예약 파이프라인 확보에 집중 투입</strong>해 M4 렌트 절벽을 돌파합니다.</div>
   </div>
 
   <div class="stat-row">
-    <div class="stat warm"><div class="stat-v">2,500만</div><div class="stat-l">월 임대료 확정<br>+3개월 렌트프리</div><div class="stat-note">렌트프리 절감 7,500만원</div></div>
-    <div class="stat warm"><div class="stat-v">3.2~4.7억</div><div class="stat-l">총 소요 현금<br>보증금·운전자금 포함</div><div class="stat-note">협상 전 반드시 공개</div></div>
-    <div class="stat dark"><div class="stat-v">1.27억</div><div class="stat-l">BEP — @60%<br>M4 이후 임대 발생 기준</div></div>
-    <div class="stat dark"><div class="stat-v">1.38억</div><div class="stat-l">BEP — @55%<br>M4 이후 임대 발생 기준</div></div>
-    <div class="stat"><div class="stat-v">M5</div><div class="stat-l">실질 BEP 목표월<br>렌트 절벽 극복 후</div></div>
-    <div class="stat"><div class="stat-v">0원</div><div class="stat-l">재고 투자<br>전 MD 위탁 판매</div></div>
+    <div class="stat dark"><div class="stat-v">2,500만</div><div class="stat-l">월 임대료 확정<br>+3개월 렌트프리</div><div class="stat-note">렌트프리 절감 7,500만원</div></div>
+    <div class="stat warm"><div class="stat-v">3.73억</div><div class="stat-l">총 소요 현금 권장<br>보증금·운전자금 포함</div><div class="stat-note">낙관 3.23억 / 보수 4.73억</div></div>
+    <div class="stat"><div class="stat-v">1.27억</div><div class="stat-l">BEP — @60% GP<br>M4 이후 임대 발생 기준</div></div>
+    <div class="stat dark"><div class="stat-v">M5</div><div class="stat-l">실질 BEP 목표월<br>렌트 절벽 극복 후</div><div class="stat-note">M9 누적 손실 해소</div></div>
+    <div class="stat warm"><div class="stat-v">0원</div><div class="stat-l">재고 투자<br>전 MD 위탁 판매</div></div>
   </div>
 
   <div class="cards">
@@ -503,17 +514,18 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec bg2" id="s2">
   <div class="s-tag">Section 02</div>
   <h2 class="s-title">사업 전제 및 핵심 가정</h2>
-  <p class="s-desc">본 문서의 수치는 내부 사업성 검토용 목표값입니다. 현장 실측·임대조건·인력계획·위탁 수수료율이 확정되면 즉시 보정합니다.</p>
+  <p class="s-desc">본 문서의 수치는 사업성 검토용 목표값입니다. 현장 실측·임대조건·인력계획·위탁 수수료율이 확정되면 즉시 보정합니다.</p>
   <div class="t-wrap">
   <table>
     <thead><tr><th>영역</th><th>전제 내용</th><th>검증 방법</th><th>비고</th></tr></thead>
     <tbody>
-      <tr><td><b>위치</b></td><td>서울 종로구 인사동 쌈지길 B1 약 200평</td><td>임대 계약서 확인</td><td>실측 필수</td></tr>
-      <tr><td><b>기존 설비</b></td><td>전기·수도·기본 공사 완료 가정</td><td>현장 실측 + 건물 관리사무소 확인</td><td>미완 시 CAPEX 증가</td></tr>
+      <tr><td><b>위치</b></td><td>서울 종로구 인사동 쌈지길 B1 약 200평</td><td>임대 계약서 확인</td><td>실측 필수 · 현재 임대 협상 진행 중</td></tr>
+      <tr><td><b>기존 설비</b></td><td>전기·수도·기본 공사 완료 가정</td><td>현장 실측 + 건물 관리사무소 확인</td><td>미완 시 CAPEX 최대 +3,000만</td></tr>
       <tr><td><b>시공 원칙</b></td><td>바닥·천장·전체 벽체 대공사 없음 — 석고보드·레일 조명</td><td>공사 설계도 사전 확인</td><td>고정 목공 금지</td></tr>
       <tr><td><b>관광 유동</b></td><td>쌈지길 평일 수천 명, 주말·성수기 약 1만 명 (내부 가정)</td><td>계약 전 7일 직접 카운팅 필수</td><td>Gate 0 선행 조건</td></tr>
-      <tr><td><b>외국인 비중</b></td><td>30~35% 내부 가정</td><td>QR 스캔·언어별 결제 데이터로 검증</td><td>외부 제출 시 검증값만</td></tr>
+      <tr><td><b>외국인 비중</b></td><td>30~35% 내부 가정</td><td>QR 스캔·언어별 결제 데이터로 검증</td><td>검증값 확보 후 수치 공개</td></tr>
       <tr><td><b>재고 투자</b></td><td>K-BEAUTY·외부 MD 전품 위탁 판매 — 0원</td><td>브랜드별 위탁 계약서</td><td>예외 없음</td></tr>
+      <tr><td><b>자금 조달</b></td><td>자기자본 + 필요시 외부 투자 병행</td><td>자금 확보 스케줄 별도 관리</td><td>§12 자금 조달 계획 참조</td></tr>
     </tbody>
   </table>
   </div>
@@ -527,8 +539,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec" id="s3">
   <div class="s-tag">Section 03</div>
   <h2 class="s-title">경쟁 공간 분석 및 차별화</h2>
-  <p class="s-desc">인사동·북촌·성수권 직간접 경쟁 공간 분석. PLANT WELLNESS GROUND가 단순 체험 매장이 아닌 K-Wellness Commerce Platform임을 명확히 보여줍니다.</p>
-  <div class="box tip"><span class="box-icon">ℹ</span><div><strong>데이터 출처 :</strong> 경쟁 공간명·가격대·운영 현황은 내부 분석값입니다. 외부 제출 전 현장 방문 또는 웹 검색으로 최신 정보를 재확인하십시오.</div></div>
+  <p class="s-desc">인사동·북촌·성수권 직간접 경쟁 공간 분석. PLANT WELLNESS GROUND가 단순 체험 매장이 아닌 K-Wellness Commerce Platform임을 명확히 보여줍니다. (경쟁사 데이터는 오픈 전 현장 방문으로 최신 정보 재확인 필요)</p>
   <div class="t-wrap">
   <table>
     <thead><tr><th>경쟁사</th><th>위치</th><th>체험 유형</th><th>위협도</th><th>차별화 포인트</th></tr></thead>
@@ -569,20 +580,46 @@ td b,td strong{font-weight:600;color:var(--ink)}
   </div>
 </section>
 
-<!-- S4 -->
+<!-- S4 신규: 브랜드 통합 -->
 <section class="sec bg2" id="s4">
   <div class="s-tag">Section 04</div>
-  <h2 class="s-title">메디센츠 / SHIFTI 실행 역량</h2>
-  <p class="s-desc">대상 공간은 신규 컨셉이지만, 운영 주체는 향·웰니스·제조·오프라인 레퍼런스를 이미 보유합니다. 협의 상대가 가장 먼저 확인할 신뢰 근거 섹션입니다.</p>
+  <h2 class="s-title">SHIFTI × PLANT — 브랜드 정체성과 제품 라인</h2>
+  <p class="s-desc">PLANT WELLNESS GROUND는 두 브랜드의 물리적 통합 공간입니다. 각 브랜드의 역할과 제품 라인을 명확히 구분해 교차 업셀 구조를 설계합니다.</p>
+
   <div class="img-2">
-    <figure><img decoding="async" loading="lazy" src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천룸"><figcaption>EEG Scent Recommendation Room</figcaption></figure>
-    <figure><img decoding="async" loading="lazy" src="assets/06-meditation-room.webp" alt="명상룸"><figcaption>Meditation Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천룸"><figcaption>SHIFTI — EEG Scent Recommendation Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/06-meditation-room.webp" alt="명상룸"><figcaption>PLANT — Meditation & Water Wellness Room</figcaption></figure>
   </div>
-  <div class="cards">
-    <div class="card"><div class="card-top"></div><div class="card-title">자체 제조·개발 기반</div><div class="card-body">향수·샴푸·바디케어·콜라겐·홈스파 MD를 자사 브랜드·제조 기반으로 연계. 화장품제조업 제7691호 보유. 외부 제출 전 계약서·납품서·행사 사진 별첨 필요</div></div>
-    <div class="card"><div class="card-top"></div><div class="card-title">오프라인 협업 레퍼런스</div><div class="card-body">현대백화점·반얀트리·아름지기 등 기존 협업·납품·전시 이력. 공간 제안의 구체적 신뢰 근거로 활용</div></div>
-    <div class="card"><div class="card-top"></div><div class="card-title">EEG + Bio Closed-Loop</div><div class="card-body">EEG/HRV·Face·Voice 멀티모달 감정 분석 → 향 DNA 프로파일 → 맞춤 향 추천 → 재측정 폐루프 시스템 보유</div></div>
-    <div class="card"><div class="card-top"></div><div class="card-title">ISO16128 퍼퓨머리</div><div class="card-body">천연 기원 지수 98~100% ISO16128 라인 보유. 발효 알코올 기반, 지속가능 패키징. 글로벌 바이어 대상 차별화 스토리텔링 자산</div></div>
+
+  <div class="t-wrap">
+  <table>
+    <thead><tr><th>브랜드</th><th>핵심 정체성</th><th>주요 제품</th><th>가격대</th><th>공간 역할</th></tr></thead>
+    <tbody>
+      <tr class="t-hl"><td><b>SHIFTI</b></td><td>"Scents to find myself" — 빙렬 미학, 이모셔널 웰니스. SHIFT+I = 나를 바라보는 관점의 변화</td><td>TATE ARCHIVE 30ml (6종) · Nature's Breath 50ml (4종) · 디스커버리 3ml×4 · 청자 디퓨저 500ml</td><td>37,000~320,000원</td><td>향수 클래스·EEG 체험의 구매 전환 앵커</td></tr>
+      <tr><td><b>PLANT</b></td><td>Water Wellness — 물 기반 회복 루틴. 샤워기필터·샴푸·바디케어·콜라겐의 안팎 케어 통합</td><td>샤워기필터 · PLANT 샴푸·바디케어 · 콜라겐 드링크/젤리/파우더 · 홈스파 키트</td><td>15,000~89,000원</td><td>족욕·필터 시연의 구매 전환 앵커</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 class="sec-h3">SHIFTI 제품 라인업 상세</h3>
+  <div class="t-wrap">
+  <table>
+    <thead><tr><th>컬렉션</th><th>제품명</th><th>용량</th><th>가격</th><th>향 계열</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="6"><b>TATE ARCHIVE 01</b><br><small style="color:var(--ink4)">감정 데이터 기반</small></td><td>AnnE</td><td>30ml</td><td>54,000원</td><td>플로럴 우디</td></tr>
+      <tr><td>Foggy Study</td><td>30ml</td><td>54,000원</td><td>그린 머스크</td></tr>
+      <tr><td>Red Tara</td><td>30ml</td><td>54,000원</td><td>스파이시 오리엔탈</td></tr>
+      <tr><td>Who am I</td><td>30ml</td><td>54,000원</td><td>아쿠아틱 시트러스</td></tr>
+      <tr><td>The Great</td><td>30ml</td><td>54,000원</td><td>우디 앰버</td></tr>
+      <tr><td>말괄량이</td><td>30ml</td><td>54,000원</td><td>프루티 플로럴</td></tr>
+      <tr class="t-hl"><td rowspan="4"><b>Nature's Breath</b><br><small style="color:var(--ink4)">천연기원 98~100%</small></td><td>Secret Garden</td><td>50ml</td><td>90,000원</td><td>플로럴 그린</td></tr>
+      <tr class="t-hl"><td>Violet Hill</td><td>50ml</td><td>90,000원</td><td>바이올렛 우디</td></tr>
+      <tr class="t-hl"><td>Sunlit Window</td><td>50ml</td><td>90,000원</td><td>시트러스 플로럴</td></tr>
+      <tr class="t-hl"><td>Urban Forest</td><td>50ml</td><td>90,000원</td><td>우디 모스</td></tr>
+      <tr><td><b>Discovery Set</b></td><td>3ml×4ea</td><td>37,000원</td><td>37,000원</td><td>혼합 (선택)</td></tr>
+      <tr class="t-hl"><td><b>Celadon Diffuser</b><br><small style="color:var(--ink4)">최인규 명장 협업</small></td><td>청자 리드 디퓨저</td><td>500ml</td><td>320,000원</td><td>SHIFTI 시그니처</td></tr>
+    </tbody>
+  </table>
   </div>
 </section>
 
@@ -590,17 +627,17 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec" id="s5">
   <div class="s-tag">Section 05</div>
   <h2 class="s-title">최종 운영 구조 — 3 Anchor · 5 MD · 2 Popup</h2>
-  <p class="s-desc">고정 입점 10개 구조는 폐기합니다. 고정비·관리 복잡도를 낮추기 위해 고정 앵커·자사 MD·위탁·팝업을 분리합니다.</p>
+  <p class="s-desc">고정비·관리 복잡도를 낮추기 위해 고정 앵커·자사 MD·위탁·팝업을 분리합니다. 모든 외부 MD는 위탁 판매 원칙 — 재고 투자 0원.</p>
   <div class="t-wrap">
   <table>
     <thead><tr><th>구분</th><th>운영 항목</th><th>형태</th><th>핵심 역할</th><th>초기 운영 원칙</th></tr></thead>
     <tbody>
       <tr class="t-hl"><td><span class="pill p-a">Anchor 1</span></td><td><b>K-BEAUTY SELECT ZONE</b></td><td>20평 내외 / 위탁 판매</td><td>내·외국인 구매 앵커</td><td>고정 목공 없이 MD 테이블·이동식 진열</td></tr>
       <tr><td><span class="pill p-a">Anchor 2</span></td><td><b>두피·헤드스파</b></td><td>전문 입점 (§24 파트너 모집)</td><td>Water Wellness 체험 축</td><td>입점사 장비·인력 부담, 수익 배분 30~40%</td></tr>
-      <tr class="t-hl"><td><span class="pill p-a">Anchor 3</span></td><td><b>Foot & Leg Recovery</b></td><td>위탁/혼합 MD</td><td>족욕 후 압박양말·패치·인솔 전환</td><td>소량 테스트, 잘 팔리는 SKU만 확대</td></tr>
+      <tr class="t-hl"><td><span class="pill p-a">Anchor 3</span></td><td><b>Foot &amp; Leg Recovery</b></td><td>위탁/혼합 MD</td><td>족욕 후 압박양말·패치·인솔 전환</td><td>소량 테스트, 잘 팔리는 SKU만 확대</td></tr>
       <tr><td><span class="pill p-m">MD 1</span></td><td>SHIFTI Core Retail</td><td>자사 리테일</td><td>향수 클래스 후 본품·디스커버리 구매</td><td>체험 종료 동선에 배치</td></tr>
       <tr class="t-hl"><td><span class="pill p-m">MD 2</span></td><td>PLANT / Water Wellness</td><td>자사 MD</td><td>샤워기필터·샴푸·바디케어</td><td>필터 시연 후 구매 전환</td></tr>
-      <tr><td><span class="pill p-m">MD 3</span></td><td>Inner Wellness</td><td>자사 콜라겐 중심</td><td>콜라겐·티·전해질·저당 스낵</td><td>건기식 표현 사전 검수 필수 (§20)</td></tr>
+      <tr><td><span class="pill p-m">MD 3</span></td><td>Inner Wellness</td><td>자사 콜라겐 중심</td><td>콜라겐·티·전해질·저당 스낵</td><td>건기식 표현 사전 법무 검수 필수</td></tr>
       <tr class="t-hl"><td><span class="pill p-m">MD 4</span></td><td>Home Spa / Patch</td><td>위탁+자사 MD</td><td>홈스파·족욕제·패치·바디툴</td><td>재고 투자 없이 위탁·소량 테스트</td></tr>
       <tr><td><span class="pill p-m">MD 5</span></td><td>Recovery Kit Bar</td><td>키트 패키지</td><td>Walking·Hotel·Home Spa 키트 객단가 상승</td><td>POS 앞 기프트 매대</td></tr>
       <tr class="t-hl"><td><span class="pill p-p">Pop 1</span></td><td>K-Craft Gallery</td><td>시즌 위탁 전시</td><td>인사동 명분·공간 품격·기프트</td><td>작품 매입 금지, 판매수수료 구조</td></tr>
@@ -612,7 +649,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
 <!-- CH II -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/05-overall-3d-floor-plan.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/05-overall-3d-floor-plan.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter II</div>
@@ -626,10 +663,10 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <h2 class="s-title">200평 전체 공간 배치</h2>
   <p class="s-desc">전체 면적 중 약 33%를 공용·유입·갤러리로 확보해 지하 공간의 답답함을 완화합니다. 매출존 121평 + 공용·지원 79평 구조입니다.</p>
 
-  <img decoding="async" loading="lazy" class="img-hero" src="assets/05-overall-3d-floor-plan.webp" alt="200평 전체 3D 평면">
-  <p class="img-caption">Overall 3D Floor Plan — 입구·K-Beauty·명상·EEG·족욕을 포함한 전체 구획 예시</p>
+  <img loading="lazy" decoding="async" class="img-hero" src="assets/05-overall-3d-floor-plan.webp" alt="200평 전체 3D 평면">
+  <p class="img-caption">Overall 3D Floor Plan — 입구·K-Beauty·명상·EEG·족욕을 포함한 전체 구획 예시 (실측 후 보정 필요)</p>
 
-  <div class="box warn"><span class="box-icon">📐</span><div><strong>향수 클래스 정원 조정 :</strong> 18평 ÷ 8명 = 2.25평/인. 작업 테이블·향료 세트·동선 감안 시 <strong>6~8명이 현실적 상한</strong>입니다. 증원이 필요하면 2차 투자 시 향수 클래스 존을 22~24평으로 확장합니다. 기존 5구간 요약표는 합산 202평(+2평 오류)으로 아래 16행 상세 표를 단일 기준으로 삼습니다.</div></div>
+  <div class="box info"><span class="box-icon">📐</span><div><strong>향수 클래스 정원 :</strong> 18평 기준 작업 테이블·향료 세트·동선 감안 시 <strong>6~8명이 현실적 상한</strong>입니다. 증원이 필요하면 2차 투자 시 22~24평으로 확장합니다.</div></div>
 
   <div class="t-wrap">
   <table>
@@ -648,15 +685,15 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <tr><td>족욕 / Foot Recovery Lounge</td><td>20평</td><td>10%</td><td>족욕·풋패치·압박양말</td><td>1인 1수조·소독·대기동선 고려</td></tr>
       <tr><td>EEG / 명상 / Ritual Room</td><td>12평</td><td>6%</td><td>프리미엄 웰니스 체험</td><td>브랜드 차별화와 B2B 근거</td></tr>
       <tr><td>두피·헤드스파 파트너존</td><td>8평</td><td>4%</td><td>전문 입점·샤워기필터 연계</td><td>초기 1~2석, 파트너 모집 §24</td></tr>
-      <tr><td rowspan="2"><b>지원</b></td><td>백오피스 / 창고 / 직원공간</td><td>9평</td><td>4.5%</td><td>재고·직원·사무·정산</td><td>K-Beauty 재고 과다 시 부족</td></tr>
+      <tr><td rowspan="2"><b>지원</b></td><td>백오피스 / 창고 / 직원공간</td><td>9평</td><td>4.5%</td><td>재고·직원·사무·정산</td><td>위탁 MD 증가 시 추가 수납 필요</td></tr>
       <tr><td>위생·준비·세척·설비</td><td>4평</td><td>2%</td><td>족욕 세척·위생·소모품</td><td>족욕·클래스 운영의 필수 후방</td></tr>
       <tr class="t-sum"><td colspan="2"><b>합계</b></td><td><b>200평</b></td><td><b>100%</b></td><td colspan="2">매출존 121평 + 공용/지원 79평</td></tr>
     </tbody>
   </table>
   </div>
   <div class="img-2">
-    <figure><img decoding="async" loading="lazy" src="assets/03-kbeauty-select-zone-layout.webp" alt="K-Beauty Select Zone"><figcaption>K-Beauty Select Zone Layout</figcaption></figure>
-    <figure><img decoding="async" loading="lazy" src="assets/04-kwellness-retail-corridor.webp" alt="K-Wellness 리테일 코리도어"><figcaption>K-Wellness Retail Corridor</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/03-kbeauty-select-zone-layout.webp" alt="K-Beauty Select Zone"><figcaption>K-Beauty Select Zone Layout</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/04-kwellness-retail-corridor.webp" alt="K-Wellness 리테일 코리도어"><figcaption>K-Wellness Retail Corridor</figcaption></figure>
   </div>
 </section>
 
@@ -666,8 +703,8 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <h2 class="s-title">공간 구성 및 최소 시공 범위</h2>
   <p class="s-desc">초기 시공은 고객이 돈을 쓰는 구역과 조용해야 하는 구역에만 집중합니다. 고정 목공·고급 라운지·대형 장비는 2차 투자 이후입니다.</p>
   <div class="img-2">
-    <figure><img decoding="async" loading="lazy" src="assets/10-photo-zone-entry.webp" alt="포토존 입구"><figcaption>Entrance & Photo Zone</figcaption></figure>
-    <figure><img decoding="async" loading="lazy" src="assets/11-shower-filter-demo-zone.webp" alt="샤워기필터 시연존"><figcaption>Shower Filter Demo Zone</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/10-photo-zone-entry.webp" alt="포토존 입구"><figcaption>Entrance &amp; Photo Zone</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/11-shower-filter-demo-zone.webp" alt="샤워기필터 시연존"><figcaption>Shower Filter Demo Zone</figcaption></figure>
   </div>
   <div class="t-wrap">
   <table>
@@ -691,9 +728,9 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <p class="s-desc">처음부터 고가 프로그램만 운영하지 않습니다. 15분 미니 체험으로 진입시키고 정규 클래스·EEG·리테일로 업셀합니다.</p>
   <div class="box info"><span class="box-icon">💡</span><div><strong>객단가 기준 구분 :</strong> §15의 "객단가 28,000원"은 전체 방문객(비구매자 포함) 평균이며, §28의 체험 전환 계산은 체험 결제자 기준 45,000원입니다. 두 수치는 다른 모집단이므로 혼용하지 않습니다.</div></div>
   <div class="img-3">
-    <figure><img decoding="async" loading="lazy" src="assets/06-meditation-room.webp" alt="명상룸"><figcaption>Meditation Room</figcaption></figure>
-    <figure><img decoding="async" loading="lazy" src="assets/09-foot-bath-lounge.webp" alt="족욕 라운지"><figcaption>Foot Bath Lounge</figcaption></figure>
-    <figure><img decoding="async" loading="lazy" src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천룸"><figcaption>EEG Scent Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/06-meditation-room.webp" alt="명상룸"><figcaption>Meditation Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/09-foot-bath-lounge.webp" alt="족욕 라운지"><figcaption>Foot Bath Lounge</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천룸"><figcaption>EEG Scent Room</figcaption></figure>
   </div>
   <div class="t-wrap">
   <table>
@@ -702,9 +739,9 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <tr><td><b>K-Scent Mini Class</b></td><td>15분 향 체험</td><td>19,000원</td><td>25,000~29,000원</td><td>포토존 고객 첫 결제</td><td>SHIFTI 디스커버리·본품</td></tr>
       <tr class="t-hl"><td><b>Signature Perfume Class</b></td><td>45~60분 클래스 (6~8명)</td><td>49,000원</td><td>59,000~69,000원</td><td>주력 체험 매출</td><td>향수 본품·기프트</td></tr>
       <tr><td><b>EEG Scent Insight</b></td><td>EEG 향 추천 45분</td><td>69,000원</td><td>79,000~89,000원</td><td>차별화·프리미엄 체험</td><td>맞춤 향·리포트</td></tr>
-      <tr class="t-hl"><td><b>Scent Meditation</b></td><td>명상 클래스</td><td>39,000원</td><td>49,000~59,000원</td><td>저녁/호텔 투숙객</td><td>콜라겐·수면 리추얼</td></tr>
-      <tr><td><b>Foot Bath Recovery</b></td><td>3인 족욕 회차</td><td>29,000원</td><td>39,000~45,000원</td><td>관광객 회복 체험</td><td>풋패치·압박양말·콜라겐</td></tr>
-      <tr class="t-hl"><td><b>Filter Demo Kit</b></td><td>샤워기필터 시연</td><td>무료/구매 유도</td><td>—</td><td>Water Wellness 설명</td><td>샤워기필터·PLANT 샴푸</td></tr>
+      <tr class="t-hl"><td><b>Scent Meditation</b></td><td>명상 클래스 60분</td><td>39,000원</td><td>49,000~59,000원</td><td>저녁/호텔 투숙객</td><td>콜라겐·수면 리추얼</td></tr>
+      <tr><td><b>Foot Bath Recovery</b></td><td>3인 족욕 30분</td><td>29,000원</td><td>39,000~45,000원</td><td>관광객 회복 체험</td><td>풋패치·압박양말·콜라겐</td></tr>
+      <tr class="t-hl"><td><b>Filter Demo Kit</b></td><td>샤워기필터 시연 (무료)</td><td>무료 유도</td><td>—</td><td>Water Wellness 설명</td><td>샤워기필터·PLANT 샴푸</td></tr>
     </tbody>
   </table>
   </div>
@@ -714,25 +751,27 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec" id="s9">
   <div class="s-tag">Section 09</div>
   <h2 class="s-title">K-BEAUTY 소싱 파트너 계획</h2>
-  <div class="box tip"><span class="box-icon">📦</span><div><strong>SKU 총수 기준 (오류 수정) :</strong> K-Beauty 위탁 SKU 50~80개는 K-Beauty 카테고리 한정이며 전체 SKU가 아닙니다. 자사 MD 20~30개 + Foot/Patch/HomeSpa 20~40개 포함 <strong>전체 150개 이하</strong>로 관리합니다.</div></div>
+  <p class="s-desc">K-Beauty는 물량 앵커이자 현금 회전 엔진입니다. 전체 SKU는 K-Beauty 60~80개 + 자사 MD 20~30개 + Foot/Patch 20~40개로 <strong>총 150개 이하</strong>로 관리합니다.</p>
   <div class="t-wrap">
   <table>
-    <thead><tr><th>카테고리</th><th>K-Beauty SKU</th><th>소싱 기준</th><th>위탁 수수료</th><th>퇴출 기준</th></tr></thead>
+    <thead><tr><th>카테고리</th><th>SKU 수</th><th>소싱 기준</th><th>위탁 수수료</th><th>퇴출 기준</th></tr></thead>
     <tbody>
       <tr><td><b>마스크팩/패드</b></td><td>15~20개</td><td>외국인 이해 쉬움, 여행 수요</td><td>30% 내외</td><td>4주 GMV 100만원 미만</td></tr>
       <tr class="t-hl"><td><b>선케어/클렌징</b></td><td>15~20개</td><td>한국 여행 필수품, 1만~3만원대</td><td>25~30%</td><td>테스터 대비 전환율 5% 미만</td></tr>
       <tr><td><b>립/핸드/미니 기프트</b></td><td>20~25개</td><td>충동구매·선물·포켓 사이즈</td><td>30~35%</td><td>재구매/세트 전환 없음</td></tr>
       <tr class="t-hl"><td><b>홈스파/패치/풋웨어</b></td><td>10~15개</td><td>족욕·샤워기필터·회복 루틴 연계</td><td>위탁 또는 매입 혼합</td><td>체험 후 전환율 8% 미만</td></tr>
-      <tr class="t-sum"><td><b>K-Beauty 소계</b></td><td><b>60~80개</b></td><td colspan="3">자사 MD(20~30) + Foot/Patch(20~40) 포함 전체 150개 이하</td></tr>
+      <tr class="t-sum"><td><b>K-Beauty 소계</b></td><td><b>60~80개</b></td><td colspan="3">전체 150개 이하 원칙. 하위 30% SKU 매월 교체 검토.</td></tr>
     </tbody>
   </table>
   </div>
 </section>
 
-<!-- S10 -->
+<!-- S10 신규: MD + 멤버십 -->
 <section class="sec bg2" id="s10">
   <div class="s-tag">Section 10</div>
-  <h2 class="s-title">MD · 판매 · CRM 운영방안</h2>
+  <h2 class="s-title">MD · 판매 · 멤버십 · CRM</h2>
+
+  <h3 class="sec-h3">고객 상황별 업셀 스크립트</h3>
   <div class="t-wrap">
   <table>
     <thead><tr><th>고객 상황</th><th>추천 상품</th><th>직원 멘트</th><th>관리 KPI</th></tr></thead>
@@ -744,11 +783,37 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
+
+  <h3 class="sec-h3">멤버십 설계 — 재방문 구조</h3>
+  <div class="box info"><span class="box-icon">🎟</span><div><strong>멤버십 목표 :</strong> M6까지 유료 멤버 200명 확보. 멤버십은 단순 할인이 아닌 재방문 파이프라인이자 비수기 방어선입니다.</div></div>
+  <div class="t-wrap">
+  <table>
+    <thead><tr><th>티어</th><th>가입 조건</th><th>월 구독료</th><th>혜택</th><th>목표 인원</th></tr></thead>
+    <tbody>
+      <tr><td><b>GREEN</b><br><small>일반</small></td><td>1회 체험 이상</td><td>무료</td><td>포인트 적립 3%, 생일 쿠폰, 신상품 선공개</td><td>M3까지 500명</td></tr>
+      <tr class="t-hl"><td><b>CELADON</b><br><small>정기 고객</small></td><td>월 2회 이상 방문</td><td>29,000원</td><td>월 1회 족욕 무료 + 클래스 10% 할인 + MD 5% 추가 적립</td><td>M6까지 100명</td></tr>
+      <tr><td><b>GOLD</b><br><small>프리미엄</small></td><td>3개월 선납</td><td>89,000원</td><td>월 1회 EEG 체험 + 클래스 무제한 20% 할인 + 분기 기프트 세트</td><td>M6까지 30명</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 class="sec-h3">온라인 판매 채널 연계</h3>
+  <div class="t-wrap">
+  <table>
+    <thead><tr><th>채널</th><th>주요 상품</th><th>역할</th><th>우선순위</th></tr></thead>
+    <tbody>
+      <tr><td><b>네이버 스마트스토어</b></td><td>SHIFTI 향수 전 라인, Discovery Set</td><td>내국인 온라인 메인 채널. 공간 방문 전환 콘텐츠 연계</td><td>1순위 (기운영)</td></tr>
+      <tr class="t-hl"><td><b>네이버 예약</b></td><td>향수 클래스, EEG, 명상, 족욕</td><td>내국인 예약 파이프라인. 리뷰 연동</td><td>1순위 (오픈 전 세팅)</td></tr>
+      <tr><td><b>Klook / Viator</b></td><td>K-Scent Mini, Walking Recovery, Night Reset</td><td>외국인 사전 예약. OTA 수수료 20~25% 반영 가격 필수</td><td>1순위 (§22 가격표 준수)</td></tr>
+      <tr class="t-hl"><td><b>인스타그램 쇼핑</b></td><td>Discovery Set, 콜라겐, 홈스파 키트</td><td>SNS 유입 구매 전환. 릴스 → 쇼핑 링크</td><td>2순위</td></tr>
+    </tbody>
+  </table>
+  </div>
 </section>
 
 <!-- CH III -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/04-kwellness-retail-corridor.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/04-kwellness-retail-corridor.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter III</div>
@@ -765,11 +830,11 @@ td b,td strong{font-weight:600;color:var(--ink)}
     <thead><tr><th>항목</th><th>임대 조건</th><th>재무 결과</th><th>경영 판단</th></tr></thead>
     <tbody>
       <tr class="t-ok"><td><b>월 임대료</b></td><td>2,500만원 확정</td><td>M4부터 월 고정비 7,600만원 발생</td><td>M4가 최대 위험 구간 — 렌트 절벽</td></tr>
-      <tr class="t-hl"><td><b>렌트프리 3개월</b></td><td>M1~M3 임대료 면제</td><td>월 고정비 7,600만→5,100만으로 경감. 3개월 누계 절감 7,500만원</td><td>M3에 9,500만 달성 시 렌트프리 중 손익분기 도달</td></tr>
+      <tr class="t-hl"><td><b>렌트프리 3개월</b></td><td>M1~M3 임대료 면제</td><td>월 고정비 5,100만으로 경감. 3개월 누계 절감 7,500만원</td><td>M3에 9,500만 달성 시 렌트프리 중 손익분기 도달</td></tr>
       <tr><td><b>BEP (M4 이후)</b></td><td>고정비 7,600만, GP률 58~60%</td><td>BEP @60%: 1.27억 / @58%: 1.31억 / @55%: 1.38억</td><td>M5에 1.3억 달성이 핵심 목표</td></tr>
       <tr class="t-hl"><td><b>보증금</b></td><td>2,500만 × 6~12개월</td><td>협상 목표 1.5억(6개월), 최대 3억(12개월)</td><td>권장 보증금 2.0억(8개월)으로 협상</td></tr>
-      <tr><td><b>총 소요 자금</b></td><td>CAPEX + 보증금 + 운전자금</td><td>낙관 3.23억 / 권장 3.73억 / 보수 4.73억</td><td>렌트프리 덕분에 운전자금 6,086만으로 압축</td></tr>
-      <tr class="t-hl"><td><b>OTA 가격</b></td><td>기존 5~10% 인상 → 역마진</td><td>현장가 대비 30~40% 인상 패키지형으로 수정</td><td>§22 가격표 기준 통일</td></tr>
+      <tr><td><b>총 소요 자금</b></td><td>CAPEX + 보증금 + 운전자금</td><td>낙관 3.23억 / 권장 3.73억 / 보수 4.73억</td><td>렌트프리 덕분에 운전자금 5,611만으로 압축</td></tr>
+      <tr class="t-hl"><td><b>OTA 가격</b></td><td>수수료 20~25% 차감 반영</td><td>현장가 대비 30~40% 인상 패키지형</td><td>§22 가격표 기준 통일</td></tr>
     </tbody>
   </table>
   </div>
@@ -777,17 +842,33 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <div class="box warn"><span class="box-icon">⚠</span><div><strong>M4 렌트 절벽 :</strong> M4부터 임대 2,500만원이 발생합니다. M3까지 순조로워도 M4에 준비 없이 맞이하면 월 1,220만원 손실로 전환됩니다. <strong>M3 이전에 반복 예약 구조(OTA·호텔·기업복지)를 반드시 확보</strong>해야 합니다.</div></div>
 </section>
 
-<!-- S12 -->
+<!-- S12 신규: 자금 조달 계획 구체화 -->
 <section class="sec bg2" id="s12">
   <div class="s-tag">Section 12</div>
-  <h2 class="s-title">총 자금 조달 계획 — 보증금 포함</h2>
+  <h2 class="s-title">자금 조달 계획 — 총 3.73억 (권장)</h2>
   <div class="sc-row">
-    <div class="sc"><div class="sc-tag">낙관 (보증금 6개월)</div><div class="sc-val">3.23억원</div><div class="sc-sub">CAPEX 9,700만 · 보증금 1.5억<br>선납·복구 1,500만 · 운전 6,086만</div></div>
-    <div class="sc base"><div class="sc-tag">권장 (보증금 8개월) ★</div><div class="sc-val">3.73억원</div><div class="sc-sub">CAPEX 9,700만 · 보증금 2.0억<br>선납·복구 1,500만 · 운전 6,086만</div></div>
-    <div class="sc"><div class="sc-tag">보수 (보증금 12개월)</div><div class="sc-val">4.73억원</div><div class="sc-sub">CAPEX 9,700만 · 보증금 3.0억<br>선납·복구 1,500만 · 운전 6,086만</div></div>
+    <div class="sc"><div class="sc-tag">낙관 (보증금 6개월)</div><div class="sc-val">3.23억원</div><div class="sc-sub">CAPEX 9,700만 · 보증금 1.5억<br>선납·복구 1,500만 · 운전 5,611만</div></div>
+    <div class="sc base"><div class="sc-tag">권장 (보증금 8개월) ★</div><div class="sc-val">3.73억원</div><div class="sc-sub">CAPEX 9,700만 · 보증금 2.0억<br>선납·복구 1,500만 · 운전 5,611만</div></div>
+    <div class="sc"><div class="sc-tag">보수 (보증금 12개월)</div><div class="sc-val">4.73억원</div><div class="sc-sub">CAPEX 9,700만 · 보증금 3.0억<br>선납·복구 1,500만 · 운전 6,611만</div></div>
   </div>
-  <div class="box ok"><span class="box-icon">💡</span><div><strong>렌트프리 효과 :</strong> M3 흑자 전환(+314만)으로 운전자금이 6,086만원으로 압축됩니다. 총 소요 자금 권장 3.73억입니다.</div></div>
+
+  <h3 class="sec-h3">조달 구조 — 자기자본 vs 외부 조달</h3>
   <div class="t-wrap">
+  <table>
+    <thead><tr><th>조달 구분</th><th>금액 (권장 기준)</th><th>내용</th><th>확보 시점</th></tr></thead>
+    <tbody>
+      <tr class="t-ok"><td><b>자기자본</b></td><td>[ 확인 후 기재 ]억원</td><td>(주)메디센츠 법인 현금 + 대표 개인 자금</td><td>계약 전 확인 필수</td></tr>
+      <tr class="t-hl"><td><b>정부 지원금</b></td><td>최대 5,000만~1억</td><td>경기 수출바우처, 소상공인 디지털전환, AI 바우처 등 §27 참조</td><td>신청~수령 3~6개월 소요</td></tr>
+      <tr><td><b>외부 투자 / 임대인 조건 협상</b></td><td>필요시 [ 기재 ]억원</td><td>렌트프리 연장, 보증금 분납, 앤젤/시드 투자 검토</td><td>임대 계약 협상 시 병행</td></tr>
+      <tr class="t-hl"><td><b>임대인 인센티브</b></td><td>렌트프리 7,500만 (현금 등가)</td><td>3개월 렌트프리 확보 — 실질 현금 절감</td><td>계약 협상 완료 (확정)</td></tr>
+      <tr class="t-sum"><td><b>총 필요</b></td><td><b>3.73억 (권장)</b></td><td colspan="2">자기자본 + 정부지원 + 필요시 외부조달 병행</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="box warn"><span class="box-icon">⚠</span><div><strong>자금 조달 선행 조건 :</strong> 계약 체결 전 3.73억 중 <strong>최소 자기자본 2.0억 이상 확보</strong>를 권장합니다. M4 렌트 절벽에서 외부 조달이 지연될 경우 유동성 위기로 이어질 수 있습니다.</div></div>
+
+  <div class="t-wrap" style="margin-top:20px">
   <table>
     <thead><tr><th>구분</th><th>항목</th><th>낙관</th><th>권장</th><th>보수</th><th>비고</th></tr></thead>
     <tbody>
@@ -795,18 +876,18 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <tr><td>설비</td><td>2,000만</td><td>2,600만</td><td>3,200만</td><td>EEG·족욕·MD테이블·POS</td></tr>
       <tr><td>콘텐츠·소품·오픈 마케팅</td><td>800만</td><td>1,100만</td><td>1,500만</td><td>POP·촬영·다국어 사인</td></tr>
       <tr><td>예비비</td><td>500만</td><td>900만</td><td>1,100만</td><td>총액 10~15%</td></tr>
-      <tr class="t-hl"><td></td><td><b>A 소계</b></td><td><b>6,500만</b></td><td><b>9,700만</b></td><td><b>1.2억</b></td><td></td></tr>
-      <tr><td rowspan="3"><b>B. 보증금</b></td><td>임대 보증금 (2,500만×6/8/12개월)</td><td>1.5억</td><td>2.0억</td><td>3.0억</td><td>협상 목표 8개월치 2억</td></tr>
+      <tr class="t-hl"><td></td><td><b>A 소계</b></td><td><b>6,500만</b></td><td><b>9,700만</b></td><td><b>1.2억</b></td><td>VAT 별도</td></tr>
+      <tr><td rowspan="3"><b>B. 보증금</b></td><td>임대 보증금</td><td>1.5억</td><td>2.0억</td><td>3.0억</td><td>협상 목표 8개월치</td></tr>
       <tr><td>관리비 선납·기타</td><td>500만</td><td>800만</td><td>1,200만</td><td>건물별 상이</td></tr>
       <tr><td>원상복구 적립금</td><td>0원</td><td>700만</td><td>1,000만</td><td>계약 조건 따라 변동</td></tr>
-      <tr class="t-hl"><td></td><td><b>B 소계</b></td><td><b>1.5억</b></td><td><b>2.0억</b></td><td><b>3.0억</b></td><td>렌트프리 협상 시 추가 감액 시도 가능</td></tr>
-      <tr><td rowspan="5"><b>C. 운전자금</b></td><td>M1 손실 (렌트프리, FC 5,100만)</td><td>-2,625만</td><td>-2,625만</td><td>-2,625만</td><td>렌트프리로 FC 압축</td></tr>
-      <tr><td>M2 손실 (렌트프리, FC 5,100만)</td><td>-1,180만</td><td>-1,180만</td><td>-1,180만</td><td></td></tr>
-      <tr><td>M3 흑자 (렌트프리, FC 5,100만)</td><td>+314만</td><td>+314만</td><td>+314만</td><td>렌트프리 기간 손익분기!</td></tr>
-      <tr><td>M4 손실 (렌트 시작, FC 7,600만)</td><td>-1,220만</td><td>-1,220만</td><td>-1,220만</td><td>★ 렌트 절벽 — 예약 파이프라인 필수</td></tr>
+      <tr class="t-hl"><td></td><td><b>B 소계</b></td><td><b>1.5억</b></td><td><b>2.0억</b></td><td><b>3.0억</b></td><td></td></tr>
+      <tr><td rowspan="5"><b>C. 운전자금</b></td><td>M1 손실 (렌트프리)</td><td>-2,625만</td><td>-2,625만</td><td>-2,625만</td><td>고정비 5,100만 기준</td></tr>
+      <tr><td>M2 손실 (렌트프리)</td><td>-1,180만</td><td>-1,180만</td><td>-1,180만</td><td></td></tr>
+      <tr><td>M3 흑자 (렌트프리)</td><td>+314만</td><td>+314만</td><td>+314만</td><td>렌트프리 BEP 달성</td></tr>
+      <tr><td>M4 손실 (렌트 시작)</td><td>-1,220만</td><td>-1,220만</td><td>-1,220만</td><td>★ 렌트 절벽</td></tr>
       <tr><td>완충 예비비</td><td>500만</td><td>1,000만</td><td>2,000만</td><td>M5 BEP 지연 대비</td></tr>
-      <tr class="t-hl"><td></td><td><b>C 소계</b></td><td><b>5,111만</b></td><td><b>5,611만</b></td><td><b>6,611만</b></td><td>렌트프리로 압축 (기존 대비 ~2,400만 절감)</td></tr>
-      <tr class="t-sum"><td colspan="2"><b>총 필요 자금 A+B+C</b></td><td><b>3.23억</b></td><td><b>3.73억</b></td><td><b>4.73억</b></td><td>월 임대 2,500만·렌트프리 3개월 기준</td></tr>
+      <tr class="t-hl"><td></td><td><b>C 소계</b></td><td><b>4,611만</b></td><td><b>5,611만</b></td><td><b>6,611만</b></td><td></td></tr>
+      <tr class="t-sum"><td colspan="2"><b>총 필요 자금 A+B+C</b></td><td><b>3.23억</b></td><td><b>3.73억</b></td><td><b>4.73억</b></td><td>렌트프리 3개월 기준</td></tr>
     </tbody>
   </table>
   </div>
@@ -823,8 +904,8 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <tr><td><b>석고보드 구획 공사</b></td><td>1,500만~3,000만</td><td>기능 구획만, 대규모 인테리어 금지</td></tr>
       <tr class="t-hl"><td><b>저소음/흡음 보강</b></td><td>1,200만~2,700만</td><td>완전 방음실 금지, 저소음 집중룸</td></tr>
       <tr><td><b>레일 조명·포인트 조명</b></td><td>800만~1,800만</td><td>천장 대공사 없이 레일 조명만</td></tr>
-      <tr class="t-hl"><td><b>EEG룸 세팅</b></td><td>1,300만~1,800만</td><td>EEG 장비 1대 1,000만 + 테이블/의자. Gate 3 이후 2대</td></tr>
-      <tr><td><b>족욕 3인 세팅</b></td><td>700만~1,500만</td><td>8석 이상 금지, 3인으로 ROI 검증 후 확장</td></tr>
+      <tr class="t-hl"><td><b>EEG룸 세팅</b></td><td>1,300만~1,800만</td><td>EEG 장비 1대 포함. Gate 3 이후 2대</td></tr>
+      <tr><td><b>족욕 3인 세팅</b></td><td>700만~1,500만</td><td>3인으로 ROI 검증 후 8석 확장</td></tr>
       <tr class="t-hl"><td><b>MD 테이블·이동식 진열</b></td><td>800만~1,800만</td><td>고정 목공 진열장 금지</td></tr>
       <tr><td><b>포토존 소품·사인</b></td><td>300만~800만</td><td>스티커 사진기 렌탈/수익쉐어 검토</td></tr>
       <tr class="t-hl"><td><b>POS·QR·예약 시스템</b></td><td>300만~700만</td><td>위챗페이·알리페이 처리 여부 확인</td></tr>
@@ -844,7 +925,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <div class="t-wrap">
   <table>
     <thead><tr><th colspan="8" style="background:#1e3320;color:rgba(255,255,255,.6);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트프리 기간 (M1~M3) — 임대료 0원</th></tr>
-    <tr><th>기간</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>손익분기 매출 @58%</th><th>손익분기 매출 @60%</th></tr></thead>
+    <tr><th>기간</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>BEP @58%</th><th>BEP @60%</th></tr></thead>
     <tbody>
       <tr class="t-ok"><td><b>M1~M3</b></td><td style="color:var(--forest2);font-weight:700">0원</td><td>1,100만</td><td>2,800만</td><td>1,200만</td><td><b>5,100만</b></td><td><b>8,793만</b></td><td><b>8,500만</b></td></tr>
     </tbody>
@@ -860,7 +941,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <div class="box warn"><span class="box-icon">🎯</span><div><strong>M4 렌트 절벽 공략법 :</strong> M3까지 9,500만원 달성(고정비 5,100만 대비 +4,400만 여유)으로 렌트프리 기간을 흑자로 마감하되, <strong>M4 이전에 반복 예약 구조를 확보</strong>해야 합니다. M4에는 고정비가 7,600만으로 뛰므로 예약 공백 상태에서 맞이하면 즉시 적자 1,220만원으로 전환됩니다. OTA 월 100건·호텔 QR 10곳·기업복지 계약 3건이 M3 이전 필수 달성 목표입니다.</div></div>
+  <div class="box warn"><span class="box-icon">🎯</span><div><strong>M4 렌트 절벽 공략법 :</strong> OTA 월 100건·호텔 QR 10곳·기업복지 계약 3건을 M3 이전에 확보해야 M4 고정비 7,600만원을 소화할 수 있습니다.</div></div>
 </section>
 
 <!-- S15 -->
@@ -884,7 +965,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <div class="box ok"><span class="box-icon">📈</span><div><strong>연간 손익 포인트 :</strong> 렌트프리 3개월 덕분에 M3에서 일시 흑자 전환 후 M4 절벽을 경험하지만, M5~M6에서 BEP를 넘기고 M7 이후부터 안정적 흑자 구조에 진입합니다. 연간 영업이익 <strong>약 1.2억원</strong> 달성이 목표입니다.</div></div>
+  <div class="box ok"><span class="box-icon">📈</span><div><strong>연간 손익 포인트 :</strong> 렌트프리 3개월 덕분에 M3에서 일시 흑자 전환 후 M4 절벽을 경험하지만, M6에서 흑자 안정화, M9에 누적 손실 해소. 연간 영업이익 <strong>약 1.2억원</strong> 달성이 목표입니다.</div></div>
   <h3 class="sec-h3">민감도 분석</h3>
   <div class="t-wrap">
   <table>
@@ -897,7 +978,6 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">채널별 월 매출 믹스 목표</h3>
   <div class="t-wrap">
   <table>
@@ -913,7 +993,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <div class="box tip"><span class="box-icon">💡</span><div><strong>매출 믹스 원칙 :</strong> K-Beauty(32%)가 물량 앵커, 자사 체험+MD(53%)가 마진 앵커입니다. K-Beauty는 외국인 유입 장치이자 현금 회전 엔진이며, 자사 향수 클래스·EEG·MD가 실질 수익을 만듭니다. 기업복지·B2B(7%)는 비수기 방어선입니다.</div></div>
+  <div class="box tip"><span class="box-icon">💡</span><div><strong>매출 믹스 원칙 :</strong> K-Beauty(32%)가 물량 앵커, 자사 체험+MD(53%)가 마진 앵커입니다. 기업복지·B2B(7%)는 비수기 방어선입니다.</div></div>
 </section>
 
 <!-- S16 -->
@@ -963,7 +1043,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <tr><td><b>M4 ⚠</b></td><td><b>1.10억</b></td><td>58%</td><td>6,380만</td><td style="color:var(--red);font-weight:600">7,600만</td><td style="color:var(--red);font-weight:700">-1,220만</td><td style="color:var(--red)">-4,710만</td><td>OTA 예약 100건+, 기업복지 월매출 700만+ 필수</td></tr>
       <tr class="t-hl"><td><b>M5 🔥</b></td><td><b>1.30억</b></td><td>58%</td><td>7,540만</td><td style="color:var(--red)">7,600만</td><td style="color:var(--red);font-weight:600">-60만</td><td style="color:var(--red)">-4,770만</td><td><b>실질 BEP 진입 — 자사 MD·기업복지 확대</b></td></tr>
       <tr class="t-ok"><td><b>M6 ✓</b></td><td><b>1.50억</b></td><td>59%</td><td>8,850만</td><td style="color:var(--forest2)">7,700만</td><td style="color:var(--forest2);font-weight:700"><b>+1,150만</b></td><td style="color:var(--red)">-3,620만</td><td>흑자 안정 — 2차 투자 검토 시작</td></tr>
-      <tr class="t-ok"><td><b>M9</b></td><td>1.55억</td><td>60%</td><td>9,300만</td><td style="color:var(--forest2)">7,800만</td><td style="color:var(--forest2);font-weight:700">+1,500만</td><td style="color:var(--forest2);font-weight:700"><b>흑자 전환</b></td><td>누적 손실 해소, 사업 지속 가능성 확인</td></tr>
+      <tr class="t-ok"><td><b>M9</b></td><td>1.55억</td><td>60%</td><td>9,300만</td><td style="color:var(--forest2)">7,800만</td><td style="color:var(--forest2);font-weight:700">+1,500만</td><td style="color:var(--forest2);font-weight:700"><b>흑자 전환</b></td><td>누적 손실 해소, 2차 투자 집행 검토</td></tr>
     </tbody>
   </table>
   </div>
@@ -972,7 +1052,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
 <!-- CH IV -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter IV</div>
@@ -994,13 +1074,14 @@ td b,td strong{font-weight:600;color:var(--ink)}
     <span class="kpi g">자사 MD 2,000만+</span>
     <span class="kpi">전체 방문객 평균 객단가 28,000원+</span>
     <span class="kpi a">패키지 판매율 10%→25%</span>
-    <span class="kpi a">고정비 6,000만 이하</span>
+    <span class="kpi a">고정비 6,000만 이하 (렌트프리 기간)</span>
+    <span class="kpi a">멤버십 CELADON 100명 (M6)</span>
   </div>
   <div class="gates">
-    <div class="gate g0"><div class="gate-no">Gate 0 — 오픈 전</div><div class="gate-h">계약 전 검증</div><div class="gate-b">공사비 1.2억 이하 확인. B1 유입 7일 직접 카운팅. EEG 1대·족욕 3인·재고 0원 확인</div></div>
+    <div class="gate g0"><div class="gate-no">Gate 0 — 오픈 전</div><div class="gate-h">계약 전 검증</div><div class="gate-b">공사비 1.2억 이하 확인. B1 유입 7일 직접 카운팅. EEG 1대·족욕 3인·재고 0원 확인. 자기자본 2억 확보 확인.</div></div>
     <div class="gate g1"><div class="gate-no">Gate 1 — M1 30일</div><div class="gate-h">MVP 검증</div><div class="gate-b">4,000만 이하 → 즉시 전략 수정. 4,000만~7,000만 → 개선 운영 지속. 7,000만+ → M2 가속</div></div>
     <div class="gate g2"><div class="gate-no">Gate 2 — M3 (렌트프리 종료)</div><div class="gate-h">★ 렌트 절벽 준비</div><div class="gate-b">9,500만 미달 → M4 즉시 비상 가동. 달성 시 → OTA·기업복지 파이프라인 확보 완료 여부 확인</div></div>
-    <div class="gate g3"><div class="gate-no">Gate 3 — M5 (실질 BEP)</div><div class="gate-h">흑자 안정화</div><div class="gate-b">1.30억 달성 → 운영 안정화·채널 확대. 1.30억 미달 → 인력·운영시간·광고비 즉시 조정</div></div>
+    <div class="gate g3"><div class="gate-no">Gate 3 — M5 (실질 BEP)</div><div class="gate-h">흑자 안정화</div><div class="gate-b">1.30억 달성 → 운영 안정화·채널 확대·2차 투자 실행. 1.30억 미달 → 인력·운영시간·광고비 즉시 조정</div></div>
   </div>
 </section>
 
@@ -1008,20 +1089,22 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec" id="s19">
   <div class="s-tag">Section 19</div>
   <h2 class="s-title">운영 조직 · RACI · 인건비 연결</h2>
-  <p class="s-desc">§14 인건비 Low=2,500만, Base=2,800만 기준의 인원 구성입니다. RACI와 직접 연동됩니다.</p>
+  <p class="s-desc">§14 인건비 Base=2,800만 기준의 인원 구성입니다. 시프트 구조로 영업시간(10:00~22:00)을 효율적으로 커버합니다.</p>
   <div class="t-wrap">
   <table>
-    <thead><tr><th>직책</th><th>인원</th><th>월 급여</th><th>고용 형태</th><th>주요 담당</th></tr></thead>
+    <thead><tr><th>직책</th><th>인원</th><th>월 급여</th><th>고용 형태</th><th>시프트</th><th>주요 담당</th></tr></thead>
     <tbody>
-      <tr class="t-hl"><td><b>운영 매니저</b></td><td>1명</td><td>380만</td><td>정규직</td><td>전체 일일 운영, 매출 집계, 직원 관리, Gate 보고</td></tr>
-      <tr><td><b>클래스·웰니스 담당</b></td><td>1명</td><td>300만</td><td>정규직</td><td>향수 클래스, EEG, 명상 운영, 스크립트 관리</td></tr>
-      <tr class="t-hl"><td><b>웰컴·MD 담당</b></td><td>2명</td><td>각 170만</td><td>파트타임</td><td>포토존 운영, K-Beauty MD 관리, POS 정산</td></tr>
-      <tr><td><b>족욕·리커버리 담당</b></td><td>1명</td><td>150만</td><td>파트타임</td><td>족욕 회차 운영, 소독 로그, 풋패치 업셀</td></tr>
-      <tr><td><b>4대보험·퇴직충당</b></td><td>—</td><td>430만</td><td>—</td><td>정규직 2명 기준</td></tr>
-      <tr class="t-sum"><td colspan="2"><b>합계</b></td><td><b>약 2,800만</b></td><td colspan="2">§14 Base 인건비 정합 확인</td></tr>
+      <tr class="t-hl"><td><b>운영 매니저</b></td><td>1명</td><td>380만</td><td>정규직</td><td>10:00~19:00</td><td>전체 일일 운영, 매출 집계, 직원 관리, Gate 보고</td></tr>
+      <tr><td><b>클래스·웰니스 담당</b></td><td>1명</td><td>300만</td><td>정규직</td><td>13:00~22:00</td><td>향수 클래스, EEG, 명상 운영, 스크립트 관리</td></tr>
+      <tr class="t-hl"><td><b>웰컴·MD 담당 A</b></td><td>1명</td><td>170만</td><td>파트타임</td><td>10:00~16:00</td><td>포토존, K-Beauty MD, POS 오전 정산</td></tr>
+      <tr><td><b>웰컴·MD 담당 B</b></td><td>1명</td><td>170만</td><td>파트타임</td><td>16:00~22:00</td><td>포토존, K-Beauty MD, POS 마감 정산</td></tr>
+      <tr class="t-hl"><td><b>족욕·리커버리 담당</b></td><td>1명</td><td>150만</td><td>파트타임</td><td>12:00~20:00</td><td>족욕 회차 운영, 소독 로그, 풋패치 업셀</td></tr>
+      <tr><td><b>4대보험·퇴직충당</b></td><td>—</td><td>430만</td><td>—</td><td>—</td><td>정규직 2명 기준</td></tr>
+      <tr class="t-sum"><td colspan="2"><b>합계</b></td><td><b>약 2,800만</b></td><td colspan="3">§14 Base 인건비 정합 확인</td></tr>
     </tbody>
   </table>
   </div>
+
   <h3 class="sec-h3">RACI 매트릭스</h3>
   <div class="t-wrap">
   <table>
@@ -1029,24 +1112,10 @@ td b,td strong{font-weight:600;color:var(--ink)}
     <tbody>
       <tr><td>웰컴/포토존</td><td>웰컴 담당</td><td>매니저</td><td>QR·대기·사진소품·리뷰 유도</td><td>대기 10분 초과 시 쿠폰 제공</td></tr>
       <tr class="t-hl"><td>향수 클래스</td><td>클래스 담당</td><td>운영총괄</td><td>향료·라벨·환기·회차표</td><td>지연 시 다음 회차 10분 버퍼</td></tr>
-      <tr><td>족욕</td><td>리커버리 담당</td><td>매니저</td><td>온도·1인 1수조·소독 로그</td><td>로그 누락 시 좌석 중단</td></tr>
+      <tr><td>족욕</td><td>리커버리 담당</td><td>매니저</td><td>온도·1인 1수조·소독 로그 (매 회차)</td><td>로그 누락 시 좌석 즉시 중단</td></tr>
       <tr class="t-hl"><td>K-Beauty/MD</td><td>MD 담당</td><td>매니저</td><td>테스터·품절·베스트존·가격표</td><td>품절 시 대체 SKU 제안</td></tr>
       <tr><td>EEG/AI 추천</td><td>웰니스 담당</td><td>운영총괄</td><td>동의서·장비·추천 결과·표현 검수</td><td>측정 오류 시 재측정 또는 대체권</td></tr>
       <tr class="t-hl"><td>POS/정산</td><td>POS 담당</td><td>대표/매니저</td><td>채널별 매출 코드 분리</td><td>미분류 건 익일 오전 재확인</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h3 class="sec-h3">일일·주간 운영 스케줄</h3>
-  <div class="t-wrap">
-  <table>
-    <thead><tr><th>시간대</th><th>운영 내용</th><th>담당</th><th>체크포인트</th></tr></thead>
-    <tbody>
-      <tr><td><b>09:00~10:00</b></td><td>오픈 준비 — 족욕 수조 온도 세팅, 향료·클래스 재료 보충, POS 매출 초기화, MD 테스터 정비</td><td>매니저 + 담당자 전원</td><td>소독 로그 작성, QR 동작 확인</td></tr>
-      <tr class="t-hl"><td><b>10:00~13:00</b></td><td>평일 오전 — 포토존 유도, K-Scent Mini 클래스 운영, K-Beauty 구매 안내, 필터 시연</td><td>웰컴+MD 담당</td><td>포토존 QR 스캔 수 기록</td></tr>
-      <tr><td><b>13:00~17:00</b></td><td>성수기 — Signature Perfume Class 2회, 족욕 3인 2회, EEG 2회, K-Beauty 구매 피크</td><td>클래스+리커버리+웰니스</td><td>회차별 입장·퇴장 시간 기록</td></tr>
-      <tr class="t-hl"><td><b>17:00~21:00</b></td><td>저녁 — Night Reset 패키지, Scent Meditation, 호텔 QR 유입 피크, K-Beauty 기프트 구매</td><td>클래스+웰컴 담당</td><td>OTA 예약 인원 vs 현장 결제 비교</td></tr>
-      <tr><td><b>21:00~22:00</b></td><td>마감 — 족욕 세척·소독, POS 채널별 정산, 재고 확인, AI 리포트 검토, 익일 예약 확인</td><td>매니저</td><td>채널별 매출 코드 미분류 건 처리</td></tr>
     </tbody>
   </table>
   </div>
@@ -1064,7 +1133,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <div class="box ok"><span class="box-icon">✓</span><div><strong>§15 채널 믹스 검증 :</strong> 향수 클래스 월 매출 목표 2,375만(M3 기준 25%)은 4회차 정원 7명 평균 기준으로 달성 가능한 수치입니다. 예약률 80% 이상 유지가 전제 조건이며, OTA와 호텔 QR 예약이 핵심 공급원입니다.</div></div>
+  <div class="box ok"><span class="box-icon">✓</span><div><strong>채널 믹스 검증 :</strong> 향수 클래스 월 매출 목표 2,375만(M3 기준 25%)은 4회차 정원 7명 기준으로 달성 가능한 수치입니다. 예약률 80% 이상 유지가 전제 조건입니다.</div></div>
 </section>
 
 <!-- S20 -->
@@ -1075,12 +1144,12 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <table>
     <thead><tr><th>영역</th><th>확인 이슈</th><th>위험도</th><th>사전 조치</th><th>금지 표현</th></tr></thead>
     <tbody>
-      <tr><td><b>족욕</b></td><td>공중위생관리법상 목욕장업 해당 가능성. 단, 1인 1수조·개인용 용기 방식은 제외 유권해석 존재 — 서면 질의 필수</td><td><span class="r r-h">상</span></td><td>관할구청 서면 질의, 소독 로그 설계</td><td><span class="r-x">혈액순환 개선, 부종 치료, 통증 완화</span></td></tr>
+      <tr><td><b>족욕</b></td><td>공중위생관리법상 목욕장업 해당 가능성. 1인 1수조·개인용 용기 방식은 제외 유권해석 존재 — 관할구청 서면 질의 필수. 소독제: 염소계 또는 동등 기준 적용, 매 회차 수조 교체 원칙.</td><td><span class="r r-h">상</span></td><td>관할구청 서면 질의, 소독 로그 설계, 소독제 비치</td><td><span class="r-x">혈액순환 개선, 부종 치료, 통증 완화</span></td></tr>
       <tr class="t-hl"><td><b>콜라겐 티·음료</b></td><td>유상 제공 시 휴게음식점 신고 필요 가능성. 건기식 현장 시음 범위 확인 필요</td><td><span class="r r-h">상</span></td><td>제공 방식 확정 후 신고 여부 확인</td><td><span class="r-x">디톡스, 해독, 피부개선 보장</span></td></tr>
-      <tr><td><b>EEG</b></td><td>의료기기 해당 여부 + 개인정보보호법상 민감정보(생체정보) 별도 서면 동의 필수. B2B 제공 시 제3자 제공 동의 추가</td><td><span class="r r-h">상</span></td><td>비의료 체험 고지, 민감정보 동의서, 개인정보처리방침 게시</td><td><span class="r-x">진단, 치료, 정신건강 판정</span></td></tr>
-      <tr class="t-hl"><td><b>화장품/건기식</b></td><td>표시광고, 판매업, 기능성 문구</td><td><span class="r r-h">상</span></td><td>전성분/주의사항/광고문구 사전 검수</td><td><span class="r-x">질병 예방, 치료, 체중감량 보장</span></td></tr>
-      <tr><td><b>위탁/팝업</b></td><td>전대 여부, 판매대행 계약, 정산</td><td><span class="r r-h">상</span></td><td>위탁판매/판매대행 구조 계약서</td><td><span class="r-x">공간 재임대 구조 금지</span></td></tr>
-      <tr class="t-hl"><td><b>건물 업종 허용</b></td><td>용도·영업시간·사인·급배수 범위</td><td><span class="r r-h">상</span></td><td>계약 전 서면 확인</td><td><span class="r-x">구두 합의에만 의존 금지</span></td></tr>
+      <tr><td><b>EEG</b></td><td>의료기기 해당 여부 + 생체정보(민감정보) 별도 서면 동의 필수. B2B 제공 시 제3자 제공 동의 추가. 개인정보처리방침 공개 필수.</td><td><span class="r r-h">상</span></td><td>비의료 체험 고지문, 생체정보 동의서, 개인정보처리방침 게시</td><td><span class="r-x">진단, 치료, 정신건강 판정</span></td></tr>
+      <tr class="t-hl"><td><b>화장품/건기식</b></td><td>표시광고, 판매업, 기능성 문구 적법성</td><td><span class="r r-h">상</span></td><td>전성분/주의사항/광고문구 법무 사전 검수</td><td><span class="r-x">질병 예방, 치료, 체중감량 보장</span></td></tr>
+      <tr><td><b>위탁/팝업</b></td><td>전대 여부, 판매대행 계약, 정산 구조</td><td><span class="r r-h">상</span></td><td>위탁판매/판매대행 구조 계약서 (변호사 검토 권장)</td><td><span class="r-x">공간 재임대 구조 금지</span></td></tr>
+      <tr class="t-hl"><td><b>건물 업종 허용</b></td><td>용도·영업시간·사인·급배수 범위</td><td><span class="r r-h">상</span></td><td>계약 전 서면 확인 필수</td><td><span class="r-x">구두 합의에만 의존 금지</span></td></tr>
     </tbody>
   </table>
   </div>
@@ -1088,7 +1157,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
 <!-- CH V -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/03-kbeauty-select-zone-layout.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/03-kbeauty-select-zone-layout.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter V</div>
@@ -1110,12 +1179,13 @@ td b,td strong{font-weight:600;color:var(--ink)}
       <tr class="t-hl"><td><b>호텔 QR</b></td><td>평일/저녁 예약</td><td>객실 QR 카드, 프런트 안내카드, 숙소별 쿠폰코드</td><td>30만~100만</td><td>숙소별 스캔, 예약, 결제</td></tr>
       <tr><td><b>OTA (Klook/Viator)</b></td><td>외국인 사전예약</td><td>K-Scent Mini, Walking Recovery 등록</td><td>100만~300만</td><td>예약, 리뷰, 수수료 후 이익</td></tr>
       <tr class="t-hl"><td><b>유학생 앰배서더</b></td><td>언어권별 콘텐츠</td><td>월 2개 숏폼, Google 리뷰, 친구 QR</td><td>100만~200만</td><td>콘텐츠 수, 예약, 리뷰</td></tr>
+      <tr><td><b>네이버 예약·블로그</b></td><td>내국인 사전예약</td><td>클래스 예약 페이지, 체험 후기 블로그</td><td>50만~150만</td><td>예약 건수, 블로그 유입</td></tr>
     </tbody>
   </table>
   </div>
   <div class="img-2">
-    <figure><img decoding="async" loading="lazy" src="assets/10-photo-zone-entry.webp" alt="포토존 입구"><figcaption>Photo Zone Entry — B1 유입의 핵심 장치</figcaption></figure>
-    <figure><img decoding="async" loading="lazy" src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="두피 EEG 진단존"><figcaption>Diagnostic Wing — 체험의 차별화 포인트</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/10-photo-zone-entry.webp" alt="포토존 입구"><figcaption>Photo Zone Entry — B1 유입의 핵심 장치</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="두피 EEG 진단존"><figcaption>Diagnostic Wing — 체험의 차별화 포인트</figcaption></figure>
   </div>
 </section>
 
@@ -1123,7 +1193,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec bg2" id="s22">
   <div class="s-tag">Section 22</div>
   <h2 class="s-title">OTA 입점 전략 · 수수료 반영 가격표</h2>
-  <div class="box warn"><span class="box-icon">⚠</span><div><strong>§23 오류 수정 완료 :</strong> 기존 §23에 명시되었던 "현장가 대비 5~10% 인상"은 OTA 수수료 20~25% 차감 후 역마진입니다. 해당 문장은 삭제하고 아래 가격표를 단일 기준으로 삼습니다.</div></div>
+  <p class="s-desc">OTA 수수료 20~25%를 완전 반영한 가격 구조입니다. 현장가 대비 30~40% 인상 패키지형으로만 출시합니다.</p>
   <div class="t-wrap">
   <table>
     <thead><tr><th>상품</th><th>현장가</th><th>20% 수수료 동등가</th><th>25% 수수료 동등가</th><th>권장 OTA 판매가</th><th>운영 판단</th></tr></thead>
@@ -1183,8 +1253,8 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <h3 class="sec-h3">두피·헤드스파 Anchor 2 파트너 모집 계획 </h3>
-  <div class="box info"><span class="box-icon">🔧</span><div><strong>오픈 D-4주 전까지 파트너 1명 확정 필수.</strong> 수익 배분 30~40% 수수료 또는 월 고정 입점료(80만~150만) + 매출 연동 15~20% 혼합 구조. 장비·소모품은 파트너 부담 원칙. 미확정 시 8평을 EEG·명상 확장 구역으로 임시 운영.</div></div>
+  <h3 class="sec-h3">두피·헤드스파 Anchor 2 파트너 모집 계획</h3>
+  <div class="box info"><span class="box-icon">🔧</span><div><strong>오픈 D-4주 전까지 파트너 1명 확정 필수.</strong> 미확정 시 8평을 EEG·명상 확장 구역으로 임시 운영.</div></div>
   <div class="t-wrap">
   <table>
     <thead><tr><th>항목</th><th>내용</th></tr></thead>
@@ -1201,7 +1271,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
 <!-- CH VI -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/08-eeg-scent-recommendation-room.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter VI</div>
@@ -1225,7 +1295,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec bg2" id="s26">
   <div class="s-tag">Section 26</div>
   <h2 class="s-title">EEG 투자 타당성 · B2B 수익화</h2>
-  <div class="box tip"><span class="box-icon">📉</span><div><strong>운용 현실성 보정 :</strong> 기존 "기준 6회/일"은 과낙관적입니다. 현실적 운용은 <strong>4회/일</strong>(45분 측정+15분 정리×4 = 4시간)이 적정하며, 6회는 성수기·예약 완충 목표로 재표기합니다.</div></div>
+  <div class="box tip"><span class="box-icon">📉</span><div><strong>운용 현실성 :</strong> 현실적 운용은 <strong>4회/일</strong>(45분 측정+15분 정리×4회 = 4시간)이 적정하며, 6회는 성수기 목표입니다.</div></div>
   <div class="t-wrap">
   <table>
     <thead><tr><th>구분</th><th>보수적 3회</th><th>현실적 4회</th><th>성수기 목표 6회</th></tr></thead>
@@ -1247,7 +1317,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <div class="box warn"><span class="box-icon">🔐</span><div><strong>EEG 개인정보·생체정보 처리 의무 (신규) :</strong> ① 민감정보(생체정보) 별도 서면 동의 ② 데이터 보존기간 및 파기 방법 명시 ③ B2B 제공 시 제3자 제공 동의 ④ 개인정보처리방침 게시 ⑤ 개인정보 보호책임자 지정. 정부과제 심사 필수 항목입니다.</div></div>
+  <div class="box warn"><span class="box-icon">🔐</span><div><strong>EEG 개인정보·생체정보 처리 의무 :</strong> ① 민감정보(생체정보) 별도 서면 동의 ② 데이터 보존기간 및 파기 방법 명시 ③ B2B 제공 시 제3자 제공 동의 ④ 개인정보처리방침 게시 ⑤ 개인정보 보호책임자 지정. 정부과제 심사 필수 항목입니다.</div></div>
 </section>
 
 <!-- S27 -->
@@ -1270,7 +1340,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 
 <!-- CH VII -->
 <div class="ch-header">
-  <img decoding="async" loading="lazy" src="assets/09-foot-bath-lounge.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/09-foot-bath-lounge.webp" alt="">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter VII</div>
@@ -1282,7 +1352,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <section class="sec bg2" id="s28">
   <div class="s-tag">Section 28</div>
   <h2 class="s-title">B1 유입 첫 30일 실험 가설</h2>
-  <div class="box info"><span class="box-icon">📌</span><div><strong>주의 :</strong> 아래 시뮬레이션은 체험 전환 수익만입니다. K-Beauty·자사 MD·B2B 매출은 별도 집계이며, 합산하면 §17 런웨이 목표에 근접합니다. §15의 객단가 28,000원(전체 방문객 평균)과 아래 45,000원(체험 결제자)은 다른 모집단입니다.</div></div>
+  <div class="box info"><span class="box-icon">📌</span><div><strong>주의 :</strong> 아래 시뮬레이션은 체험 전환 수익만입니다. K-Beauty·자사 MD·B2B 매출은 별도 집계이며, 합산하면 §17 런웨이 목표에 근접합니다.</div></div>
   <div class="t-wrap">
   <table>
     <thead><tr><th>시나리오</th><th>B1 순방문/일</th><th>유료 전환율</th><th>체험 객단가</th><th>체험 전환 월매출</th><th>판단</th></tr></thead>
@@ -1293,8 +1363,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
     </tbody>
   </table>
   </div>
-  <div class="box warn"><span class="box-icon">🚨</span><div><strong>Gate 0 선행 조건 :</strong> 계약 전 기존 B1 유입 데이터 확인 또는 7일 직접 카운팅이 선행되어야 합니다. 이 데이터가 없으면 모든 매출 시뮬레이션은 가설에 불과합니다.</div></div>
-
+  <div class="box warn"><span class="box-icon">🚨</span><div><strong>Gate 0 선행 조건 :</strong> 계약 전 B1 유입 데이터 확인 또는 7일 직접 카운팅이 선행되어야 합니다. 이 데이터가 없으면 모든 매출 시뮬레이션은 가설에 불과합니다.</div></div>
   <h3 class="sec-h3">인사동 상권 근거 데이터</h3>
   <div class="t-wrap">
   <table>
@@ -1302,14 +1371,13 @@ td b,td strong{font-weight:600;color:var(--ink)}
     <tbody>
       <tr><td><b>인사동 연간 관광객</b></td><td>약 1,000만명+/년</td><td>서울관광재단·문화재청 추정</td><td>일 평균 2.7만명 — B1 유입 800명은 3% 내외 전환</td></tr>
       <tr class="t-hl"><td><b>외국인 관광객 비중</b></td><td>30~40%</td><td>서울시 관광데이터서비스</td><td>K-Beauty·체험 프로그램 주요 소비층</td></tr>
-      <tr><td><b>쌈지길 연간 방문자</b></td><td>약 350만명/년 추정</td><td>내부 추정 (현장 카운팅 필수)</td><td>일 평균 9,500명 — 주말 피크 1.5만명 이상</td></tr>
+      <tr><td><b>쌈지길 연간 방문자</b></td><td>약 350만명/년 추정</td><td>내부 추정 (계약 전 현장 실측 필수)</td><td>일 평균 9,500명 — 주말 피크 1.5만명 이상</td></tr>
       <tr class="t-hl"><td><b>인사동 평균 체류시간</b></td><td>2.5~3시간</td><td>서울관광재단 조사</td><td>1회 체험(45~60분)은 전체 일정의 25~30% — 수용 가능</td></tr>
-      <tr><td><b>인근 경쟁 체험 공간 가격대</b></td><td>3만~7만원</td><td>현장 조사 (업데이트 필요)</td><td>PLANT WG 가격 포지셔닝 정합 확인</td></tr>
+      <tr><td><b>인근 경쟁 체험 공간 가격대</b></td><td>3만~7만원</td><td>현장 조사 (오픈 전 재확인 필요)</td><td>PLANT WG 가격 포지셔닝 정합 확인</td></tr>
       <tr class="t-hl"><td><b>쌈지길 B1 기존 집객 사례</b></td><td>컬러풀뮤지엄 등 체험형 콘텐츠</td><td>건물 관리사무소·기존 입점사 인터뷰</td><td>계약 전 Gate 0에서 실측 데이터 확보 필수</td></tr>
     </tbody>
   </table>
   </div>
-  <div class="box tip"><span class="box-icon">📍</span><div><strong>현장 검증 방법 :</strong> 계약 전 평일 3일 + 주말 2일을 직접 방문해 B1 계단 이용자 수를 시간대별로 카운팅합니다. 오전(10~12시) · 점심(12~14시) · 오후(14~18시) · 저녁(18~21시) 4개 구간으로 나눠 기록하면 유입 패턴과 피크 시간대를 파악할 수 있습니다.</div></div>
 </section>
 
 <!-- S29 -->
@@ -1331,12 +1399,11 @@ td b,td strong{font-weight:600;color:var(--ink)}
   </div>
 </section>
 
-<!-- S30 렌트프리 체크리스트 (신규) -->
+<!-- S30-RF -->
 <section class="sec bg2" id="s30-rf">
   <div class="s-tag">Section 30-A</div>
   <h2 class="s-title">렌트프리 3개월 집중 실행 체크리스트</h2>
   <p class="s-desc">렌트프리 기간은 사업의 성패를 가르는 골든타임입니다. 각 월의 목표를 달성해야 M4 렌트 절벽을 돌파할 수 있습니다.</p>
-
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:28px 0">
     <div style="border:1px solid var(--line);border-radius:10px;overflow:hidden">
       <div style="background:var(--forest);padding:14px 16px">
@@ -1353,6 +1420,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
           ☐ OTA 2개 플랫폼 상품 라이브<br>
           ☐ 호텔 QR 5곳 이상 비치 완료<br>
           ☐ 채널별 매출 코드 분리 정산 확립<br>
+          ☐ 네이버 예약 클래스 페이지 오픈<br>
           ☐ 고객 동선·병목 구간 관찰 후 개선
         </div>
       </div>
@@ -1372,6 +1440,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
           ☐ 인스타그램 릴스 8개 이상 게시<br>
           ☐ 족욕 Recovery 회전율 최적화<br>
           ☐ EEG 예약 가동률 60% 달성<br>
+          ☐ CELADON 멤버십 가입 30명 이상<br>
           ☐ 두피 파트너 최종 계약 완료
         </div>
       </div>
@@ -1391,12 +1460,13 @@ td b,td strong{font-weight:600;color:var(--ink)}
           ☐ 향수 클래스 예약률 75% 이상 유지<br>
           ☐ M4 임대 2,500만 발생 대비 운전자금 확인<br>
           ☐ 정부 지원금 1순위 사업 신청 완료<br>
-          ☐ Google Maps 리뷰 100개 이상 달성
+          ☐ Google Maps 리뷰 100개 이상 달성<br>
+          ☐ CELADON 멤버십 가입 70명 이상
         </div>
       </div>
     </div>
   </div>
-  <div class="box warn"><span class="box-icon">🚨</span><div><strong>M3 종료 시점 판단 기준 :</strong> M3 체크리스트 중 굵은 항목(OTA 100건·기업복지 3건·호텔 MOU 3곳) 3개 모두 미달성 시 M4 즉시 비상 운영 모드로 전환합니다 — 파트타임 축소, 팝업 임시 중단, 광고비 집중 재배치.</div></div>
+  <div class="box warn"><span class="box-icon">🚨</span><div><strong>M3 종료 시점 판단 기준 :</strong> 굵은 항목(OTA 100건·기업복지 3건·호텔 MOU 3곳) 3개 모두 미달성 시 M4 즉시 비상 운영 모드로 전환 — 파트타임 축소, 팝업 임시 중단, 광고비 집중 재배치.</div></div>
 </section>
 
 <!-- S30 -->
@@ -1405,15 +1475,15 @@ td b,td strong{font-weight:600;color:var(--ink)}
   <h2 class="s-title">실행 로드맵 — 계약~오픈 12주 타임라인</h2>
   <div class="box ok"><span class="box-icon">🗓</span><div><strong>렌트프리 3개월을 최대한 활용하는 로드맵 :</strong> M1은 데이터 수집, M2는 채널 최적화, M3는 렌트 절벽 대비 파이프라인 확보에 집중합니다. M4부터 임대가 발생하므로 그 전에 반복 예약 구조를 반드시 완성해야 합니다.</div></div>
   <div class="tl">
-    <div class="tl-item"><div class="tl-dot">D-12</div><div><div class="tl-head">계약 전 Gate 0 체크리스트 완료</div><div class="tl-body">B1 유입 7일 직접 카운팅 · 관할구청 족욕·EEG·음료 업종 서면 질의 · 건물 업종·급배수·영업시간 서면 확인 · 보증금·렌트프리 협상 시나리오 준비</div></div></div>
-    <div class="tl-item"><div class="tl-dot">D-10</div><div><div class="tl-head">임대 계약 체결 · 공사 설계</div><div class="tl-body">공사 업체 2~3곳 견적 비교 · 구획 도면 확정 (명상룸·EEG룸·족욕 위치) · EEG 장비 발주 · 위탁 파트너 계약서 초안</div></div></div>
-    <div class="tl-item"><div class="tl-dot">D-8</div><div><div class="tl-head">공사 착공</div><div class="tl-body">석고보드 구획·레일 조명·흡음 보강 · 두피 파트너 모집 1차 연락 · K-Beauty 브랜드 위탁 계약 (10개 브랜드 목표) · Google 비즈니스 프로필 사전 등록</div></div></div>
-    <div class="tl-item"><div class="tl-dot">D-4</div><div><div class="tl-head">공사 완료 · 장비 입고 · 직원 채용</div><div class="tl-body">족욕 세트·MD 테이블·POS·QR 세팅 · 운영 매니저·클래스 담당 채용 확정 · K-Beauty 위탁 SKU 50~80개 입고 · EEG 생체정보 동의서 양식 완성</div></div></div>
+    <div class="tl-item"><div class="tl-dot">D-12</div><div><div class="tl-head">계약 전 Gate 0 체크리스트 완료</div><div class="tl-body">B1 유입 7일 직접 카운팅 · 관할구청 족욕·EEG·음료 업종 서면 질의 · 건물 업종·급배수·영업시간 서면 확인 · 자기자본 2억 이상 확보 확인 · 보증금·렌트프리 협상 시나리오 준비</div></div></div>
+    <div class="tl-item"><div class="tl-dot">D-10</div><div><div class="tl-head">임대 계약 체결 · 공사 설계</div><div class="tl-body">공사 업체 2~3곳 견적 비교 · 구획 도면 확정 (명상룸·EEG룸·족욕 위치) · EEG 장비 발주 · 위탁 파트너 계약서 초안 · 변호사 계약서 검토 의뢰</div></div></div>
+    <div class="tl-item"><div class="tl-dot">D-8</div><div><div class="tl-head">공사 착공</div><div class="tl-body">석고보드 구획·레일 조명·흡음 보강 · 두피 파트너 모집 1차 연락 · K-Beauty 브랜드 위탁 계약 (10개 브랜드 목표) · Google 비즈니스 프로필 사전 등록 · 네이버 예약 페이지 사전 세팅</div></div></div>
+    <div class="tl-item"><div class="tl-dot">D-4</div><div><div class="tl-head">공사 완료 · 장비 입고 · 직원 채용</div><div class="tl-body">족욕 세트·MD 테이블·POS·QR 세팅 · 운영 매니저·클래스 담당 채용 확정 · K-Beauty 위탁 SKU 50~80개 입고 · EEG 생체정보 동의서 양식 완성 · 시프트 스케줄 확정</div></div></div>
     <div class="tl-item"><div class="tl-dot">D-2</div><div><div class="tl-head">소프트 오픈 · 직원 트레이닝</div><div class="tl-body">직원 스크립트·금지 표현·AI Staff 교육 · 호텔 QR 카드 10곳 비치 · 포토존 소품·사인 설치 · 릴스 5개 사전 제작 · 100명 베타 테스트</div></div></div>
     <div class="tl-item"><div class="tl-dot active">D-0</div><div><div class="tl-head">그랜드 오픈</div><div class="tl-body">Google Maps 업데이트 · OTA 상품 라이브 · 쌈지길 1층 A보드 설치 · KPI 일별 기록 시작 (B1 유입·전환율·객단가·기여이익)</div></div></div>
-    <div class="tl-item"><div class="tl-dot gold">M1</div><div><div class="tl-head">Gate 1 — 30일 데이터 검토</div><div class="tl-body">5,000만 미만 → 구조 축소 / 5,000만~8,000만 → 개선 운영 / 8,000만+ → 2차 투자 준비 시작</div></div></div>
-    <div class="tl-item"><div class="tl-dot gold">M3</div><div><div class="tl-head">★ Gate 2 — 렌트프리 종료 직전 (최대 위기)</div><div class="tl-body">매출 9,500만 목표 달성 확인 · OTA Klook/Viator 월 예약 100건+ 확보 여부 · 기업복지 계약 3건 이상 완료 여부 · M4 임대 2,500만 발생에 대비한 예약 잔고 확인 · K-Beauty 하위 30% SKU 교체 · 누적 손실 -3,490만원 → 운전자금 여유 확인</div></div></div>
-    <div class="tl-item"><div class="tl-dot gold">M6</div><div><div class="tl-head">Gate 3 — 확장 판단</div><div class="tl-body">월매출 1.3억+ · 기여이익 6,500만+ 달성 시 향수 클래스 존 확장·EEG 2대·족욕 8석·두피 파트너 추가 고려</div></div></div>
+    <div class="tl-item"><div class="tl-dot gold">M1</div><div><div class="tl-head">Gate 1 — 30일 데이터 검토</div><div class="tl-body">5,000만 미만 → 구조 축소 / 5,000만~8,000만 → 개선 운영 / 8,000만+ → M2 가속</div></div></div>
+    <div class="tl-item"><div class="tl-dot gold">M3</div><div><div class="tl-head">★ Gate 2 — 렌트프리 종료 직전 (최대 위기)</div><div class="tl-body">매출 9,500만 목표 달성 확인 · OTA 월 예약 100건+ · 기업복지 계약 3건 이상 · M4 임대 2,500만 발생에 대비한 예약 잔고 확인 · K-Beauty 하위 30% SKU 교체 · 누적 손실 -3,490만원 → 운전자금 여유 확인</div></div></div>
+    <div class="tl-item"><div class="tl-dot gold">M6</div><div><div class="tl-head">Gate 3 — 확장 판단</div><div class="tl-body">월매출 1.3억+ · 기여이익 6,500만+ 달성 시 향수 클래스 존 확장(22~24평)·EEG 2대·족욕 8석·두피 파트너 추가 검토. 2차 투자 예산 편성 시작.</div></div></div>
   </div>
 </section>
 
@@ -1441,7 +1511,7 @@ td b,td strong{font-weight:600;color:var(--ink)}
 <div class="ft">
   <div>
     <div class="ft-brand">PLANT WELLNESS GROUND <em>INSADONG</em></div>
-    <div class="ft-info">주식회사 메디센츠 (Mediscent Co., Ltd.) · 화장품제조업 제7691호<br>경기 구리시 갈매순환로154 현대테라타워 A동 1038호<br>mediscent.co.kr &nbsp;·&nbsp; shifti.co.kr &nbsp;·&nbsp; @shifti_official_kr</div>
+    <div class="ft-info">주식회사 메디센츠 (Mediscent Co., Ltd.) · 화장품제조업 제7691호<br>경기 구리시 갈매순환로154 현대테라타워 A동 1038호<br>Tel. 070-4365-4807 &nbsp;·&nbsp; mediscent.co.kr &nbsp;·&nbsp; shifti.co.kr &nbsp;·&nbsp; @shifti_official_kr</div>
   </div>
   <div class="ft-conf">본 문서는 내부 사업성 검토용 기밀 자료입니다<br>수치는 목표값이며 현장 실측 후 즉시 보정 필요<br>FINAL INTEGRATED EXECUTION PLAN · 2026</div>
 </div>
