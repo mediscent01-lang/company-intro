@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,14 +6,25 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PLANT WELLNESS GROUND INSADONG — 최종 통합 사업계획서 2026</title>
 
-<!-- ── 성능 최적화 ── -->
+<!-- ── 1. DNS Prefetch & Preconnect ── -->
 <meta http-equiv="x-dns-prefetch-control" content="on">
-<link rel="preload" as="image" href="assets/01-plant-wellness-entrance.webp" fetchpriority="high">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet"></noscript>
+
+<!-- ── 2. LCP 이미지 preload (모바일 최우선) ── -->
+<link rel="preload" as="image" href="assets/01-plant-wellness-entrance.webp" fetchpriority="high" type="image/webp">
+
+<!-- ── 3. 폰트: 필요한 weight만, display=swap, 비동기 로드 ── -->
+<!-- 300(light)·500(medium)·700(bold)만 요청, 900 제거 -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap&subset=korean">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap&subset=korean" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap&subset=korean"></noscript>
+
+<!-- ── 4. Critical CSS (render-blocking 완전 인라인화) ── -->
 <style>
+/* === RESET & TOKENS === */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --gold:#b8944a;--gold-lt:#f5edd8;--gold-mid:#e8d4a8;
@@ -25,37 +35,82 @@
   --red:#7a2c2c;--red-lt:#faf0ef;
   --blue:#1e3a5f;--blue-lt:#eef3fa;
   --green:#1e3320;--green-lt:#edf4ed;
+  /* 폰트 fallback 스택 — 웹폰트 로딩 전 시스템 폰트로 즉시 렌더 */
+  --font-stack:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:14px;
-  line-height:1.85;color:var(--ink2);background:var(--bg)}
+body{
+  font-family:var(--font-stack);
+  font-weight:400;font-size:14px;
+  line-height:1.85;color:var(--ink2);background:var(--bg);
+  /* 텍스트 렌더링 최적화 */
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeSpeed; /* optimizeLegibility는 모바일 느림 */
+}
 
-/* COVER */
-.cover{position:relative;height:100vh;min-height:720px;display:flex;flex-direction:column;overflow:hidden;background:#0e0d09}
-.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-.cover-dim{position:absolute;inset:0;background:linear-gradient(165deg,rgba(14,13,9,.15) 0%,rgba(14,13,9,.6) 60%,rgba(14,13,9,.93) 100%)}
-.cover-line{position:absolute;left:80px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent 10%,var(--gold) 40%,var(--gold) 60%,transparent 90%);opacity:.7}
-.cover-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:0 96px 72px}
-.cover-eyebrow{font-size:10px;font-weight:500;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
-.cover-h1{font-size:56px;font-weight:700;line-height:1.1;color:#fff;letter-spacing:-.02em;margin-bottom:6px}
+/* === COVER (Above-the-fold — critical) === */
+.cover{
+  position:relative;height:100vh;min-height:600px;
+  display:flex;flex-direction:column;overflow:hidden;
+  background:#0e0d09; /* 이미지 로딩 전 배경색 즉시 표시 */
+}
+.cover-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.55;
+  /* will-change 제거 — GPU 메모리 낭비 */
+}
+.cover-dim{
+  position:absolute;inset:0;
+  background:linear-gradient(165deg,rgba(14,13,9,.15) 0%,rgba(14,13,9,.6) 60%,rgba(14,13,9,.93) 100%);
+}
+.cover-line{
+  position:absolute;left:80px;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,transparent 10%,var(--gold) 40%,var(--gold) 60%,transparent 90%);
+  opacity:.7;
+}
+.cover-content{
+  position:relative;z-index:2;display:flex;flex-direction:column;
+  justify-content:flex-end;height:100%;padding:0 96px 72px;
+}
+.cover-eyebrow{
+  font-size:10px;font-weight:500;letter-spacing:.24em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:20px;
+}
+.cover-h1{
+  font-size:56px;font-weight:700;line-height:1.1;
+  color:#fff;letter-spacing:-.02em;margin-bottom:6px;
+}
 .cover-h1 span{font-weight:300;color:rgba(255,255,255,.75)}
-.cover-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);margin-bottom:52px;letter-spacing:.02em}
-.cover-kpis{display:flex;gap:0;padding-top:36px;border-top:1px solid rgba(255,255,255,.12)}
+.cover-sub{
+  font-size:16px;font-weight:300;color:rgba(255,255,255,.6);
+  margin-bottom:52px;letter-spacing:.02em;
+}
+.cover-kpis{
+  display:flex;gap:0;padding-top:36px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
 .ckpi{flex:1;padding-right:32px;margin-right:32px;border-right:1px solid rgba(255,255,255,.08)}
 .ckpi:last-child{border-right:none;padding-right:0;margin-right:0}
 .ckpi-v{font-size:26px;font-weight:700;color:#fff;line-height:1}
 .ckpi-v.gold{color:var(--gold)}
 .ckpi-v.gold2{color:#e8c87a}
 .ckpi-l{font-size:11px;font-weight:400;color:rgba(255,255,255,.4);margin-top:8px;line-height:1.5}
-.cover-footer{position:absolute;bottom:24px;right:96px;font-size:10px;font-weight:400;
-  letter-spacing:.12em;color:rgba(255,255,255,.2);text-transform:uppercase;text-align:right;line-height:1.8}
+.cover-footer{
+  position:absolute;bottom:24px;right:96px;
+  font-size:10px;font-weight:400;letter-spacing:.12em;
+  color:rgba(255,255,255,.2);text-transform:uppercase;text-align:right;line-height:1.8;
+}
 
-/* LAYOUT */
+/* === LAYOUT === */
 .wrap{display:flex;min-height:100vh}
 
-/* SIDEBAR */
-.sidebar{width:240px;min-width:240px;position:sticky;top:0;height:100vh;
-  overflow-y:auto;background:var(--forest);display:flex;flex-direction:column}
+/* === SIDEBAR (데스크톱 전용 — 모바일에서 DOM 자체를 JS로 처리) === */
+.sidebar{
+  width:240px;min-width:240px;position:sticky;top:0;height:100vh;
+  overflow-y:auto;background:var(--forest);display:flex;flex-direction:column;
+  /* 사이드바 스크롤바 숨김 */
+  scrollbar-width:none;
+}
 .sidebar::-webkit-scrollbar{width:0}
 .sb-head{padding:28px 24px 22px;border-bottom:1px solid rgba(255,255,255,.07)}
 .sb-logo{font-size:13px;font-weight:700;color:#fff;line-height:1.5;letter-spacing:.02em}
@@ -63,40 +118,63 @@ body{font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:14px;
 .sb-tagline{font-size:10px;font-weight:400;color:rgba(255,255,255,.3);margin-top:5px;letter-spacing:.04em}
 .sb-nav{padding:14px 0 36px;flex:1}
 .sb-chapter{padding:18px 24px 4px}
-.sb-ch-lbl{font-size:9px;font-weight:500;letter-spacing:.18em;color:rgba(255,255,255,.25);
+.sb-ch-lbl{
+  font-size:9px;font-weight:500;letter-spacing:.18em;color:rgba(255,255,255,.25);
   text-transform:uppercase;margin-bottom:6px;padding-bottom:6px;
-  border-bottom:1px solid rgba(255,255,255,.06)}
-.sb-link{display:flex;align-items:center;gap:9px;padding:5px 24px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.sb-link{
+  display:flex;align-items:center;gap:9px;padding:5px 24px;
   font-size:11.5px;font-weight:400;color:rgba(255,255,255,.42);
-  cursor:pointer;transition:color .12s,background .12s;line-height:1.4}
-.sb-link:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.04)}
+  cursor:pointer;line-height:1.4;
+}
 .sb-link.on{color:#fff;font-weight:500;background:rgba(255,255,255,.07)}
 .sb-link.on .sb-n{color:var(--gold)}
-.sb-n{font-size:10px;font-weight:400;color:rgba(255,255,255,.2);min-width:18px;font-feature-settings:"tnum"}
+.sb-n{font-size:10px;font-weight:400;color:rgba(255,255,255,.2);min-width:18px}
 
-/* MAIN */
+/* === MAIN === */
 .main{flex:1;min-width:0;background:var(--bg)}
 
-/* CHAPTER HEADER */
-.ch-header{position:relative;height:180px;overflow:hidden;display:flex;align-items:flex-end}
-.ch-header img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
-.ch-header-dim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,51,32,.95) 0%,rgba(30,51,32,.75) 50%,rgba(30,51,32,.4) 100%)}
+/* === CHAPTER HEADER === */
+.ch-header{
+  position:relative;height:180px;overflow:hidden;
+  display:flex;align-items:flex-end;
+  /* 이미지 없을 때 fallback 배경 */
+  background:var(--forest);
+}
+.ch-header img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 35%;
+}
+.ch-header-dim{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(30,51,32,.95) 0%,rgba(30,51,32,.75) 50%,rgba(30,51,32,.4) 100%);
+}
 .ch-header-body{position:relative;z-index:1;padding:28px 72px 32px}
 .ch-label{font-size:10px;font-weight:500;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
 .ch-title{font-size:30px;font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.01em}
 
-/* SECTION */
+/* === SECTION === */
 .sec{padding:60px 72px 52px;border-bottom:1px solid var(--line2)}
 .sec.bg2{background:var(--bg2)}
-.s-tag{font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;
-  margin-bottom:12px;display:flex;align-items:center;gap:12px}
+
+/* content-visibility: 뷰포트 밖 섹션 렌더링 건너뜀 */
+.sec{content-visibility:auto;contain-intrinsic-size:auto 500px}
+
+.s-tag{
+  font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:12px;
+}
 .s-tag::after{content:'';width:28px;height:1px;background:var(--gold);opacity:.5}
 .s-title{font-size:26px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:10px;letter-spacing:-.02em}
 .s-desc{font-size:14px;font-weight:400;color:var(--ink3);line-height:1.85;max-width:720px;margin-bottom:36px}
 
-/* STAT GRID */
-.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;
-  background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:32px 0}
+/* === STAT GRID === */
+.stat-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:10px;overflow:hidden;margin:32px 0;
+}
 .stat{padding:20px 18px;background:var(--bg)}
 .stat.dark{background:var(--forest)}
 .stat.warm{background:var(--gold-lt)}
@@ -109,9 +187,11 @@ body{font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:14px;
 .stat-note{font-size:11px;font-weight:500;color:var(--gold);margin-top:4px}
 .stat.dark .stat-note{color:rgba(255,255,255,.35)}
 
-/* CALLOUT */
-.box{display:flex;gap:14px;padding:18px 22px;border-radius:8px;margin:24px 0;
-  font-size:13px;font-weight:400;line-height:1.8;border-left:3px solid}
+/* === CALLOUT BOXES === */
+.box{
+  display:flex;gap:14px;padding:18px 22px;border-radius:8px;margin:24px 0;
+  font-size:13px;font-weight:400;line-height:1.8;border-left:3px solid;
+}
 .box-icon{font-size:16px;flex-shrink:0;margin-top:1px;line-height:1}
 .box strong{font-weight:700}
 .box.warn{background:var(--red-lt);border-color:var(--red)}
@@ -123,17 +203,23 @@ body{font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:14px;
 .box.ok{background:var(--green-lt);border-color:var(--forest3)}
 .box.ok strong{color:var(--forest2)}
 
-/* TABLES */
-.t-wrap{overflow-x:auto;margin:24px 0;border-radius:10px;
-  border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.05)}
+/* === TABLES === */
+.t-wrap{
+  overflow-x:auto;margin:24px 0;border-radius:10px;
+  border:1px solid var(--line);
+  /* 모바일 스크롤 관성 */
+  -webkit-overflow-scrolling:touch;
+}
 table{width:100%;border-collapse:collapse;font-size:13px}
 thead tr{background:var(--forest)}
-thead th{color:rgba(255,255,255,.82);font-weight:500;font-size:11.5px;
-  padding:12px 16px;text-align:left;letter-spacing:.02em;white-space:nowrap;border:none}
+thead th{
+  color:rgba(255,255,255,.82);font-weight:500;font-size:11.5px;
+  padding:12px 16px;text-align:left;letter-spacing:.02em;
+  white-space:nowrap;border:none;
+}
 tbody tr{border-bottom:1px solid var(--line2)}
 tbody tr:last-child{border-bottom:none}
 tbody tr:nth-child(even){background:var(--bg2)}
-tbody tr:hover{background:#f5f0e4}
 tbody td{padding:11px 16px;color:var(--ink2);line-height:1.65;vertical-align:top}
 td b,td strong{font-weight:600;color:var(--ink)}
 .t-sum{background:var(--forest2)!important}
@@ -143,23 +229,30 @@ td b,td strong{font-weight:600;color:var(--ink)}
 .t-ok td{color:var(--forest)}
 .t-bad td{color:var(--red)!important}
 
-/* RISK */
-.r{display:inline-flex;align-items:center;font-size:11px;font-weight:600;
-  padding:2px 9px;border-radius:10px;line-height:1.6}
+/* === RISK BADGES === */
+.r{
+  display:inline-flex;align-items:center;font-size:11px;font-weight:600;
+  padding:2px 9px;border-radius:10px;line-height:1.6;
+}
 .r-h{background:#fae8e8;color:var(--red)}
 .r-m{background:#fef3e0;color:#7a4e10}
 .r-l{background:var(--green-lt);color:var(--forest2)}
 .r-x{font-size:12px;color:var(--red);font-style:italic;font-weight:400}
 
-/* PILLS */
-.pill{display:inline-flex;align-items:center;font-size:10px;font-weight:600;
-  padding:3px 10px;border-radius:11px;letter-spacing:.03em}
+/* === PILLS === */
+.pill{
+  display:inline-flex;align-items:center;font-size:10px;font-weight:600;
+  padding:3px 10px;border-radius:11px;letter-spacing:.03em;
+}
 .p-a{background:var(--forest);color:rgba(255,255,255,.85)}
 .p-m{background:var(--gold-lt);color:var(--gold);border:1px solid var(--gold-mid)}
 .p-p{background:var(--bg3);color:var(--ink3);border:1px solid var(--line)}
 
-/* IMAGES */
-.img-hero{width:100%;height:420px;object-fit:cover;border-radius:10px;display:block;margin:28px 0 6px}
+/* === IMAGES === */
+.img-hero{
+  width:100%;height:420px;object-fit:cover;border-radius:10px;
+  display:block;margin:28px 0 6px;
+}
 .img-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}
 .img-2 figure{margin:0}
 .img-2 figure img{width:100%;height:220px;object-fit:cover;border-radius:8px;display:block}
@@ -170,16 +263,17 @@ td b,td strong{font-weight:600;color:var(--ink)}
 .img-3 figcaption{font-size:11px;color:var(--ink4);text-align:center;margin-top:5px;font-style:italic}
 .img-caption{font-size:11px;color:var(--ink4);text-align:center;margin:-20px 0 28px;font-style:italic}
 
-/* CARDS */
+/* === CARDS === */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:28px 0}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:10px;
-  padding:20px 20px 22px;transition:box-shadow .15s}
-.card:hover{box-shadow:0 3px 12px rgba(0,0,0,.07)}
+.card{
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:10px;padding:20px 20px 22px;
+}
 .card-top{height:3px;background:var(--gold);margin:-20px -20px 16px;border-radius:10px 10px 0 0}
 .card-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.4}
 .card-body{font-size:12.5px;color:var(--ink3);line-height:1.75}
 
-/* GATES */
+/* === GATES === */
 .gates{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px 0}
 .gate{border-radius:10px;padding:20px 18px;border:1px solid var(--line)}
 .g0{background:var(--bg2);border-top:3px solid var(--ink4)}
@@ -193,92 +287,96 @@ td b,td strong{font-weight:600;color:var(--ink)}
 .gate-b{font-size:12px;color:var(--ink3);line-height:1.65}
 .g2 .gate-b{color:rgba(255,255,255,.6)}
 
-/* KPI CHIPS */
+/* === KPI CHIPS === */
 .kpis{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
-.kpi{font-size:12.5px;font-weight:400;padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:var(--bg);color:var(--ink2)}
+.kpi{
+  font-size:12.5px;font-weight:400;padding:7px 14px;
+  border-radius:20px;border:1px solid var(--line);
+  background:var(--bg);color:var(--ink2);
+}
 .kpi.g{background:var(--forest);color:rgba(255,255,255,.85);border-color:var(--forest2);font-weight:500}
 .kpi.a{background:var(--gold-lt);color:var(--gold);border-color:var(--gold-mid);font-weight:500}
 
-/* SCENARIOS */
+/* === SCENARIOS === */
 .sc-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:28px 0}
 .sc{border:1px solid var(--line);border-radius:10px;padding:22px 20px;background:var(--bg)}
 .sc.base{background:var(--forest);border-color:var(--forest2)}
-.sc-tag{font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink4);margin-bottom:12px}
+.sc-tag{font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink4);margin-bottom:12px}
 .sc.base .sc-tag{color:var(--gold);opacity:.9}
 .sc-val{font-size:28px;font-weight:700;color:var(--ink);line-height:1}
 .sc.base .sc-val{color:#fff}
 .sc-sub{font-size:12px;color:var(--ink4);margin-top:10px;line-height:1.6}
 .sc.base .sc-sub{color:rgba(255,255,255,.45)}
 
-/* POSMAP */
-.posmap{position:relative;width:100%;max-width:520px;height:360px;margin:28px auto;
-  background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+/* === POSITIONING MAP === */
+.posmap{
+  position:relative;width:100%;max-width:520px;height:360px;
+  margin:28px auto;background:var(--bg2);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;
+}
 .pm-h{position:absolute;top:50%;left:6%;right:6%;height:1px;background:var(--line);transform:translateY(-50%)}
 .pm-v{position:absolute;left:50%;top:6%;bottom:6%;width:1px;background:var(--line);transform:translateX(-50%)}
 .pm-lbl{position:absolute;font-size:10px;font-weight:500;color:var(--ink4);letter-spacing:.04em}
 .pm-dot{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
 .pm-name{position:absolute;font-size:11px;font-weight:600;transform:translateX(-50%);white-space:nowrap;text-align:center}
 
-/* TIMELINE */
+/* === TIMELINE === */
 .tl{margin:28px 0;position:relative;padding-left:20px}
-.tl::before{content:'';position:absolute;left:28px;top:22px;bottom:22px;width:2px;background:var(--line2)}
+.tl::before{
+  content:'';position:absolute;left:28px;top:22px;bottom:22px;
+  width:2px;background:var(--line2);
+}
 .tl-item{display:flex;gap:20px;margin-bottom:20px;align-items:flex-start;position:relative}
-.tl-dot{width:36px;min-width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-size:10px;font-weight:700;border:2px solid var(--line);
-  background:var(--bg);color:var(--ink3);position:relative;z-index:1;margin-top:1px}
+.tl-dot{
+  width:36px;min-width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;border:2px solid var(--line);
+  background:var(--bg);color:var(--ink3);position:relative;z-index:1;margin-top:1px;
+}
 .tl-dot.active{background:var(--forest);border-color:var(--forest);color:#fff}
 .tl-dot.gold{background:var(--gold);border-color:var(--gold);color:#fff}
 .tl-head{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .tl-body{font-size:12.5px;color:var(--ink3);line-height:1.72}
 
-/* PULLQUOTE */
-.pq{background:var(--forest);border-radius:12px;padding:32px 36px;margin:36px 0}
+/* === PULLQUOTE === */
+.pq{
+  background:linear-gradient(135deg,var(--forest) 0%,var(--forest2) 100%);
+  border-radius:12px;padding:32px 36px;margin:36px 0;
+}
 .pq p{font-size:18px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.7;letter-spacing:-.01em}
-.pq cite{display:block;margin-top:16px;font-size:11px;font-weight:500;
-  color:var(--gold);letter-spacing:.08em;font-style:normal;text-transform:uppercase}
+.pq cite{
+  display:block;margin-top:16px;font-size:11px;font-weight:500;
+  color:var(--gold);letter-spacing:.08em;font-style:normal;text-transform:uppercase;
+}
 
-/* H3 inside sec */
-.sec-h3{font-size:17px;font-weight:700;color:var(--ink);margin:32px 0 14px;
-  padding-bottom:10px;border-bottom:2px solid var(--line2)}
+/* === SECTION H3 === */
+.sec-h3{
+  font-size:17px;font-weight:700;color:var(--ink);margin:32px 0 14px;
+  padding-bottom:10px;border-bottom:2px solid var(--line2);
+}
 
-/* FOOTER */
-.ft{background:var(--forest);padding:52px 72px;display:flex;
-  justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+/* === NUMBER HIGHLIGHTS === */
+.num-pos{color:var(--forest2);font-weight:700}
+.num-neg{color:var(--red);font-weight:700}
+.num-gold{color:var(--gold);font-weight:700}
+
+/* === FOOTER === */
+.ft{
+  background:var(--forest);padding:52px 72px;
+  display:flex;justify-content:space-between;
+  align-items:flex-end;flex-wrap:wrap;gap:24px;
+}
 .ft-brand{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px}
 .ft-brand em{color:var(--gold);font-style:normal}
 .ft-info{font-size:11px;color:rgba(255,255,255,.35);line-height:1.9}
 .ft-conf{text-align:right;font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.1em;line-height:2}
 
-@media(max-width:960px){
-  .sidebar{display:none}
-  .sec{padding:44px 24px 40px}
-  .ch-header-body{padding:22px 24px 28px}
-  .cover-content{padding:0 32px 48px}
-  .cover-h1{font-size:36px}
-  .gates{grid-template-columns:1fr 1fr}
-  .sc-row{grid-template-columns:1fr}
-  .img-2,.img-3{grid-template-columns:1fr}
-  .ft{padding:36px 24px}
-}
+/* === 카드 nth 컬러 === */
+.card:nth-child(2) .card-top{background:var(--forest2)}
+.card:nth-child(3) .card-top{background:var(--ink3)}
+.card:nth-child(4) .card-top{background:var(--red)}
 
-/* ── ENHANCED: 섹션 진입 애니메이션 ── */
-.sec{opacity:1}
-@media(prefers-reduced-motion:no-preference){
-  .sec{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
-  .sec.visible{opacity:1;transform:translateY(0)}
-}
-
-/* ── ENHANCED: 테이블 강조행 색상 ── */
-.t-ok td{background:rgba(30,51,32,.06)!important;color:var(--forest2)}
-.t-bad td{color:var(--red)!important;font-style:italic}
-
-/* ── ENHANCED: 숫자 강조 ── */
-.num-pos{color:var(--forest2);font-weight:700}
-.num-neg{color:var(--red);font-weight:700}
-.num-gold{color:var(--gold);font-weight:700}
-
-/* ── ENHANCED: 인쇄 최적화 ── */
+/* === 인쇄 최적화 === */
 @media print{
   .sidebar{display:none!important}
   .main{width:100%}
@@ -291,50 +389,91 @@ td b,td strong{font-weight:600;color:var(--ink)}
   body{font-size:12px}
 }
 
-/* ── ENHANCED: 스크롤바 ── */
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:var(--ink4)}
-
-/* ── ENHANCED: 월별 체크리스트 카드 호버 ── */
-[style*="border:1px solid var(--line)"]:hover,[style*="border:2px solid var(--gold)"]:hover{
-  box-shadow:0 4px 20px rgba(0,0,0,.08);transition:box-shadow .2s
+/* === 모바일 반응형 === */
+@media(max-width:960px){
+  .sidebar{display:none}
+  .sec{padding:36px 20px 32px}
+  .ch-header-body{padding:20px 20px 26px}
+  .cover-content{padding:0 24px 40px}
+  .cover-h1{font-size:32px}
+  .cover-kpis{flex-wrap:wrap;gap:16px}
+  .ckpi{
+    flex:1 1 calc(50% - 8px);
+    border-right:none;padding-right:0;margin-right:0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding-bottom:16px;
+  }
+  .ckpi:nth-child(n+4){border-bottom:none}
+  .cover-line{display:none}
+  .gates{grid-template-columns:1fr 1fr}
+  .sc-row{grid-template-columns:1fr}
+  .img-2,.img-3{grid-template-columns:1fr}
+  .img-2 figure img,.img-3 figure img{height:180px}
+  .img-hero{height:240px}
+  .pq{padding:24px 20px}
+  .pq p{font-size:15px}
+  .ft{padding:32px 20px}
+  .ft-conf{text-align:left}
+  .ch-header{height:140px}
+  .ch-title{font-size:22px}
 }
 
-/* ── ENHANCED: Gate 박스 미세 조정 ── */
-.gate{transition:transform .15s,box-shadow .15s}
-.gate:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-
-/* ── ENHANCED: 카드 상단 컬러 라인 변형 ── */
-.card:nth-child(2) .card-top{background:var(--forest2)}
-.card:nth-child(3) .card-top{background:var(--ink3)}
-.card:nth-child(4) .card-top{background:var(--red)}
-
-/* ── ENHANCED: 풀쿼트 배경 텍스처 ── */
-.pq{background:linear-gradient(135deg,var(--forest) 0%,var(--forest2) 100%)}
-
-/* ── ENHANCED: 섹션 번호 태그 ── */
-.s-tag{position:relative}
-
-/* ── ENHANCED: stat-row 반응형 ── */
-@media(max-width:700px){
+@media(max-width:600px){
   .stat-row{grid-template-columns:1fr 1fr}
   .gates{grid-template-columns:1fr}
-  .img-3{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .cover-h1{font-size:26px}
+  .s-title{font-size:20px}
+  .cover-kpis{flex-direction:column;gap:12px}
+  .ckpi{border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:12px}
+  /* 테이블 모바일 최소 width */
+  table{min-width:500px}
+  thead th,tbody td{padding:9px 12px;font-size:12px}
 }
 
+/* === 데스크톱 전용 hover (모바일 파싱 비용 절감) === */
+@media(hover:hover) and (pointer:fine){
+  .sb-link:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.04)}
+  tbody tr:hover{background:#f5f0e4}
+  .card:hover{box-shadow:0 3px 12px rgba(0,0,0,.07)}
+  .gate:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+}
 
-/* ── 성능: content-visibility ── */
-.sec:not(:first-child){content-visibility:auto;contain-intrinsic-size:auto 600px;}
-img{max-width:100%;height:auto;}
+/* === 스크롤 진행 바 (JS로 width 업데이트) === */
+#progress-bar{
+  position:fixed;top:0;left:0;height:3px;
+  background:var(--gold);z-index:9999;
+  pointer-events:none;width:0%;
+  /* transition 제거 — JS가 직접 업데이트 */
+}
 
+/* === 섹션 진입 애니메이션 (모션 허용 시만) === */
+@media(prefers-reduced-motion:no-preference){
+  .sec{
+    opacity:0;transform:translateY(12px);
+    transition:opacity .4s ease,transform .4s ease;
+  }
+  .sec.visible{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .sec{opacity:1;transform:none}
+}
 </style>
+</head>
+
 <body>
 
-<!-- COVER -->
+<!-- 스크롤 진행 바 (인라인 — JS로 업데이트) -->
+<div id="progress-bar" role="presentation" aria-hidden="true"></div>
+
+<!-- ===== COVER ===== -->
 <div class="cover">
-  <img fetchpriority="high" loading="eager" decoding="async" class="cover-img" src="assets/01-plant-wellness-entrance.webp" alt="PLANT WELLNESS GROUND 입구">
+  <!-- fetchpriority=high + loading=eager : LCP 이미지 즉시 로드 -->
+  <img fetchpriority="high" loading="eager" decoding="sync"
+       class="cover-img"
+       src="assets/01-plant-wellness-entrance.webp"
+       alt="PLANT WELLNESS GROUND 입구"
+       width="1920" height="1080">
   <div class="cover-dim"></div>
   <div class="cover-line"></div>
   <div class="cover-content">
@@ -358,11 +497,11 @@ img{max-width:100%;height:auto;}
   <div class="cover-footer">FINAL INTEGRATED EXECUTION PLAN · LEAN MVP · 2026</div>
 </div>
 
-<!-- LAYOUT -->
+<!-- ===== LAYOUT ===== -->
 <div class="wrap">
 
-<!-- SIDEBAR -->
-<nav class="sidebar">
+<!-- SIDEBAR (960px 이상에서만 표시) -->
+<nav class="sidebar" aria-label="문서 목차">
   <div class="sb-head">
     <div class="sb-logo">PLANT WELLNESS<br><em>GROUND</em></div>
     <div class="sb-tagline">인사동 쌈지길 B1 · 사업계획서 2026</div>
@@ -370,57 +509,57 @@ img{max-width:100%;height:auto;}
   <div class="sb-nav">
     <div class="sb-chapter">
       <div class="sb-ch-lbl">I. 비전·전제</div>
-      <div class="sb-link" onclick="g('s0')"><span class="sb-n">00</span>대표 소개 · 신뢰 근거</div>
-      <div class="sb-link" onclick="g('s1')"><span class="sb-n">01</span>Executive Summary</div>
-      <div class="sb-link" onclick="g('s2')"><span class="sb-n">02</span>사업 전제 및 가정</div>
-      <div class="sb-link" onclick="g('s3')"><span class="sb-n">03</span>경쟁 공간 분석</div>
-      <div class="sb-link" onclick="g('s4')"><span class="sb-n">04</span>SHIFTI × PLANT 브랜드</div>
-      <div class="sb-link" onclick="g('s5')"><span class="sb-n">05</span>운영 구조 3A·5M·2P</div>
+      <div class="sb-link" data-target="s0"><span class="sb-n">00</span>대표 소개 · 신뢰 근거</div>
+      <div class="sb-link" data-target="s1"><span class="sb-n">01</span>Executive Summary</div>
+      <div class="sb-link" data-target="s2"><span class="sb-n">02</span>사업 전제 및 가정</div>
+      <div class="sb-link" data-target="s3"><span class="sb-n">03</span>경쟁 공간 분석</div>
+      <div class="sb-link" data-target="s4"><span class="sb-n">04</span>SHIFTI × PLANT 브랜드</div>
+      <div class="sb-link" data-target="s5"><span class="sb-n">05</span>운영 구조 3A·5M·2P</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">II. 공간·상품</div>
-      <div class="sb-link" onclick="g('s6')"><span class="sb-n">06</span>200평 공간 배치</div>
-      <div class="sb-link" onclick="g('s7')"><span class="sb-n">07</span>최소 시공 범위</div>
-      <div class="sb-link" onclick="g('s8')"><span class="sb-n">08</span>프로그램 및 가격</div>
-      <div class="sb-link" onclick="g('s9')"><span class="sb-n">09</span>K-BEAUTY 소싱</div>
-      <div class="sb-link" onclick="g('s10')"><span class="sb-n">10</span>MD · 판매 · 멤버십</div>
+      <div class="sb-link" data-target="s6"><span class="sb-n">06</span>200평 공간 배치</div>
+      <div class="sb-link" data-target="s7"><span class="sb-n">07</span>최소 시공 범위</div>
+      <div class="sb-link" data-target="s8"><span class="sb-n">08</span>프로그램 및 가격</div>
+      <div class="sb-link" data-target="s9"><span class="sb-n">09</span>K-BEAUTY 소싱</div>
+      <div class="sb-link" data-target="s10"><span class="sb-n">10</span>MD · 판매 · 멤버십</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">III. 수치·재무</div>
-      <div class="sb-link" onclick="g('s11')"><span class="sb-n">11</span>수치 검산 요약</div>
-      <div class="sb-link" onclick="g('s12')"><span class="sb-n">12</span>자금 조달 계획</div>
-      <div class="sb-link" onclick="g('s13')"><span class="sb-n">13</span>CAPEX 산출</div>
-      <div class="sb-link" onclick="g('s14')"><span class="sb-n">14</span>월 고정비 · BEP</div>
-      <div class="sb-link" onclick="g('s15')"><span class="sb-n">15</span>연간 손익 · 민감도</div>
-      <div class="sb-link" onclick="g('s16')"><span class="sb-n">16</span>비수기 시나리오</div>
-      <div class="sb-link" onclick="g('s17')"><span class="sb-n">17</span>런웨이 시뮬레이션</div>
+      <div class="sb-link" data-target="s11"><span class="sb-n">11</span>수치 검산 요약</div>
+      <div class="sb-link" data-target="s12"><span class="sb-n">12</span>자금 조달 계획</div>
+      <div class="sb-link" data-target="s13"><span class="sb-n">13</span>CAPEX 산출</div>
+      <div class="sb-link" data-target="s14"><span class="sb-n">14</span>월 고정비 · BEP</div>
+      <div class="sb-link" data-target="s15"><span class="sb-n">15</span>연간 손익 · 민감도</div>
+      <div class="sb-link" data-target="s16"><span class="sb-n">16</span>비수기 시나리오</div>
+      <div class="sb-link" data-target="s17"><span class="sb-n">17</span>런웨이 시뮬레이션</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">IV. 운영·법무</div>
-      <div class="sb-link" onclick="g('s18')"><span class="sb-n">18</span>KPI · Gate</div>
-      <div class="sb-link" onclick="g('s19')"><span class="sb-n">19</span>조직 · RACI · 운영</div>
-      <div class="sb-link" onclick="g('s20')"><span class="sb-n">20</span>허가 · 리스크</div>
+      <div class="sb-link" data-target="s18"><span class="sb-n">18</span>KPI · Gate</div>
+      <div class="sb-link" data-target="s19"><span class="sb-n">19</span>조직 · RACI · 운영</div>
+      <div class="sb-link" data-target="s20"><span class="sb-n">20</span>허가 · 리스크</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">V. 마케팅·제휴</div>
-      <div class="sb-link" onclick="g('s21')"><span class="sb-n">21</span>채널 전략</div>
-      <div class="sb-link" onclick="g('s22')"><span class="sb-n">22</span>OTA 가격 전략</div>
-      <div class="sb-link" onclick="g('s23')"><span class="sb-n">23</span>기업복지 · 구글맵</div>
-      <div class="sb-link" onclick="g('s24')"><span class="sb-n">24</span>제휴 타깃 · 파트너</div>
+      <div class="sb-link" data-target="s21"><span class="sb-n">21</span>채널 전략</div>
+      <div class="sb-link" data-target="s22"><span class="sb-n">22</span>OTA 가격 전략</div>
+      <div class="sb-link" data-target="s23"><span class="sb-n">23</span>기업복지 · 구글맵</div>
+      <div class="sb-link" data-target="s24"><span class="sb-n">24</span>제휴 타깃 · 파트너</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">VI. AI · EEG</div>
-      <div class="sb-link" onclick="g('s25')"><span class="sb-n">25</span>AI Commerce OS</div>
-      <div class="sb-link" onclick="g('s26')"><span class="sb-n">26</span>EEG 투자 · B2B</div>
-      <div class="sb-link" onclick="g('s27')"><span class="sb-n">27</span>디지털 · 정부지원금</div>
+      <div class="sb-link" data-target="s25"><span class="sb-n">25</span>AI Commerce OS</div>
+      <div class="sb-link" data-target="s26"><span class="sb-n">26</span>EEG 투자 · B2B</div>
+      <div class="sb-link" data-target="s27"><span class="sb-n">27</span>디지털 · 정부지원금</div>
     </div>
     <div class="sb-chapter">
       <div class="sb-ch-lbl">VII. 실행·Exit</div>
-      <div class="sb-link" onclick="g('s28')"><span class="sb-n">28</span>B1 유입 실험 가설</div>
-      <div class="sb-link" onclick="g('s29')"><span class="sb-n">29</span>오너 리소스 배분</div>
-      <div class="sb-link" onclick="g('s30-rf')"><span class="sb-n">30A</span>렌트프리 집중 체크리스트</div>
-      <div class="sb-link" onclick="g('s30')"><span class="sb-n">30B</span>실행 로드맵 12주</div>
-      <div class="sb-link" onclick="g('s31')"><span class="sb-n">31</span>Exit · Plan B</div>
+      <div class="sb-link" data-target="s28"><span class="sb-n">28</span>B1 유입 실험 가설</div>
+      <div class="sb-link" data-target="s29"><span class="sb-n">29</span>오너 리소스 배분</div>
+      <div class="sb-link" data-target="s30-rf"><span class="sb-n">30A</span>렌트프리 집중 체크리스트</div>
+      <div class="sb-link" data-target="s30"><span class="sb-n">30B</span>실행 로드맵 12주</div>
+      <div class="sb-link" data-target="s31"><span class="sb-n">31</span>Exit · Plan B</div>
     </div>
   </div>
 </nav>
@@ -430,7 +569,10 @@ img{max-width:100%;height:auto;}
 
 <!-- CH I -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/02-main-circulation-retail-gallery.webp" alt="">
+  <!-- ch-header 이미지는 above-the-fold이므로 lazy OK, decoding=async -->
+  <img loading="lazy" decoding="async" src="assets/02-main-circulation-retail-gallery.webp"
+       width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter I</div>
@@ -438,17 +580,16 @@ img{max-width:100%;height:auto;}
   </div>
 </div>
 
-<!-- S0 신규: 대표 소개 -->
+<!-- S0 -->
 <section class="sec bg2" id="s0">
   <div class="s-tag">Section 00</div>
   <h2 class="s-title">대표 소개 · 실행 역량 · 신뢰 근거</h2>
   <p class="s-desc">공간 사업의 성패는 운영 주체의 역량에 달려 있습니다. 메디센츠는 향·웰니스·AI·제조 전반에 걸친 검증된 실행 기반을 보유하고 있습니다.</p>
-
   <div class="cards">
     <div class="card">
       <div class="card-top"></div>
-      <div class="card-title">왕지현대표이사  </div>
-      <div class="card-body">(주)메디센츠 . 향수·웰니스 브랜드 SHIFTI 창업자. EEG/HRV 기반 AI 감정 분석 향 추천 시스템 개발 총괄. 화장품제조업 제7691호 보유. 경기 구리시 소재.</div>
+      <div class="card-title">왕지현 대표이사</div>
+      <div class="card-body">(주)메디센츠 · 향수·웰니스 브랜드 SHIFTI 창업자. EEG/HRV 기반 AI 감정 분석 향 추천 시스템 개발 총괄. 화장품제조업 제7691호 보유. 경기 구리시 소재.</div>
     </div>
     <div class="card">
       <div class="card-top"></div>
@@ -466,8 +607,6 @@ img{max-width:100%;height:auto;}
       <div class="card-body">TATE ARCHIVE 01 (감정 데이터 기반 6종) + Nature's Breath (천연기원 4종) + 최인규 명장 청자 디퓨저 협업 라인. "Scents to find myself" — 빙렬(氷裂) 미학 기반 이모셔널 웰니스 브랜드.</div>
     </div>
   </div>
-
-  
 </section>
 
 <!-- S1 -->
@@ -475,17 +614,14 @@ img{max-width:100%;height:auto;}
   <div class="s-tag">Section 01</div>
   <h2 class="s-title">Executive Summary</h2>
   <p class="s-desc">핵심은 멋진 공간을 먼저 만드는 것이 아니라, 최소 투자로 "지하로 내려올 이유"와 "돈이 되는 전환 구조"를 검증하는 것입니다. 1차 오픈은 석고보드 구획·레일 조명·위탁 MD·핵심 체험만으로 MVP를 실행하고, 30일 데이터가 기준치를 통과할 때만 2차 투자를 집행합니다.</p>
-
   <div class="box warn">
     <span class="box-icon">⚠</span>
-    <div><strong>투자 규모 전체 구조 :</strong> 1차 투자 권장 CAPEX는 8,400만원(시공·설비·콘텐츠·예비비)입니다. 보증금(임대료 2개월치 5,000만) + 운전자금(5,770만) 포함 <strong>총 소요 현금 권장 2.00억원</strong>입니다. 협상·투자 협의 시 반드시 이 수치로 제시합니다.</div>
+    <div><strong>투자 규모 전체 구조 :</strong> 1차 투자 권장 CAPEX는 8,400만원(시공·설비·콘텐츠·예비비)입니다. 보증금(임대료 2개월치 5,000만) + 운전자금(5,770만) 포함 <strong>총 소요 현금 권장 2.00억원</strong>입니다.</div>
   </div>
-
   <div class="box ok">
     <span class="box-icon">🎁</span>
     <div><strong>렌트프리 3개월 — 7,500만원 현금 절감 :</strong> M1~M3 월 고정비가 5,100만원으로 낮아집니다. M3에 9,500만원 달성 시 렌트프리 기간 중 손익분기에 도달합니다. <strong>렌트프리 기간을 MVP 검증·기반 구축·예약 파이프라인 확보에 집중 투입</strong>해 M4 렌트 절벽을 돌파합니다.</div>
   </div>
-
   <div class="stat-row">
     <div class="stat dark"><div class="stat-v">2,500만</div><div class="stat-l">월 임대료 확정<br>+3개월 렌트프리</div><div class="stat-note">렌트프리 절감 7,500만원</div></div>
     <div class="stat warm"><div class="stat-v">2.00억</div><div class="stat-l">총 소요 현금 권장<br>보증금 5,000만 포함</div><div class="stat-note">낙관 1.64억 / 보수 2.41억</div></div>
@@ -493,14 +629,12 @@ img{max-width:100%;height:auto;}
     <div class="stat dark"><div class="stat-v">M5</div><div class="stat-l">실질 BEP 목표월<br>렌트 절벽 극복 후</div><div class="stat-note">M9 누적 손실 해소</div></div>
     <div class="stat warm"><div class="stat-v">0원</div><div class="stat-l">재고 투자<br>전 MD 위탁 판매</div></div>
   </div>
-
   <div class="cards">
     <div class="card"><div class="card-top"></div><div class="card-title">🌿 K-Wellness 복합 체험</div><div class="card-body">향수 클래스·EEG 향 추천·명상·족욕·두피 헤드스파를 단일 동선으로 연결. 일반 조향 공방이 아닌 K-Wellness Closed-Loop Commerce 구조</div></div>
     <div class="card"><div class="card-top"></div><div class="card-title">🛍 K-Beauty Select Zone</div><div class="card-body">20평 위탁 Select Zone — 재고 투자 없이 마스크팩·선케어·립·기프트 카테고리로 외국인 구매 앵커 역할</div></div>
     <div class="card"><div class="card-top"></div><div class="card-title">🤖 AI Commerce OS</div><div class="card-body">예약·POS·다국어 추천·금지 표현 차단·채널별 리포트를 자동화. 직원 숙련도 편차를 흡수하는 운영 인프라</div></div>
     <div class="card"><div class="card-top"></div><div class="card-title">🏺 K-Craft Gallery</div><div class="card-body">청자·도자·공예 시즌 위탁 전시·판매. 인사동 정체성과 기프트 매출을 동시에 확보하는 무비용 공간 품격 장치</div></div>
   </div>
-
   <div class="pq">
     <p>렌트프리 3개월은 자금 절감이 아닙니다. M4 임대 절벽을 살아남을 예약 파이프라인을 구축하는 기회입니다. 이 기간을 어떻게 쓰느냐가 사업의 성패를 결정합니다.</p>
     <cite>— 운영 전략 핵심 원칙</cite>
@@ -537,7 +671,7 @@ img{max-width:100%;height:auto;}
 <section class="sec" id="s3">
   <div class="s-tag">Section 03</div>
   <h2 class="s-title">경쟁 공간 분석 및 차별화</h2>
-  <p class="s-desc">인사동·북촌·성수권 직간접 경쟁 공간 분석. PLANT WELLNESS GROUND가 단순 체험 매장이 아닌 K-Wellness Commerce Platform임을 명확히 보여줍니다. (경쟁사 데이터는 오픈 전 현장 방문으로 최신 정보 재확인 필요)</p>
+  <p class="s-desc">인사동·북촌·성수권 직간접 경쟁 공간 분석. PLANT WELLNESS GROUND가 단순 체험 매장이 아닌 K-Wellness Commerce Platform임을 명확히 보여줍니다.</p>
   <div class="t-wrap">
   <table>
     <thead><tr><th>경쟁사</th><th>위치</th><th>체험 유형</th><th>위협도</th><th>차별화 포인트</th></tr></thead>
@@ -551,7 +685,6 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">포지셔닝 맵 — 가격 × 과학적 체험</h3>
   <div class="posmap">
     <div class="pm-h"></div>
@@ -571,24 +704,21 @@ img{max-width:100%;height:auto;}
     <div class="pm-dot" style="left:44%;top:76%;background:var(--ink4);width:10px;height:10px"></div>
     <div class="pm-name" style="left:44%;top:76%;color:var(--ink3);margin-top:6px">전시 공간</div>
   </div>
-
   <div class="pq">
     <p>PLANT WELLNESS GROUND는 EEG/HRV 기반 향 추천·K-Craft 포토존·K-Beauty Select·족욕·명상 회복·자사 MD 구매를 하나의 동선으로 연결하는 K-Wellness Closed-Loop Commerce 공간입니다.</p>
     <cite>— 경쟁 우위 포지셔닝 선언</cite>
   </div>
 </section>
 
-<!-- S4 신규: 브랜드 통합 -->
+<!-- S4 -->
 <section class="sec bg2" id="s4">
   <div class="s-tag">Section 04</div>
   <h2 class="s-title">SHIFTI × PLANT — 브랜드 정체성과 제품 라인</h2>
   <p class="s-desc">PLANT WELLNESS GROUND는 두 브랜드의 물리적 통합 공간입니다. 각 브랜드의 역할과 제품 라인을 명확히 구분해 교차 업셀 구조를 설계합니다.</p>
-
   <div class="img-2">
-    <figure><img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천룸"><figcaption>SHIFTI — EEG Scent Recommendation Room</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="assets/06-meditation-room.webp" alt="명상룸"><figcaption>PLANT — Meditation & Water Wellness Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" width="600" height="220" alt="EEG 향 추천룸"><figcaption>SHIFTI — EEG Scent Recommendation Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/06-meditation-room.webp" width="600" height="220" alt="명상룸"><figcaption>PLANT — Meditation &amp; Water Wellness Room</figcaption></figure>
   </div>
-
   <div class="t-wrap">
   <table>
     <thead><tr><th>브랜드</th><th>핵심 정체성</th><th>주요 제품</th><th>가격대</th><th>공간 역할</th></tr></thead>
@@ -598,7 +728,6 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">SHIFTI 제품 라인업 상세</h3>
   <div class="t-wrap">
   <table>
@@ -647,7 +776,8 @@ img{max-width:100%;height:auto;}
 
 <!-- CH II -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/05-overall-3d-floor-plan.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/05-overall-3d-floor-plan.webp" width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter II</div>
@@ -660,12 +790,9 @@ img{max-width:100%;height:auto;}
   <div class="s-tag">Section 06</div>
   <h2 class="s-title">200평 전체 공간 배치</h2>
   <p class="s-desc">전체 면적 중 약 33%를 공용·유입·갤러리로 확보해 지하 공간의 답답함을 완화합니다. 매출존 121평 + 공용·지원 79평 구조입니다.</p>
-
-  <img loading="lazy" decoding="async" class="img-hero" src="assets/2.png" alt="200평 전체 3D 평면" style="height:auto;aspect-ratio:4/3;object-fit:cover;">
+  <img loading="lazy" decoding="async" class="img-hero" src="assets/2.png" width="1200" height="900" alt="200평 전체 3D 평면" style="height:auto;aspect-ratio:4/3;object-fit:cover;">
   <p class="img-caption">PLANT WELLNESS GROUND INSADONG — B1 200평 전체 공간 배치 3D Floor Plan</p>
-
   <div class="box info"><span class="box-icon">📐</span><div><strong>향수 클래스 정원 :</strong> 18평 기준 작업 테이블·향료 세트·동선 감안 시 <strong>6~8명이 현실적 상한</strong>입니다. 증원이 필요하면 2차 투자 시 22~24평으로 확장합니다.</div></div>
-
   <div class="t-wrap">
   <table>
     <thead><tr><th>대분류</th><th>구역</th><th>평수</th><th>비율</th><th>역할</th><th>사업적 판단</th></tr></thead>
@@ -690,8 +817,8 @@ img{max-width:100%;height:auto;}
   </table>
   </div>
   <div class="img-2">
-    <figure><img loading="lazy" decoding="async" src="assets/03-kbeauty-select-zone-layout.webp" alt="K-Beauty Select Zone"><figcaption>K-Beauty Select Zone Layout</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="assets/04-kwellness-retail-corridor.webp" alt="K-Wellness 리테일 코리도어"><figcaption>K-Wellness Retail Corridor</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/03-kbeauty-select-zone-layout.webp" width="600" height="220" alt="K-Beauty Select Zone"><figcaption>K-Beauty Select Zone Layout</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/04-kwellness-retail-corridor.webp" width="600" height="220" alt="K-Wellness 리테일 코리도어"><figcaption>K-Wellness Retail Corridor</figcaption></figure>
   </div>
 </section>
 
@@ -701,8 +828,8 @@ img{max-width:100%;height:auto;}
   <h2 class="s-title">공간 구성 및 최소 시공 범위</h2>
   <p class="s-desc">초기 시공은 고객이 돈을 쓰는 구역과 조용해야 하는 구역에만 집중합니다. 고정 목공·고급 라운지·대형 장비는 2차 투자 이후입니다.</p>
   <div class="img-2">
-    <figure><img loading="lazy" decoding="async" src="assets/10-photo-zone-entry.webp" alt="포토존 입구"><figcaption>Entrance &amp; Photo Zone</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="assets/11-shower-filter-demo-zone.webp" alt="샤워기필터 시연존"><figcaption>Shower Filter Demo Zone</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/10-photo-zone-entry.webp" width="600" height="220" alt="포토존 입구"><figcaption>Entrance &amp; Photo Zone</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/11-shower-filter-demo-zone.webp" width="600" height="220" alt="샤워기필터 시연존"><figcaption>Shower Filter Demo Zone</figcaption></figure>
   </div>
   <div class="t-wrap">
   <table>
@@ -726,9 +853,9 @@ img{max-width:100%;height:auto;}
   <p class="s-desc">처음부터 고가 프로그램만 운영하지 않습니다. 15분 미니 체험으로 진입시키고 정규 클래스·EEG·리테일로 업셀합니다.</p>
   <div class="box info"><span class="box-icon">💡</span><div><strong>객단가 기준 구분 :</strong> §15의 "객단가 28,000원"은 전체 방문객(비구매자 포함) 평균이며, §28의 체험 전환 계산은 체험 결제자 기준 45,000원입니다. 두 수치는 다른 모집단이므로 혼용하지 않습니다.</div></div>
   <div class="img-3">
-    <figure><img loading="lazy" decoding="async" src="assets/06-meditation-room.webp" alt="명상룸"><figcaption>Meditation Room</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="assets/09-foot-bath-lounge.webp" alt="족욕 라운지"><figcaption>Foot Bath Lounge</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" alt="EEG 향 추천룸"><figcaption>EEG Scent Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/06-meditation-room.webp" width="400" height="180" alt="명상룸"><figcaption>Meditation Room</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/09-foot-bath-lounge.webp" width="400" height="180" alt="족욕 라운지"><figcaption>Foot Bath Lounge</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" width="400" height="180" alt="EEG 향 추천룸"><figcaption>EEG Scent Room</figcaption></figure>
   </div>
   <div class="t-wrap">
   <table>
@@ -764,11 +891,10 @@ img{max-width:100%;height:auto;}
   </div>
 </section>
 
-<!-- S10 신규: MD + 멤버십 -->
+<!-- S10 -->
 <section class="sec bg2" id="s10">
   <div class="s-tag">Section 10</div>
   <h2 class="s-title">MD · 판매 · 멤버십 · CRM</h2>
-
   <h3 class="sec-h3">고객 상황별 업셀 스크립트</h3>
   <div class="t-wrap">
   <table>
@@ -781,7 +907,6 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">멤버십 설계 — 재방문 구조</h3>
   <div class="box info"><span class="box-icon">🎟</span><div><strong>멤버십 목표 :</strong> M6까지 유료 멤버 200명 확보. 멤버십은 단순 할인이 아닌 재방문 파이프라인이자 비수기 방어선입니다.</div></div>
   <div class="t-wrap">
@@ -794,7 +919,6 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">온라인 판매 채널 연계</h3>
   <div class="t-wrap">
   <table>
@@ -802,7 +926,7 @@ img{max-width:100%;height:auto;}
     <tbody>
       <tr><td><b>네이버 스마트스토어</b></td><td>SHIFTI 향수 전 라인, Discovery Set</td><td>내국인 온라인 메인 채널. 공간 방문 전환 콘텐츠 연계</td><td>1순위 (기운영)</td></tr>
       <tr class="t-hl"><td><b>네이버 예약</b></td><td>향수 클래스, EEG, 명상, 족욕</td><td>내국인 예약 파이프라인. 리뷰 연동</td><td>1순위 (오픈 전 세팅)</td></tr>
-      <tr><td><b>Klook / Viator</b></td><td>K-Scent Mini, Walking Recovery, Night Reset</td><td>외국인 사전 예약. OTA 수수료 20~25% 반영 가격 필수</td><td>1순위 (§22 가격표 준수)</td></tr>
+      <tr><td><b>Klook / Viator</b></td><td>K-Scent Mini, Walking Recovery 등</td><td>외국인 사전 예약. OTA 수수료 20~25% 반영 가격 필수</td><td>1순위 (§22 가격표 준수)</td></tr>
       <tr class="t-hl"><td><b>인스타그램 쇼핑</b></td><td>Discovery Set, 콜라겐, 홈스파 키트</td><td>SNS 유입 구매 전환. 릴스 → 쇼핑 링크</td><td>2순위</td></tr>
     </tbody>
   </table>
@@ -811,7 +935,8 @@ img{max-width:100%;height:auto;}
 
 <!-- CH III -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/04-kwellness-retail-corridor.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/04-kwellness-retail-corridor.webp" width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter III</div>
@@ -840,7 +965,7 @@ img{max-width:100%;height:auto;}
   <div class="box warn"><span class="box-icon">⚠</span><div><strong>M4 렌트 절벽 :</strong> M4부터 임대 2,500만원이 발생합니다. M3까지 순조로워도 M4에 준비 없이 맞이하면 월 1,220만원 손실로 전환됩니다. <strong>M3 이전에 반복 예약 구조(OTA·호텔·기업복지)를 반드시 확보</strong>해야 합니다.</div></div>
 </section>
 
-<!-- S12 신규: 자금 조달 계획 구체화 -->
+<!-- S12 -->
 <section class="sec bg2" id="s12">
   <div class="s-tag">Section 12</div>
   <h2 class="s-title">자금 조달 계획 — 총 3.73억 (권장)</h2>
@@ -849,7 +974,6 @@ img{max-width:100%;height:auto;}
     <div class="sc base"><div class="sc-tag">권장 ★</div><div class="sc-val">2.00억원</div><div class="sc-sub">CAPEX 8,400만 · 보증금 5,000만<br>선납·복구 800만 · 운전 5,770만</div></div>
     <div class="sc"><div class="sc-tag">보수 (CAPEX 최대)</div><div class="sc-val">2.41억원</div><div class="sc-sub">CAPEX 1.15억 · 보증금 5,000만<br>선납·복구 800만 · 운전 6,770만</div></div>
   </div>
-
   <h3 class="sec-h3">조달 구조 — 자기자본 vs 외부 조달</h3>
   <div class="t-wrap">
   <table>
@@ -863,9 +987,7 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
-  <div class="box warn"><span class="box-icon">⚠</span><div><strong>자금 조달 선행 조건 :</strong> 계약 체결 전 3.73억 중 <strong>최소 자기자본 1.2억 이상 확보</strong>를 권장합니다. M4 렌트 절벽에서 외부 조달이 지연될 경우 유동성 위기로 이어질 수 있습니다.</div></div>
-
+  <div class="box warn"><span class="box-icon">⚠</span><div><strong>자금 조달 선행 조건 :</strong> 계약 체결 전 <strong>최소 자기자본 1.2억 이상 확보</strong>를 권장합니다. M4 렌트 절벽에서 외부 조달이 지연될 경우 유동성 위기로 이어질 수 있습니다.</div></div>
   <div class="t-wrap" style="margin-top:20px">
   <table>
     <thead><tr><th>구분</th><th>항목</th><th>낙관</th><th>권장</th><th>보수</th><th>비고</th></tr></thead>
@@ -910,7 +1032,7 @@ img{max-width:100%;height:auto;}
       <tr><td><b>오픈 콘텐츠·소모품</b></td><td>300만~800만</td><td>외주 최소화, 템플릿 활용</td></tr>
       <tr class="t-hl"><td><b>예비비</b></td><td>800만~1,500만</td><td>총액 10~15%</td></tr>
       <tr><td><b>재고 투자</b></td><td><b>0원</b></td><td>K-BEAUTY·외부 MD 위탁 판매 원칙 — 예외 없음</td></tr>
-      <tr class="t-sum"><td><b>합계</b></td><td><b>4,800만~1.15억</b></td><td>VAT 별도 · 보증금·월세 별도 / 낙관 4,800만 · 권장 8,400만 · 보수 1.15억</td></tr>
+      <tr class="t-sum"><td><b>합계</b></td><td><b>4,800만~1.15억</b></td><td>VAT 별도 / 낙관 4,800만 · 권장 8,400만 · 보수 1.15억</td></tr>
     </tbody>
   </table>
   </div>
@@ -922,8 +1044,10 @@ img{max-width:100%;height:auto;}
   <h2 class="s-title">월 고정비 및 BEP 재산정</h2>
   <div class="t-wrap">
   <table>
-    <thead><tr><th colspan="8" style="background:#1e3320;color:rgba(255,255,255,.6);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트프리 기간 (M1~M3) — 임대료 0원</th></tr>
-    <tr><th>기간</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>BEP @58%</th><th>BEP @60%</th></tr></thead>
+    <thead>
+      <tr><th colspan="8" style="background:#1e3320;color:rgba(255,255,255,.6);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트프리 기간 (M1~M3) — 임대료 0원</th></tr>
+      <tr><th>기간</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>BEP @58%</th><th>BEP @60%</th></tr>
+    </thead>
     <tbody>
       <tr class="t-ok"><td><b>M1~M3</b></td><td style="color:var(--forest2);font-weight:700">0원</td><td>1,100만</td><td>2,800만</td><td>1,200만</td><td><b>5,100만</b></td><td><b>8,793만</b></td><td><b>8,500만</b></td></tr>
     </tbody>
@@ -931,8 +1055,10 @@ img{max-width:100%;height:auto;}
   </div>
   <div class="t-wrap" style="margin-top:12px">
   <table>
-    <thead><tr><th colspan="8" style="background:#1e3320;color:rgba(255,255,255,.6);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트 발생 구간 (M4 이후) — 임대료 2,500만원</th></tr>
-    <tr><th>시나리오</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>BEP @58%</th><th>BEP @60%</th></tr></thead>
+    <thead>
+      <tr><th colspan="8" style="background:#1e3320;color:rgba(255,255,255,.6);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트 발생 구간 (M4 이후) — 임대료 2,500만원</th></tr>
+      <tr><th>시나리오</th><th>임대료</th><th>관리비·전기·수도</th><th>인건비</th><th>마케팅/운영비</th><th>총 고정비</th><th>BEP @58%</th><th>BEP @60%</th></tr>
+    </thead>
     <tbody>
       <tr class="t-ok"><td><b>Base ★</b></td><td>2,500만</td><td>1,100만</td><td>2,800만</td><td>1,200만</td><td><b>7,600만</b></td><td><b>1.31억</b></td><td><b>1.27억</b></td></tr>
       <tr><td><b>High (비수기 대비)</b></td><td>2,500만</td><td>1,350만</td><td>3,000만</td><td>1,300만</td><td>8,150만</td><td>1.40억</td><td>1.36억</td></tr>
@@ -946,11 +1072,11 @@ img{max-width:100%;height:auto;}
 <section class="sec" id="s15">
   <div class="s-tag">Section 15</div>
   <h2 class="s-title">재무 심화 — 연간 손익 · 민감도</h2>
-  <div class="box info"><span class="box-icon">📊</span><div><strong>수치 읽는 법 :</strong> M1~M3는 렌트프리로 고정비 5,100만원, M4부터 7,600만원입니다. 연간 손익은 렌트 발생 후 구조를 반영한 수치입니다.</div></div>
+  <div class="box info"><span class="box-icon">📊</span><div><strong>수치 읽는 법 :</strong> M1~M3는 렌트프리로 고정비 5,100만원, M4부터 7,600만원입니다.</div></div>
   <div class="t-wrap">
   <table>
     <thead>
-      <tr><th colspan="7" style="background:#1e3320;color:rgba(255,255,255,.55);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트프리 3개월 반영 연간 손익 (월 임대 2,500만 확정 기준)</th></tr>
+      <tr><th colspan="7" style="background:#1e3320;color:rgba(255,255,255,.55);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">렌트프리 3개월 반영 연간 손익</th></tr>
       <tr><th>구분</th><th>M1~M3</th><th>M4</th><th>M5</th><th>M6</th><th>M7~M12 평균</th><th>연간 합계</th></tr>
     </thead>
     <tbody>
@@ -959,11 +1085,11 @@ img{max-width:100%;height:auto;}
       <tr><td>기여이익</td><td>2,475 / 3,920 / 5,415만</td><td>6,380만</td><td>7,540만</td><td>8,850만</td><td>9,300만</td><td><b>약 10.3억</b></td></tr>
       <tr class="t-hl"><td>월 고정비</td><td><b>5,100만 (렌트프리)</b></td><td><b>7,600만 (렌트 시작)</b></td><td>7,600만</td><td>7,700만</td><td>7,800만</td><td><b>약 9.1억</b></td></tr>
       <tr><td style="color:var(--red)">M 손익</td><td>-2,625 / -1,180 / <b style="color:var(--forest2)">+315만</b></td><td style="color:var(--red)">-1,220만</td><td style="color:var(--red)">-60만</td><td style="color:var(--forest2)"><b>+1,150만</b></td><td style="color:var(--forest2)">+1,500만</td><td>—</td></tr>
-      <tr class="t-sum"><td><b>누적 손익</b></td><td>-3,490만</td><td>-4,710만</td><td>-4,770만</td><td>-3,620만</td><td style="color:var(--gold2)">+흑자 전환</td><td><b>약 +1.2억</b></td></tr>
+      <tr class="t-sum"><td><b>누적 손익</b></td><td>-3,490만</td><td>-4,710만</td><td>-4,770만</td><td>-3,620만</td><td style="color:var(--gold)">+흑자 전환</td><td><b>약 +1.2억</b></td></tr>
     </tbody>
   </table>
   </div>
-  <div class="box ok"><span class="box-icon">📈</span><div><strong>연간 손익 포인트 :</strong> 렌트프리 3개월 덕분에 M3에서 일시 흑자 전환 후 M4 절벽을 경험하지만, M6에서 흑자 안정화, M9에 누적 손실 해소. 연간 영업이익 <strong>약 1.2억원</strong> 달성이 목표입니다.</div></div>
+  <div class="box ok"><span class="box-icon">📈</span><div><strong>연간 손익 포인트 :</strong> M6에서 흑자 안정화, M9에 누적 손실 해소. 연간 영업이익 <strong>약 1.2억원</strong> 달성이 목표입니다.</div></div>
   <h3 class="sec-h3">민감도 분석</h3>
   <div class="t-wrap">
   <table>
@@ -1034,7 +1160,7 @@ img{max-width:100%;height:auto;}
   <div class="t-wrap">
   <table>
     <thead>
-      <tr><th colspan="8" style="background:#7a2c2c;color:rgba(255,255,255,.7);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">★ 렌트 절벽 구간 — 월 고정비 7,600만원 (임대 2,500만 발생)</th></tr>
+      <tr><th colspan="8" style="background:#7a2c2c;color:rgba(255,255,255,.7);font-size:11px;padding:8px 16px;text-align:left;letter-spacing:.05em">★ 렌트 절벽 구간 — 월 고정비 7,600만원</th></tr>
       <tr><th>월</th><th>월매출 목표</th><th>총이익률</th><th>기여이익</th><th>월 고정비</th><th>월 손익</th><th>누적 손익</th><th>핵심 과제</th></tr>
     </thead>
     <tbody>
@@ -1050,7 +1176,8 @@ img{max-width:100%;height:auto;}
 
 <!-- CH IV -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/07-scalp-eeg-diagnostic-zone.webp" width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter IV</div>
@@ -1102,7 +1229,6 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">RACI 매트릭스</h3>
   <div class="t-wrap">
   <table>
@@ -1117,7 +1243,6 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-
   <h3 class="sec-h3">향수 클래스 1일 수익 시뮬레이션</h3>
   <div class="t-wrap">
   <table>
@@ -1142,9 +1267,9 @@ img{max-width:100%;height:auto;}
   <table>
     <thead><tr><th>영역</th><th>확인 이슈</th><th>위험도</th><th>사전 조치</th><th>금지 표현</th></tr></thead>
     <tbody>
-      <tr><td><b>족욕</b></td><td>공중위생관리법상 목욕장업 해당 가능성. 1인 1수조·개인용 용기 방식은 제외 유권해석 존재 — 관할구청 서면 질의 필수. 소독제: 염소계 또는 동등 기준 적용, 매 회차 수조 교체 원칙.</td><td><span class="r r-h">상</span></td><td>관할구청 서면 질의, 소독 로그 설계, 소독제 비치</td><td><span class="r-x">혈액순환 개선, 부종 치료, 통증 완화</span></td></tr>
+      <tr><td><b>족욕</b></td><td>공중위생관리법상 목욕장업 해당 가능성. 1인 1수조 방식은 제외 유권해석 존재 — 관할구청 서면 질의 필수.</td><td><span class="r r-h">상</span></td><td>관할구청 서면 질의, 소독 로그 설계</td><td><span class="r-x">혈액순환 개선, 부종 치료, 통증 완화</span></td></tr>
       <tr class="t-hl"><td><b>콜라겐 티·음료</b></td><td>유상 제공 시 휴게음식점 신고 필요 가능성. 건기식 현장 시음 범위 확인 필요</td><td><span class="r r-h">상</span></td><td>제공 방식 확정 후 신고 여부 확인</td><td><span class="r-x">디톡스, 해독, 피부개선 보장</span></td></tr>
-      <tr><td><b>EEG</b></td><td>의료기기 해당 여부 + 생체정보(민감정보) 별도 서면 동의 필수. B2B 제공 시 제3자 제공 동의 추가. 개인정보처리방침 공개 필수.</td><td><span class="r r-h">상</span></td><td>비의료 체험 고지문, 생체정보 동의서, 개인정보처리방침 게시</td><td><span class="r-x">진단, 치료, 정신건강 판정</span></td></tr>
+      <tr><td><b>EEG</b></td><td>의료기기 해당 여부 + 생체정보(민감정보) 별도 서면 동의 필수. 개인정보처리방침 공개 필수.</td><td><span class="r r-h">상</span></td><td>비의료 체험 고지문, 생체정보 동의서, 개인정보처리방침 게시</td><td><span class="r-x">진단, 치료, 정신건강 판정</span></td></tr>
       <tr class="t-hl"><td><b>화장품/건기식</b></td><td>표시광고, 판매업, 기능성 문구 적법성</td><td><span class="r r-h">상</span></td><td>전성분/주의사항/광고문구 법무 사전 검수</td><td><span class="r-x">질병 예방, 치료, 체중감량 보장</span></td></tr>
       <tr><td><b>위탁/팝업</b></td><td>전대 여부, 판매대행 계약, 정산 구조</td><td><span class="r r-h">상</span></td><td>위탁판매/판매대행 구조 계약서 (변호사 검토 권장)</td><td><span class="r-x">공간 재임대 구조 금지</span></td></tr>
       <tr class="t-hl"><td><b>건물 업종 허용</b></td><td>용도·영업시간·사인·급배수 범위</td><td><span class="r r-h">상</span></td><td>계약 전 서면 확인 필수</td><td><span class="r-x">구두 합의에만 의존 금지</span></td></tr>
@@ -1155,7 +1280,8 @@ img{max-width:100%;height:auto;}
 
 <!-- CH V -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/03-kbeauty-select-zone-layout.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/03-kbeauty-select-zone-layout.webp" width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter V</div>
@@ -1182,8 +1308,8 @@ img{max-width:100%;height:auto;}
   </table>
   </div>
   <div class="img-2">
-    <figure><img loading="lazy" decoding="async" src="assets/10-photo-zone-entry.webp" alt="포토존 입구"><figcaption>Photo Zone Entry — B1 유입의 핵심 장치</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="assets/07-scalp-eeg-diagnostic-zone.webp" alt="두피 EEG 진단존"><figcaption>Diagnostic Wing — 체험의 차별화 포인트</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/10-photo-zone-entry.webp" width="600" height="220" alt="포토존 입구"><figcaption>Photo Zone Entry — B1 유입의 핵심 장치</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="assets/07-scalp-eeg-diagnostic-zone.webp" width="600" height="220" alt="두피 EEG 진단존"><figcaption>Diagnostic Wing — 체험의 차별화 포인트</figcaption></figure>
   </div>
 </section>
 
@@ -1269,7 +1395,8 @@ img{max-width:100%;height:auto;}
 
 <!-- CH VI -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/08-eeg-scent-recommendation-room.webp" width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter VI</div>
@@ -1315,7 +1442,7 @@ img{max-width:100%;height:auto;}
     </tbody>
   </table>
   </div>
-  <div class="box warn"><span class="box-icon">🔐</span><div><strong>EEG 개인정보·생체정보 처리 의무 :</strong> ① 민감정보(생체정보) 별도 서면 동의 ② 데이터 보존기간 및 파기 방법 명시 ③ B2B 제공 시 제3자 제공 동의 ④ 개인정보처리방침 게시 ⑤ 개인정보 보호책임자 지정. 정부과제 심사 필수 항목입니다.</div></div>
+  <div class="box warn"><span class="box-icon">🔐</span><div><strong>EEG 개인정보·생체정보 처리 의무 :</strong> ① 민감정보(생체정보) 별도 서면 동의 ② 데이터 보존기간 및 파기 방법 명시 ③ B2B 제공 시 제3자 제공 동의 ④ 개인정보처리방침 게시 ⑤ 개인정보 보호책임자 지정.</div></div>
 </section>
 
 <!-- S27 -->
@@ -1338,7 +1465,8 @@ img{max-width:100%;height:auto;}
 
 <!-- CH VII -->
 <div class="ch-header">
-  <img loading="lazy" decoding="async" src="assets/09-foot-bath-lounge.webp" alt="">
+  <img loading="lazy" decoding="async" src="assets/09-foot-bath-lounge.webp" width="1200" height="180" alt=""
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%">
   <div class="ch-header-dim"></div>
   <div class="ch-header-body">
     <div class="ch-label">Chapter VII</div>
@@ -1474,11 +1602,11 @@ img{max-width:100%;height:auto;}
   <div class="box ok"><span class="box-icon">🗓</span><div><strong>렌트프리 3개월을 최대한 활용하는 로드맵 :</strong> M1은 데이터 수집, M2는 채널 최적화, M3는 렌트 절벽 대비 파이프라인 확보에 집중합니다. M4부터 임대가 발생하므로 그 전에 반복 예약 구조를 반드시 완성해야 합니다.</div></div>
   <div class="tl">
     <div class="tl-item"><div class="tl-dot">D-12</div><div><div class="tl-head">계약 전 Gate 0 체크리스트 완료</div><div class="tl-body">B1 유입 7일 직접 카운팅 · 관할구청 족욕·EEG·음료 업종 서면 질의 · 건물 업종·급배수·영업시간 서면 확인 · 자기자본 2억 이상 확보 확인 · 보증금·렌트프리 협상 시나리오 준비</div></div></div>
-    <div class="tl-item"><div class="tl-dot">D-10</div><div><div class="tl-head">임대 계약 체결 · 공사 설계</div><div class="tl-body">공사 업체 2~3곳 견적 비교 · 구획 도면 확정 (명상룸·EEG룸·족욕 위치) · EEG 장비 발주 · 위탁 파트너 계약서 초안 · 변호사 계약서 검토 의뢰</div></div></div>
+    <div class="tl-item"><div class="tl-dot">D-10</div><div><div class="tl-head">임대 계약 체결 · 공사 설계</div><div class="tl-body">공사 업체 2~3곳 견적 비교 · 구획 도면 확정 · EEG 장비 발주 · 위탁 파트너 계약서 초안 · 변호사 계약서 검토 의뢰</div></div></div>
     <div class="tl-item"><div class="tl-dot">D-8</div><div><div class="tl-head">공사 착공</div><div class="tl-body">석고보드 구획·레일 조명·흡음 보강 · 두피 파트너 모집 1차 연락 · K-Beauty 브랜드 위탁 계약 (10개 브랜드 목표) · Google 비즈니스 프로필 사전 등록 · 네이버 예약 페이지 사전 세팅</div></div></div>
     <div class="tl-item"><div class="tl-dot">D-4</div><div><div class="tl-head">공사 완료 · 장비 입고 · 직원 채용</div><div class="tl-body">족욕 세트·MD 테이블·POS·QR 세팅 · 운영 매니저·클래스 담당 채용 확정 · K-Beauty 위탁 SKU 50~80개 입고 · EEG 생체정보 동의서 양식 완성 · 시프트 스케줄 확정</div></div></div>
     <div class="tl-item"><div class="tl-dot">D-2</div><div><div class="tl-head">소프트 오픈 · 직원 트레이닝</div><div class="tl-body">직원 스크립트·금지 표현·AI Staff 교육 · 호텔 QR 카드 10곳 비치 · 포토존 소품·사인 설치 · 릴스 5개 사전 제작 · 100명 베타 테스트</div></div></div>
-    <div class="tl-item"><div class="tl-dot active">D-0</div><div><div class="tl-head">그랜드 오픈</div><div class="tl-body">Google Maps 업데이트 · OTA 상품 라이브 · 쌈지길 1층 A보드 설치 · KPI 일별 기록 시작 (B1 유입·전환율·객단가·기여이익)</div></div></div>
+    <div class="tl-item"><div class="tl-dot active">D-0</div><div><div class="tl-head">그랜드 오픈</div><div class="tl-body">Google Maps 업데이트 · OTA 상품 라이브 · 쌈지길 1층 A보드 설치 · KPI 일별 기록 시작</div></div></div>
     <div class="tl-item"><div class="tl-dot gold">M1</div><div><div class="tl-head">Gate 1 — 30일 데이터 검토</div><div class="tl-body">5,000만 미만 → 구조 축소 / 5,000만~8,000만 → 개선 운영 / 8,000만+ → M2 가속</div></div></div>
     <div class="tl-item"><div class="tl-dot gold">M3</div><div><div class="tl-head">★ Gate 2 — 렌트프리 종료 직전 (최대 위기)</div><div class="tl-body">매출 9,500만 목표 달성 확인 · OTA 월 예약 100건+ · 기업복지 계약 3건 이상 · M4 임대 2,500만 발생에 대비한 예약 잔고 확인 · K-Beauty 하위 30% SKU 교체 · 누적 손실 -3,490만원 → 운전자금 여유 확인</div></div></div>
     <div class="tl-item"><div class="tl-dot gold">M6</div><div><div class="tl-head">Gate 3 — 확장 판단</div><div class="tl-body">월매출 1.3억+ · 기여이익 6,500만+ 달성 시 향수 클래스 존 확장(22~24평)·EEG 2대·족욕 8석·두피 파트너 추가 검토. 2차 투자 예산 편성 시작.</div></div></div>
@@ -1506,6 +1634,7 @@ img{max-width:100%;height:auto;}
 </main>
 </div>
 
+<!-- FOOTER -->
 <div class="ft">
   <div>
     <div class="ft-brand">PLANT WELLNESS GROUND <em>INSADONG</em></div>
@@ -1514,42 +1643,76 @@ img{max-width:100%;height:auto;}
   <div class="ft-conf">본 문서는 내부 사업성 검토용 기밀 자료입니다<br>수치는 목표값이며 현장 실측 후 즉시 보정 필요<br>FINAL INTEGRATED EXECUTION PLAN · 2026</div>
 </div>
 
+<!-- ===== JS: defer 처리 — 렌더 완료 후 실행 ===== -->
 <script>
-// 스크롤 진행 바
-const bar=document.createElement('div');
-bar.style.cssText='position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:9999;transition:width .1s;pointer-events:none';
-document.body.appendChild(bar);
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
-  bar.style.width=pct+'%';
-});
+(function(){
+  'use strict';
 
-// 섹션 애니메이션 + 사이드바 하이라이트
-function g(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
-const links=document.querySelectorAll('.sb-link');
-const secs=[...document.querySelectorAll('section[id]')];
+  // ── 1. 스크롤 진행 바 (requestAnimationFrame으로 throttle) ──
+  var bar = document.getElementById('progress-bar');
+  var ticking = false;
+  function updateBar(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    bar.style.width = pct + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(updateBar); ticking = true; }
+  }, {passive: true});
 
-const obs=new IntersectionObserver(e=>{
-  e.forEach(en=>{
-    if(en.isIntersecting){
-      en.target.classList.add('visible');
-      const id=en.target.id;
-      links.forEach(l=>l.classList.remove('on'));
-      const a=document.querySelector(`.sb-link[onclick="g('${id}')"]`);
-      if(a){a.classList.add('on');a.scrollIntoView({block:'nearest'})}
-    }
+  // ── 2. 섹션 진입 애니메이션 + 사이드바 하이라이트 ──
+  var secs = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sb-link'));
+
+  // motionQuery 체크: prefers-reduced-motion이면 IO 불필요
+  var motionOK = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+  var isMobile = window.innerWidth <= 960;
+
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          if(motionOK) en.target.classList.add('visible');
+          // 사이드바는 데스크톱에서만 업데이트
+          if(!isMobile){
+            var id = en.target.id;
+            links.forEach(function(l){ l.classList.remove('on'); });
+            var active = document.querySelector('.sb-link[data-target="' + id + '"]');
+            if(active){
+              active.classList.add('on');
+              active.scrollIntoView({block:'nearest'});
+            }
+          }
+        }
+      });
+    }, {threshold: 0.1, rootMargin: '-40px 0px -55% 0px'});
+    secs.forEach(function(s){ obs.observe(s); });
+  } else {
+    // IO 미지원 브라우저: 모든 섹션 visible 처리
+    secs.forEach(function(s){ s.classList.add('visible'); });
+  }
+
+  // ── 3. 사이드바 클릭 → smooth scroll ──
+  links.forEach(function(link){
+    link.addEventListener('click', function(){
+      var target = this.getAttribute('data-target');
+      var el = document.getElementById(target);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
   });
-},{threshold:.1,rootMargin:'-40px 0px -55% 0px'});
-secs.forEach(s=>obs.observe(s));
 
-// 키보드 단축키 (j/k 섹션 이동)
-let ci=0;
-document.addEventListener('keydown',e=>{
-  if(e.target.tagName==='INPUT') return;
-  if(e.key==='j'){ci=Math.min(ci+1,secs.length-1);g(secs[ci].id)}
-  if(e.key==='k'){ci=Math.max(ci-1,0);g(secs[ci].id)}
-});
+  // ── 4. 키보드 단축키 (j/k) — 데스크톱에서만 ──
+  if(!isMobile){
+    var ci = 0;
+    document.addEventListener('keydown', function(e){
+      if(e.target.tagName === 'INPUT') return;
+      if(e.key === 'j'){ ci = Math.min(ci+1, secs.length-1); secs[ci].scrollIntoView({behavior:'smooth'}); }
+      if(e.key === 'k'){ ci = Math.max(ci-1, 0); secs[ci].scrollIntoView({behavior:'smooth'}); }
+    });
+  }
+
+})();
 </script>
 </body>
 </html>
